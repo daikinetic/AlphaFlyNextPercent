@@ -1,0 +1,16 @@
+PODS:
+  - MondrianLayout (0.10.0)
+
+DEPENDENCIES:
+  - MondrianLayout
+
+SPEC REPOS:
+  trunk:
+    - MondrianLayout
+
+SPEC CHECKSUMS:
+  MondrianLayout: a817f7dd2f7c2663ba46d8944db09ac04bc39310
+
+PODFILE CHECKSUM: 13919e5d4a5b0dda00e87d5820af27c8457a4e1c
+
+COCOAPODS: 1.12.0

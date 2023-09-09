@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01C017953319DE5062C9FBDD57C1A3A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		0CF378DA93B1EA2E337F3645A1249B34 /* VGridBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD8D5F42C475032A4D8101130DD50F /* VGridBlock.swift */; };
+		13C6357F6A15B9DB6076B61C25631B08 /* ZStackBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C33AF0FBCBB26F58B2095201DB40A2A /* ZStackBlock.swift */; };
+		164632AECF28062A9CBC9D517A34425F /* LayoutContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B922562F5C55BF1C1B5217A35B64052 /* LayoutContainer.swift */; };
+		1B40FFF14D304CFED159BE6E146671E6 /* RelativeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8861B4EF3E8FEA64F337D58CCCFC1 /* RelativeBlock.swift */; };
+		20A2A512D8A7B194F4D17AAC6F114E56 /* LayoutGuideBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF6CEA9CD9DDAB87AB619C2B0EA1550 /* LayoutGuideBlock.swift */; };
+		32EA0F3EF17AA3E53C3335A9443B0F8D /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6743C1941D47B15A9AAAC1BC90054BF0 /* LayoutManager.swift */; };
+		338B45007D8D0F5A7187E0C6D0CD632A /* VHStackContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF1A0B1F2189555285ACC3D25A7B01 /* VHStackContentBuilder.swift */; };
+		34C98224C22A21C584794EA3160F2598 /* _LayoutBlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650BA3BE568F1A93132039AEE3E326A /* _LayoutBlockNode.swift */; };
+		481E6AE3D6F4BAA9CB460E57E40A7DD1 /* UIView+Mondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35143812360578082277DF2C82B8111C /* UIView+Mondrian.swift */; };
+		56050E8079CD19C353303696F976CC90 /* OverlayBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D895A20B060806DFF233E44C8DB8DE /* OverlayBlock.swift */; };
+		59E8F5BA8E6491B3FFC4697C35848460 /* Pods-AlphaFlyNextPercent-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9009987CD3FD15EF9F1E58242CC8DC37 /* Pods-AlphaFlyNextPercent-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B2387B7A5732170A5D112D5925B3F70 /* Pods-AlphaFlyNextPercent-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A8CFB8B16B262674E6289D17A55CCB /* Pods-AlphaFlyNextPercent-dummy.m */; };
+		631510B9B965FF4D7392666DB2F2963C /* NSLayoutConstraint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4499AD1E6572850163F235DD858907 /* NSLayoutConstraint+.swift */; };
+		6C6C0F0CE14968A1CD1D53F22A11C6CE /* ViewBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF1154D7667A093035FDEA5E2214BF /* ViewBlock.swift */; };
+		74D469D1A1FE3D86E50B02C7F38646FA /* LayoutDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E04BCA0CAADD642D75886084A6A61 /* LayoutDescriptor.swift */; };
+		80A12DFEB35F1EE1591B4469F207308C /* HStackBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D25E2CA27F302704064525F9BF2F0 /* HStackBlock.swift */; };
+		832ABD744AE6C6790A6262634C5C2199 /* MondrianLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A678FDF650E2E4AF308626BC185E4166 /* MondrianLayout-dummy.m */; };
+		8A73EF7E30CAE9D578FA3A65DA7AF66F /* _LayoutBlockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEBEE0C9A034067EB3B8B0EC204B060 /* _LayoutBlockType.swift */; };
+		8DC88C99E9C526C2CA244D386E47BDB6 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBAF73C328FD2E313F38EFCB8086D54 /* Edge.swift */; };
+		9452CD9ED96FDE3DA53E8920C7514080 /* Optimization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C563F4958AD024C1D6FA5D502BE28A /* Optimization.swift */; };
+		9B86415298FBD20D10D199BCE7CDFB0A /* VStackBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267F03BA4E13D6B997AE06D5D90FA3B7 /* VStackBlock.swift */; };
+		A12D806A9716373CF4A2824A1B3A2346 /* MondrianLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7C356EB3FC0CA76CBB94C5F914EBC53 /* MondrianLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A20AFC6DC942DA4F95504C589439BB39 /* LayoutBuilderContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6F3B8C3380219738F48764396373AF /* LayoutBuilderContext.swift */; };
+		A45798077C7941220F2E4A6DA5517136 /* _LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3765069780A20DB8B824E14E5C6584CB /* _LayoutElement.swift */; };
+		A94AE6857C714EFE62C972C651957176 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEFD4A8A923C42811F48CA91B6469D /* Utils.swift */; };
+		B1C560D386E13335859F49A11C7DC037 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		C6B9B939984EC17157EBAA4F57C50A7B /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39AD215188898E2B5341D6C78BBCA38 /* EntryPoint.swift */; };
+		D30125B209A44756C7697C720C50DE97 /* UILayoutGuide+Mondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EABB92990A4E25E435B5737C863B92 /* UILayoutGuide+Mondrian.swift */; };
+		E1D1B27AAF522EDD41BC82315FFDF7EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		F49209724FCB62D92EB4040B8FE7C704 /* DimensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FB9AF14766FBE70ED5AFD00D6C346 /* DimensionDescriptor.swift */; };
+		F69ABCD4B9FA9068CAEB9C20A92FC870 /* StackingSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C303C48181CF3F1C0F8884470B27001 /* StackingSpacer.swift */; };
+		F857241CA61FD65C239DE41F12142A71 /* MondrianArrayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58DE75C6EA249EEDB966E278C2FC22A /* MondrianArrayBuilder.swift */; };
+		FC6E4357C098E6BF42E9E88EFC5E3808 /* BackgroundBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FBE7BBE77490B7B1E95A0BBC0B7EBE /* BackgroundBlock.swift */; };
+		FF9B0641C7F00E570AD444F335FFA825 /* MondrianNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D3E75FCE4C7A70917E3CCABFB021E /* MondrianNamespace.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		229D608826E1A8F92DC27F0AC567CF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B5B11ED40E5AB576348C7CB0007D912;
+			remoteInfo = MondrianLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		094E04BCA0CAADD642D75886084A6A61 /* LayoutDescriptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutDescriptor.swift; path = MondrianLayout/Classic/LayoutDescriptor.swift; sourceTree = "<group>"; };
+		0BCF1154D7667A093035FDEA5E2214BF /* ViewBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewBlock.swift; path = MondrianLayout/LayoutBlocks/ViewBlock.swift; sourceTree = "<group>"; };
+		267F03BA4E13D6B997AE06D5D90FA3B7 /* VStackBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VStackBlock.swift; path = MondrianLayout/LayoutBlocks/VStackBlock.swift; sourceTree = "<group>"; };
+		2F5D25E2CA27F302704064525F9BF2F0 /* HStackBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HStackBlock.swift; path = MondrianLayout/LayoutBlocks/HStackBlock.swift; sourceTree = "<group>"; };
+		2FF6CEA9CD9DDAB87AB619C2B0EA1550 /* LayoutGuideBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutGuideBlock.swift; path = MondrianLayout/LayoutBlocks/LayoutGuideBlock.swift; sourceTree = "<group>"; };
+		32EABB92990A4E25E435B5737C863B92 /* UILayoutGuide+Mondrian.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutGuide+Mondrian.swift"; path = "MondrianLayout/Extensions/UILayoutGuide+Mondrian.swift"; sourceTree = "<group>"; };
+		35143812360578082277DF2C82B8111C /* UIView+Mondrian.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Mondrian.swift"; path = "MondrianLayout/Extensions/UIView+Mondrian.swift"; sourceTree = "<group>"; };
+		36387EA1E04E4368CA99D2C170991C48 /* Pods-AlphaFlyNextPercent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlphaFlyNextPercent.debug.xcconfig"; sourceTree = "<group>"; };
+		3765069780A20DB8B824E14E5C6584CB /* _LayoutElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = _LayoutElement.swift; path = MondrianLayout/Internal/_LayoutElement.swift; sourceTree = "<group>"; };
+		385DBA3A451A626894A2B0DAFE3B4310 /* Pods-AlphaFlyNextPercent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlphaFlyNextPercent.release.xcconfig"; sourceTree = "<group>"; };
+		3C7E8323F5AA619BA66818403B72CF94 /* MondrianLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MondrianLayout-prefix.pch"; sourceTree = "<group>"; };
+		4899C490A275E92A6A20DB00492054BC /* Pods-AlphaFlyNextPercent-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlphaFlyNextPercent-Info.plist"; sourceTree = "<group>"; };
+		50EF1A0B1F2189555285ACC3D25A7B01 /* VHStackContentBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VHStackContentBuilder.swift; path = MondrianLayout/Descriptors/VHStackContentBuilder.swift; sourceTree = "<group>"; };
+		54FBE7BBE77490B7B1E95A0BBC0B7EBE /* BackgroundBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackgroundBlock.swift; path = MondrianLayout/LayoutBlocks/BackgroundBlock.swift; sourceTree = "<group>"; };
+		5870AF0F92C3FD6C9D21185F0A934039 /* MondrianLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MondrianLayout.release.xcconfig; sourceTree = "<group>"; };
+		5C33AF0FBCBB26F58B2095201DB40A2A /* ZStackBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZStackBlock.swift; path = MondrianLayout/LayoutBlocks/ZStackBlock.swift; sourceTree = "<group>"; };
+		6743C1941D47B15A9AAAC1BC90054BF0 /* LayoutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutManager.swift; path = MondrianLayout/Manager/LayoutManager.swift; sourceTree = "<group>"; };
+		6B922562F5C55BF1C1B5217A35B64052 /* LayoutContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutContainer.swift; path = MondrianLayout/LayoutBlocks/LayoutContainer.swift; sourceTree = "<group>"; };
+		6DBAF73C328FD2E313F38EFCB8086D54 /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = MondrianLayout/Descriptors/Edge.swift; sourceTree = "<group>"; };
+		6E6F3B8C3380219738F48764396373AF /* LayoutBuilderContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutBuilderContext.swift; path = MondrianLayout/Descriptors/LayoutBuilderContext.swift; sourceTree = "<group>"; };
+		6FCF39247F798D0B88364C89B2F2F856 /* Pods-AlphaFlyNextPercent.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AlphaFlyNextPercent.modulemap"; sourceTree = "<group>"; };
+		70F4C8066F86B37C0083A826CA469B0A /* MondrianLayout */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MondrianLayout; path = MondrianLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CEFD4A8A923C42811F48CA91B6469D /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = MondrianLayout/Internal/Utils.swift; sourceTree = "<group>"; };
+		7DAD8D5F42C475032A4D8101130DD50F /* VGridBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VGridBlock.swift; path = MondrianLayout/LayoutBlocks/VGridBlock.swift; sourceTree = "<group>"; };
+		811DEA06A571B0BD408EB7740125D078 /* MondrianLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MondrianLayout-Info.plist"; sourceTree = "<group>"; };
+		8650BA3BE568F1A93132039AEE3E326A /* _LayoutBlockNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = _LayoutBlockNode.swift; path = MondrianLayout/Descriptors/_LayoutBlockNode.swift; sourceTree = "<group>"; };
+		895FF6AB8B7BB6A7104686564570900E /* Pods-AlphaFlyNextPercent */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AlphaFlyNextPercent"; path = Pods_AlphaFlyNextPercent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C303C48181CF3F1C0F8884470B27001 /* StackingSpacer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StackingSpacer.swift; path = MondrianLayout/LayoutBlocks/StackingSpacer.swift; sourceTree = "<group>"; };
+		9009987CD3FD15EF9F1E58242CC8DC37 /* Pods-AlphaFlyNextPercent-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AlphaFlyNextPercent-umbrella.h"; sourceTree = "<group>"; };
+		90EA017A5BA1DC0CC4EF588F2641750D /* MondrianLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MondrianLayout.debug.xcconfig; sourceTree = "<group>"; };
+		947D3E75FCE4C7A70917E3CCABFB021E /* MondrianNamespace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MondrianNamespace.swift; path = MondrianLayout/MondrianNamespace.swift; sourceTree = "<group>"; };
+		954F0A84C96327DE4721BC02E8815B8C /* Pods-AlphaFlyNextPercent-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlphaFlyNextPercent-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A678FDF650E2E4AF308626BC185E4166 /* MondrianLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MondrianLayout-dummy.m"; sourceTree = "<group>"; };
+		A7E1E809316CE5459B24313C05576910 /* MondrianLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MondrianLayout.modulemap; sourceTree = "<group>"; };
+		A8C563F4958AD024C1D6FA5D502BE28A /* Optimization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optimization.swift; path = MondrianLayout/Descriptors/Optimization.swift; sourceTree = "<group>"; };
+		A9193BC3E1861514BC99D719718B33FB /* Pods-AlphaFlyNextPercent-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlphaFlyNextPercent-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A93FB9AF14766FBE70ED5AFD00D6C346 /* DimensionDescriptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DimensionDescriptor.swift; path = MondrianLayout/Descriptors/DimensionDescriptor.swift; sourceTree = "<group>"; };
+		B3D895A20B060806DFF233E44C8DB8DE /* OverlayBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayBlock.swift; path = MondrianLayout/LayoutBlocks/OverlayBlock.swift; sourceTree = "<group>"; };
+		B4A8CFB8B16B262674E6289D17A55CCB /* Pods-AlphaFlyNextPercent-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AlphaFlyNextPercent-dummy.m"; sourceTree = "<group>"; };
+		C7C356EB3FC0CA76CBB94C5F914EBC53 /* MondrianLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MondrianLayout-umbrella.h"; sourceTree = "<group>"; };
+		CDEBEE0C9A034067EB3B8B0EC204B060 /* _LayoutBlockType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = _LayoutBlockType.swift; path = MondrianLayout/Descriptors/_LayoutBlockType.swift; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D58DE75C6EA249EEDB966E278C2FC22A /* MondrianArrayBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MondrianArrayBuilder.swift; path = MondrianLayout/Classic/MondrianArrayBuilder.swift; sourceTree = "<group>"; };
+		DAF8861B4EF3E8FEA64F337D58CCCFC1 /* RelativeBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeBlock.swift; path = MondrianLayout/LayoutBlocks/RelativeBlock.swift; sourceTree = "<group>"; };
+		E39AD215188898E2B5341D6C78BBCA38 /* EntryPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EntryPoint.swift; path = MondrianLayout/EntryPoint.swift; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F2FFD1A65BF6359D9CA834EA22B34EBB /* Pods-AlphaFlyNextPercent-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlphaFlyNextPercent-frameworks.sh"; sourceTree = "<group>"; };
+		FC4499AD1E6572850163F235DD858907 /* NSLayoutConstraint+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+.swift"; path = "MondrianLayout/Extensions/NSLayoutConstraint+.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AACDB299A6D941AD612A90C229B9FE15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C017953319DE5062C9FBDD57C1A3A9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9581E2CA8A08BF9C2AD570C25B73296 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C560D386E13335859F49A11C7DC037 /* Foundation.framework in Frameworks */,
+				E1D1B27AAF522EDD41BC82315FFDF7EE /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		267A8690094B048C864C5D8BD06CE44E /* Pods-AlphaFlyNextPercent */ = {
+			isa = PBXGroup;
+			children = (
+				6FCF39247F798D0B88364C89B2F2F856 /* Pods-AlphaFlyNextPercent.modulemap */,
+				A9193BC3E1861514BC99D719718B33FB /* Pods-AlphaFlyNextPercent-acknowledgements.markdown */,
+				954F0A84C96327DE4721BC02E8815B8C /* Pods-AlphaFlyNextPercent-acknowledgements.plist */,
+				B4A8CFB8B16B262674E6289D17A55CCB /* Pods-AlphaFlyNextPercent-dummy.m */,
+				F2FFD1A65BF6359D9CA834EA22B34EBB /* Pods-AlphaFlyNextPercent-frameworks.sh */,
+				4899C490A275E92A6A20DB00492054BC /* Pods-AlphaFlyNextPercent-Info.plist */,
+				9009987CD3FD15EF9F1E58242CC8DC37 /* Pods-AlphaFlyNextPercent-umbrella.h */,
+				36387EA1E04E4368CA99D2C170991C48 /* Pods-AlphaFlyNextPercent.debug.xcconfig */,
+				385DBA3A451A626894A2B0DAFE3B4310 /* Pods-AlphaFlyNextPercent.release.xcconfig */,
+			);
+			name = "Pods-AlphaFlyNextPercent";
+			path = "Target Support Files/Pods-AlphaFlyNextPercent";
+			sourceTree = "<group>";
+		};
+		2F95BBBC5D637BB2E33F55D5704EFA15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38A85E45AD3556311A653B70815EE74F /* MondrianLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		38A85E45AD3556311A653B70815EE74F /* MondrianLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8650BA3BE568F1A93132039AEE3E326A /* _LayoutBlockNode.swift */,
+				CDEBEE0C9A034067EB3B8B0EC204B060 /* _LayoutBlockType.swift */,
+				3765069780A20DB8B824E14E5C6584CB /* _LayoutElement.swift */,
+				54FBE7BBE77490B7B1E95A0BBC0B7EBE /* BackgroundBlock.swift */,
+				A93FB9AF14766FBE70ED5AFD00D6C346 /* DimensionDescriptor.swift */,
+				6DBAF73C328FD2E313F38EFCB8086D54 /* Edge.swift */,
+				E39AD215188898E2B5341D6C78BBCA38 /* EntryPoint.swift */,
+				2F5D25E2CA27F302704064525F9BF2F0 /* HStackBlock.swift */,
+				6E6F3B8C3380219738F48764396373AF /* LayoutBuilderContext.swift */,
+				6B922562F5C55BF1C1B5217A35B64052 /* LayoutContainer.swift */,
+				094E04BCA0CAADD642D75886084A6A61 /* LayoutDescriptor.swift */,
+				2FF6CEA9CD9DDAB87AB619C2B0EA1550 /* LayoutGuideBlock.swift */,
+				6743C1941D47B15A9AAAC1BC90054BF0 /* LayoutManager.swift */,
+				D58DE75C6EA249EEDB966E278C2FC22A /* MondrianArrayBuilder.swift */,
+				947D3E75FCE4C7A70917E3CCABFB021E /* MondrianNamespace.swift */,
+				FC4499AD1E6572850163F235DD858907 /* NSLayoutConstraint+.swift */,
+				A8C563F4958AD024C1D6FA5D502BE28A /* Optimization.swift */,
+				B3D895A20B060806DFF233E44C8DB8DE /* OverlayBlock.swift */,
+				DAF8861B4EF3E8FEA64F337D58CCCFC1 /* RelativeBlock.swift */,
+				8C303C48181CF3F1C0F8884470B27001 /* StackingSpacer.swift */,
+				32EABB92990A4E25E435B5737C863B92 /* UILayoutGuide+Mondrian.swift */,
+				35143812360578082277DF2C82B8111C /* UIView+Mondrian.swift */,
+				73CEFD4A8A923C42811F48CA91B6469D /* Utils.swift */,
+				7DAD8D5F42C475032A4D8101130DD50F /* VGridBlock.swift */,
+				50EF1A0B1F2189555285ACC3D25A7B01 /* VHStackContentBuilder.swift */,
+				0BCF1154D7667A093035FDEA5E2214BF /* ViewBlock.swift */,
+				267F03BA4E13D6B997AE06D5D90FA3B7 /* VStackBlock.swift */,
+				5C33AF0FBCBB26F58B2095201DB40A2A /* ZStackBlock.swift */,
+				4F5CE6C013BAAE82F6C9CBB0C55F0CCA /* Support Files */,
+			);
+			name = MondrianLayout;
+			path = MondrianLayout;
+			sourceTree = "<group>";
+		};
+		4F5CE6C013BAAE82F6C9CBB0C55F0CCA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7E1E809316CE5459B24313C05576910 /* MondrianLayout.modulemap */,
+				A678FDF650E2E4AF308626BC185E4166 /* MondrianLayout-dummy.m */,
+				811DEA06A571B0BD408EB7740125D078 /* MondrianLayout-Info.plist */,
+				3C7E8323F5AA619BA66818403B72CF94 /* MondrianLayout-prefix.pch */,
+				C7C356EB3FC0CA76CBB94C5F914EBC53 /* MondrianLayout-umbrella.h */,
+				90EA017A5BA1DC0CC4EF588F2641750D /* MondrianLayout.debug.xcconfig */,
+				5870AF0F92C3FD6C9D21185F0A934039 /* MondrianLayout.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MondrianLayout";
+			sourceTree = "<group>";
+		};
+		51F20A0CD426856390142F65BA41AEC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70F4C8066F86B37C0083A826CA469B0A /* MondrianLayout */,
+				895FF6AB8B7BB6A7104686564570900E /* Pods-AlphaFlyNextPercent */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		767EB140CA5939071BD22C1F69D30397 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				267A8690094B048C864C5D8BD06CE44E /* Pods-AlphaFlyNextPercent */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				2F95BBBC5D637BB2E33F55D5704EFA15 /* Pods */,
+				51F20A0CD426856390142F65BA41AEC0 /* Products */,
+				767EB140CA5939071BD22C1F69D30397 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		64005DDEEBEC7A6C95FF5406EB24B668 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A12D806A9716373CF4A2824A1B3A2346 /* MondrianLayout-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AABFD60BF3B9ED2759F6E2912B824550 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59E8F5BA8E6491B3FFC4697C35848460 /* Pods-AlphaFlyNextPercent-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5B5B11ED40E5AB576348C7CB0007D912 /* MondrianLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D5E8C45CED3C504757B1EBDB66CF175 /* Build configuration list for PBXNativeTarget "MondrianLayout" */;
+			buildPhases = (
+				64005DDEEBEC7A6C95FF5406EB24B668 /* Headers */,
+				9D728F546E03123473DB96DCBC1EBD91 /* Sources */,
+				E9581E2CA8A08BF9C2AD570C25B73296 /* Frameworks */,
+				2297E00AB15025DAA6C9155FB52CCE78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MondrianLayout;
+			productName = MondrianLayout;
+			productReference = 70F4C8066F86B37C0083A826CA469B0A /* MondrianLayout */;
+			productType = "com.apple.product-type.framework";
+		};
+		A1290ECB77211C11C158DD3BFD7E9EA2 /* Pods-AlphaFlyNextPercent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB21A1412C08779400984FB9703FECAB /* Build configuration list for PBXNativeTarget "Pods-AlphaFlyNextPercent" */;
+			buildPhases = (
+				AABFD60BF3B9ED2759F6E2912B824550 /* Headers */,
+				0A2091ACC1700BCCDEFD768C3EC8D055 /* Sources */,
+				AACDB299A6D941AD612A90C229B9FE15 /* Frameworks */,
+				6C4E377B412C6264826CC2F64E724671 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03D81CE504796C07DD20C495A0E65999 /* PBXTargetDependency */,
+			);
+			name = "Pods-AlphaFlyNextPercent";
+			productName = Pods_AlphaFlyNextPercent;
+			productReference = 895FF6AB8B7BB6A7104686564570900E /* Pods-AlphaFlyNextPercent */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 51F20A0CD426856390142F65BA41AEC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B5B11ED40E5AB576348C7CB0007D912 /* MondrianLayout */,
+				A1290ECB77211C11C158DD3BFD7E9EA2 /* Pods-AlphaFlyNextPercent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2297E00AB15025DAA6C9155FB52CCE78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4E377B412C6264826CC2F64E724671 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A2091ACC1700BCCDEFD768C3EC8D055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2387B7A5732170A5D112D5925B3F70 /* Pods-AlphaFlyNextPercent-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D728F546E03123473DB96DCBC1EBD91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C98224C22A21C584794EA3160F2598 /* _LayoutBlockNode.swift in Sources */,
+				8A73EF7E30CAE9D578FA3A65DA7AF66F /* _LayoutBlockType.swift in Sources */,
+				A45798077C7941220F2E4A6DA5517136 /* _LayoutElement.swift in Sources */,
+				FC6E4357C098E6BF42E9E88EFC5E3808 /* BackgroundBlock.swift in Sources */,
+				F49209724FCB62D92EB4040B8FE7C704 /* DimensionDescriptor.swift in Sources */,
+				8DC88C99E9C526C2CA244D386E47BDB6 /* Edge.swift in Sources */,
+				C6B9B939984EC17157EBAA4F57C50A7B /* EntryPoint.swift in Sources */,
+				80A12DFEB35F1EE1591B4469F207308C /* HStackBlock.swift in Sources */,
+				A20AFC6DC942DA4F95504C589439BB39 /* LayoutBuilderContext.swift in Sources */,
+				164632AECF28062A9CBC9D517A34425F /* LayoutContainer.swift in Sources */,
+				74D469D1A1FE3D86E50B02C7F38646FA /* LayoutDescriptor.swift in Sources */,
+				20A2A512D8A7B194F4D17AAC6F114E56 /* LayoutGuideBlock.swift in Sources */,
+				32EA0F3EF17AA3E53C3335A9443B0F8D /* LayoutManager.swift in Sources */,
+				F857241CA61FD65C239DE41F12142A71 /* MondrianArrayBuilder.swift in Sources */,
+				832ABD744AE6C6790A6262634C5C2199 /* MondrianLayout-dummy.m in Sources */,
+				FF9B0641C7F00E570AD444F335FFA825 /* MondrianNamespace.swift in Sources */,
+				631510B9B965FF4D7392666DB2F2963C /* NSLayoutConstraint+.swift in Sources */,
+				9452CD9ED96FDE3DA53E8920C7514080 /* Optimization.swift in Sources */,
+				56050E8079CD19C353303696F976CC90 /* OverlayBlock.swift in Sources */,
+				1B40FFF14D304CFED159BE6E146671E6 /* RelativeBlock.swift in Sources */,
+				F69ABCD4B9FA9068CAEB9C20A92FC870 /* StackingSpacer.swift in Sources */,
+				D30125B209A44756C7697C720C50DE97 /* UILayoutGuide+Mondrian.swift in Sources */,
+				481E6AE3D6F4BAA9CB460E57E40A7DD1 /* UIView+Mondrian.swift in Sources */,
+				A94AE6857C714EFE62C972C651957176 /* Utils.swift in Sources */,
+				0CF378DA93B1EA2E337F3645A1249B34 /* VGridBlock.swift in Sources */,
+				338B45007D8D0F5A7187E0C6D0CD632A /* VHStackContentBuilder.swift in Sources */,
+				6C6C0F0CE14968A1CD1D53F22A11C6CE /* ViewBlock.swift in Sources */,
+				9B86415298FBD20D10D199BCE7CDFB0A /* VStackBlock.swift in Sources */,
+				13C6357F6A15B9DB6076B61C25631B08 /* ZStackBlock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03D81CE504796C07DD20C495A0E65999 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MondrianLayout;
+			target = 5B5B11ED40E5AB576348C7CB0007D912 /* MondrianLayout */;
+			targetProxy = 229D608826E1A8F92DC27F0AC567CF4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09D317530F6384E29ECC32CDC1400045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5870AF0F92C3FD6C9D21185F0A934039 /* MondrianLayout.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MondrianLayout/MondrianLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MondrianLayout/MondrianLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MondrianLayout/MondrianLayout.modulemap";
+				PRODUCT_MODULE_NAME = MondrianLayout;
+				PRODUCT_NAME = MondrianLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7C3FBC45C4966EFE20583918767EFBE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9F650CD8F4C74C586243E6C61010B556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90EA017A5BA1DC0CC4EF588F2641750D /* MondrianLayout.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MondrianLayout/MondrianLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MondrianLayout/MondrianLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MondrianLayout/MondrianLayout.modulemap";
+				PRODUCT_MODULE_NAME = MondrianLayout;
+				PRODUCT_NAME = MondrianLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D68639B4C35A7F328BAA1897EBFF7A83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 385DBA3A451A626894A2B0DAFE3B4310 /* Pods-AlphaFlyNextPercent.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF0A36149038A192FFD678E1D4A40D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		FF888BC7CF9ED2B7D7F337CC64E55E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36387EA1E04E4368CA99D2C170991C48 /* Pods-AlphaFlyNextPercent.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C3FBC45C4966EFE20583918767EFBE2 /* Debug */,
+				FF0A36149038A192FFD678E1D4A40D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D5E8C45CED3C504757B1EBDB66CF175 /* Build configuration list for PBXNativeTarget "MondrianLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F650CD8F4C74C586243E6C61010B556 /* Debug */,
+				09D317530F6384E29ECC32CDC1400045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB21A1412C08779400984FB9703FECAB /* Build configuration list for PBXNativeTarget "Pods-AlphaFlyNextPercent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF888BC7CF9ED2B7D7F337CC64E55E8A /* Debug */,
+				D68639B4C35A7F328BAA1897EBFF7A83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
