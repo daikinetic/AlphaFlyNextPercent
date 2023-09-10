@@ -59,3 +59,17 @@ extension UIColor {
   }
 }
 
+extension UILabel {
+  static func mockSingleLine() {
+
+  }
+
+  static func mockMultiline(text: String, textColor: UIColor = .black) -> UILabel {
+    let label = UILabel()
+    label.font = .preferredFont(forTextStyle: .headline)
+    label.textColor = textColor
+    label.numberOfLines = 0
+    label.text = text
+    return label
+  }
+}
