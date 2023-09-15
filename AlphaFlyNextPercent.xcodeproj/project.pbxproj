@@ -15,6 +15,7 @@
 		656B667B2AACA6B0007F1A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656B66792AACA6B0007F1A7D /* LaunchScreen.storyboard */; };
 		656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */; };
 		656B66872AACA841007F1A7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66862AACA841007F1A7D /* Extension.swift */; };
+		65C025812AB42497003E3418 /* HandSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C025802AB42497003E3418 /* HandSpinner.swift */; };
 		CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		656B667C2AACA6B0007F1A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondrianOfMondrian.swift; sourceTree = "<group>"; };
 		656B66862AACA841007F1A7D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		65C025802AB42497003E3418 /* HandSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSpinner.swift; sourceTree = "<group>"; };
 		6DD5FD27638AC0DA62C58DC9 /* Pods-AlphaFlyNextPercent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFlyNextPercent.release.xcconfig"; path = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.release.xcconfig"; sourceTree = "<group>"; };
 		AB2702EDECC1D176D64322F4 /* Pods-AlphaFlyNextPercent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFlyNextPercent.debug.xcconfig"; path = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.debug.xcconfig"; sourceTree = "<group>"; };
 		CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphaFlyNextPercent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 			children = (
 				656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */,
 				656B66862AACA841007F1A7D /* Extension.swift */,
+				65C025802AB42497003E3418 /* HandSpinner.swift */,
 			);
 			path = MondrianOfMondrian;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				656B66872AACA841007F1A7D /* Extension.swift in Sources */,
+				65C025812AB42497003E3418 /* HandSpinner.swift in Sources */,
 				656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
 				656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */,
