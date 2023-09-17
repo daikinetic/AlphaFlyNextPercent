@@ -10,6 +10,9 @@
 		650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CD65F2AB03BA800502061 /* AccessControlVariation.swift */; };
 		6542F26C2AB731E30071EC01 /* keyPathExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F26B2AB731E30071EC01 /* keyPathExpression.swift */; };
 		6542F2702AB78B800071EC01 /* TagTextFieldSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F26F2AB78B800071EC01 /* TagTextFieldSwiftUI.swift */; };
+		6542F2752AB799490071EC01 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F2742AB799480071EC01 /* Tag.swift */; };
+		6542F2772AB79A3A0071EC01 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F2762AB79A3A0071EC01 /* Home.swift */; };
+		6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F2782AB79AEF0071EC01 /* TagField.swift */; };
 		656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B666E2AACA6B0007F1A7D /* AppDelegate.swift */; };
 		656B66712AACA6B0007F1A7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66702AACA6B0007F1A7D /* SceneDelegate.swift */; };
 		656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66722AACA6B0007F1A7D /* MainTabBarViewController.swift */; };
@@ -25,6 +28,9 @@
 		650CD65F2AB03BA800502061 /* AccessControlVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlVariation.swift; sourceTree = "<group>"; };
 		6542F26B2AB731E30071EC01 /* keyPathExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyPathExpression.swift; sourceTree = "<group>"; };
 		6542F26F2AB78B800071EC01 /* TagTextFieldSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTextFieldSwiftUI.swift; sourceTree = "<group>"; };
+		6542F2742AB799480071EC01 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		6542F2762AB79A3A0071EC01 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		6542F2782AB79AEF0071EC01 /* TagField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagField.swift; sourceTree = "<group>"; };
 		656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaFlyNextPercent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656B666E2AACA6B0007F1A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		656B66702AACA6B0007F1A7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,33 @@
 				6DD5FD27638AC0DA62C58DC9 /* Pods-AlphaFlyNextPercent.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6542F2712AB798F80071EC01 /* TagTextField */ = {
+			isa = PBXGroup;
+			children = (
+				6542F2722AB799110071EC01 /* Model */,
+				6542F2732AB799240071EC01 /* View */,
+				6542F26F2AB78B800071EC01 /* TagTextFieldSwiftUI.swift */,
+			);
+			path = TagTextField;
+			sourceTree = "<group>";
+		};
+		6542F2722AB799110071EC01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6542F2742AB799480071EC01 /* Tag.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6542F2732AB799240071EC01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6542F2762AB79A3A0071EC01 /* Home.swift */,
+				6542F2782AB79AEF0071EC01 /* TagField.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		656B66622AACA6B0007F1A7D = {
@@ -108,7 +141,7 @@
 				656B66822AACA6C9007F1A7D /* MondrianOfMondrian */,
 				650CD65F2AB03BA800502061 /* AccessControlVariation.swift */,
 				6542F26B2AB731E30071EC01 /* keyPathExpression.swift */,
-				6542F26F2AB78B800071EC01 /* TagTextFieldSwiftUI.swift */,
+				6542F2712AB798F80071EC01 /* TagTextField */,
 				65C025802AB42497003E3418 /* HandSpinner.swift */,
 			);
 			path = 2023;
@@ -237,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6542F26C2AB731E30071EC01 /* keyPathExpression.swift in Sources */,
+				6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */,
 				656B66872AACA841007F1A7D /* Extension.swift in Sources */,
+				6542F2752AB799490071EC01 /* Tag.swift in Sources */,
+				6542F2772AB79A3A0071EC01 /* Home.swift in Sources */,
 				65C025812AB42497003E3418 /* HandSpinner.swift in Sources */,
 				656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
