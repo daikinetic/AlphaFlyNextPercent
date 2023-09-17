@@ -16,12 +16,12 @@ private struct User {
   }
 }
 
-let users = [
-  User(name: John),
-  User(name: Johns),
-  User(name: Johnst),
-  User(name: Johnste),
-  User(name: Johnster)
+private let users = [
+  User(name: "John"),
+  User(name: "Johns"),
+  User(name: "Johnst"),
+  User(name: "Johnste"),
+  User(name: "Johnster")
 ]
 
 // Swift key path expression \Root.value can use wherever functions of (Root) -> Value are allowed.
@@ -32,5 +32,5 @@ let userNames = users.map { user in
 }
 
 // KeyPath version
-let userNames = users.map(\.name)
+let userNamesKeyPathVer = users.map(\.name)
 
