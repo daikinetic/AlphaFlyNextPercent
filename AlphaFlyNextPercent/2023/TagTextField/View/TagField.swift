@@ -12,9 +12,12 @@ struct TagField: View {
   var body: some View {
     HStack {
       ForEach($tags) { $tag in
-        
+        TagView(tag: $tag, allTags: $tags)
       }
     }
+    .padding(.vertical, 10)
+    .padding(.horizontal, 15)
+    .background(.bar, in: RoundedRectangle(cornerRadius: 5))
   }
 }
 
@@ -32,11 +35,10 @@ fileprivate struct TagView: View {
       .focused($isFocused)
       .padding(.horizontal, 10)
       .padding(.vertical, 10)
-      .background {
-        (colorScheme == .dark ? Color.black : Color.white).opacity(isFocused ? 0 : 1)
-        Rectangle()
-          .cornerRadius(5)
-      }
+      .background (
+        (colorScheme == .dark ? Color.black : Color.white).opacity(isFocused ? 0 : 1),
+        in: RoundedRectangle(cornerRadius: 5)
+      )
   }
 
 
