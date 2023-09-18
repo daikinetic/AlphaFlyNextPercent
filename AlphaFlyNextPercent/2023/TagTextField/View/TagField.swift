@@ -10,7 +10,7 @@ import SwiftUI
 struct TagField: View {
   @Binding var tags: [Tag]
   var body: some View {
-    HStack {
+    TagLayout(alignment: .leading) {
       ForEach($tags) { $tag in
         TagView(tag: $tag, allTags: $tags)
           .onChange(of: tag.value) { newValue in
