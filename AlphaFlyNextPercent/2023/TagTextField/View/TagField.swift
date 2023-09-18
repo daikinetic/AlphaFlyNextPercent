@@ -48,7 +48,11 @@ fileprivate struct TagView: View {
   //
   var body: some View {
     BackSpaceListenerTextField(hint: "Tag", text: $tag.value) {
-      print("Back Button Pressed")
+      if allTags.count > 1 {
+        if tag.value.isEmpty {
+          allTags.removeAll(where: { $0.id == tag.id })
+        }
+      }
     }
     .focused($isFocused)
     .padding(.horizontal, isFocused || tag.value.isEmpty ? 0 : 10)
@@ -71,7 +75,6 @@ fileprivate struct TagView: View {
             tag.isInitial = false
             isFocused = true
           }
-
       }
     }
   }
@@ -83,30 +86,31 @@ fileprivate struct BackSpaceListenerTextField: UIViewRepresentable {
   var onBackPressed: () -> ()
 
   func makeCoordinator() -> Coordinator {
-    return Coodinator(text: $text)
+    return Coordinator(text: $text)
   }
 
   func makeUIView(context: Context) -> CustomTextField {
     let textField = CustomTextField()
     textField.delegate = context.coordinator
+    textField.onBackPressed = onBackPressed
     // Optionals
     textField.placeholder = hint
     textField.autocorrectionType = .no
     textField.autocapitalizationType = .words
     textField.backgroundColor = .clear
-    textField.addTarget(context.coordinator, action: #selector(Coodinator.textField(_:)), for: .editingChanged)
+    textField.addTarget(context.coordinator, action: #selector(Coordinator.textChange(textField:)), for: .editingChanged)
     return textField
   }
 
   func updateUIView(_ uiView: CustomTextField, context: Context) {
-
+    uiView.text = text
   }
 
   func sizeThatFits(_ proposal: ProposedViewSize, uiView: CustomTextField, context: Context) -> CGSize? {
     return uiView.intrinsicContentSize
   }
 
-  class Coodinator: NSObject, UITextFieldDelegate {
+  class Coordinator: NSObject, UITextFieldDelegate {
     @Binding var text: String
     init(text: Binding<String>) {
       self._text = text
@@ -114,7 +118,7 @@ fileprivate struct BackSpaceListenerTextField: UIViewRepresentable {
 
     // Text Change
     @objc
-    func textField(_ textField: UITextField) {
+    func textChange(textField: UITextField) {
       text = textField.text ?? ""
     }
 
