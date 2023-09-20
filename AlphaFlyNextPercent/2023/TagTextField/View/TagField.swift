@@ -15,7 +15,7 @@ struct TagField: View {
         TagView(tag: $tag, allTags: $tags)
           .onChange(of: tag.value) { newValue in
             if newValue.last == "," {
-              // Removi Commma
+              // Remove Commma
               tag.value.removeLast()
               // Insert New Tag Item
               if !tag.value.isEmpty {
@@ -51,6 +51,10 @@ fileprivate struct TagView: View {
       if allTags.count > 1 {
         if tag.value.isEmpty {
           allTags.removeAll(where: { $0.id == tag.id })
+          // Activating the previously available Tag
+          if let lastIndex = allTags.indices.last {
+            allTags[lastIndex].isInitial = false
+          }
         }
       }
     }
@@ -72,9 +76,17 @@ fileprivate struct TagView: View {
         RoundedRectangle(cornerRadius: 5)
           .fill(.clear)
           .onTapGesture {
-            tag.isInitial = false
-            isFocused = true
+            // Activating only for last Tag
+            if allTags.last?.id == tag.id {
+              tag.isInitial = false
+              isFocused = true
+            }
           }
+      }
+    }
+    .onChange(of: isFocused) { _ in
+      if !isFocused {
+        tag.isInitial = true
       }
     }
   }
@@ -144,6 +156,10 @@ fileprivate class CustomTextField: UITextField {
     // This will be called when ever keyboard back button is pressed
     onBackPressed?()
     super.deleteBackward()
+  }
+
+  override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    return false
   }
 }
 

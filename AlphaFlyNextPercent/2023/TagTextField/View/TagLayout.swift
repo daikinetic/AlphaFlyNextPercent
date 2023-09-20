@@ -40,10 +40,23 @@ struct TagLayout: Layout {
     let rows = generateRows(maxWidth, proposal, subviews)
 
     for row in rows {
-      
+      // Changing Origin X based on Alignments
+      let leading: CGFloat = bounds.maxX - maxWidth
+      let trailing = bounds.maxX - (row.reduce(CGFloat.zero) { partialResult, view in
+
+        let width = view.sizeThatFits(proposal).width
+
+        if view == row.last {
+          // No spacing
+          return partialResult + width
+        }
+        // With Spacing
+        return partialResult + width + spacing
+      })
+      let center = (trailing + leading) / 2
 
       // Resetting Origin X to Zero for Each Row
-      origin.x = 0
+      origin.x = (alignment == .leading ? leading : alignment == .trailing ? trailing : center)
 
       for view in row {
         let viewSize = view.sizeThatFits(proposal)
@@ -53,7 +66,7 @@ struct TagLayout: Layout {
       }
 
       // Updating Origin Y
-      origin.x += (row.maxHeight(proposal) + spacing)
+      origin.y += (row.maxHeight(proposal) + spacing)
     }
 
   }
@@ -71,6 +84,7 @@ struct TagLayout: Layout {
 
       // Pushing to New Row
       if (origin.x + viewSize.width + spacing) > maxWidth {
+
         rows.append(row)
         row.removeAll()
         // Resetting X Origin since it needs to start from left to right
@@ -78,7 +92,9 @@ struct TagLayout: Layout {
         row.append(view)
         // Updating Origin X
         origin.x += (viewSize.width + spacing)
+
       } else {
+
         // Adding item to Same Row
         row.append(view)
         // Updating OriginX
