@@ -34,7 +34,12 @@ struct TagField: View {
         tags.append(.init(value: "", isInitial: true))
       }
     }
-    
+    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification), perform: { _ in
+      if let lastTag = tags.last, !lastTag.value.isEmpty {
+        // Insert empty tag at last
+        tags.append(.init(value: "", isInitial: true))
+      }
+    })
   }
 }
 
