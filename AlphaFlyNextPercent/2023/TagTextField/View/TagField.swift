@@ -34,6 +34,7 @@ struct TagField: View {
         tags.append(.init(value: "", isInitial: true))
       }
     }
+    
   }
 }
 
