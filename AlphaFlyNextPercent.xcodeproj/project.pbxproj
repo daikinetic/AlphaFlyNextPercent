@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CD65F2AB03BA800502061 /* AccessControlVariation.swift */; };
+		651DFE1C2ABC77FB00E18BBC /* GlassMorphism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DFE1B2ABC77FB00E18BBC /* GlassMorphism.swift */; };
 		6542F26C2AB731E30071EC01 /* keyPathExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F26B2AB731E30071EC01 /* keyPathExpression.swift */; };
 		6542F2702AB78B800071EC01 /* TagTextFieldSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F26F2AB78B800071EC01 /* TagTextFieldSwiftUI.swift */; };
 		6542F2752AB799490071EC01 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F2742AB799480071EC01 /* Tag.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		650CD65F2AB03BA800502061 /* AccessControlVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlVariation.swift; sourceTree = "<group>"; };
+		651DFE1B2ABC77FB00E18BBC /* GlassMorphism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassMorphism.swift; sourceTree = "<group>"; };
 		6542F26B2AB731E30071EC01 /* keyPathExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyPathExpression.swift; sourceTree = "<group>"; };
 		6542F26F2AB78B800071EC01 /* TagTextFieldSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTextFieldSwiftUI.swift; sourceTree = "<group>"; };
 		6542F2742AB799480071EC01 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 				6DD5FD27638AC0DA62C58DC9 /* Pods-AlphaFlyNextPercent.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		651DFE1A2ABC77D900E18BBC /* GlassMorphism */ = {
+			isa = PBXGroup;
+			children = (
+				651DFE1B2ABC77FB00E18BBC /* GlassMorphism.swift */,
+			);
+			path = GlassMorphism;
 			sourceTree = "<group>";
 		};
 		6542F2712AB798F80071EC01 /* TagTextField */ = {
@@ -141,6 +151,7 @@
 		656B66852AACA79D007F1A7D /* 2023 */ = {
 			isa = PBXGroup;
 			children = (
+				651DFE1A2ABC77D900E18BBC /* GlassMorphism */,
 				656B66822AACA6C9007F1A7D /* MondrianOfMondrian */,
 				650CD65F2AB03BA800502061 /* AccessControlVariation.swift */,
 				6542F26B2AB731E30071EC01 /* keyPathExpression.swift */,
@@ -273,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6542F26C2AB731E30071EC01 /* keyPathExpression.swift in Sources */,
+				651DFE1C2ABC77FB00E18BBC /* GlassMorphism.swift in Sources */,
 				6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */,
 				656B66872AACA841007F1A7D /* Extension.swift in Sources */,
 				6542F2752AB799490071EC01 /* Tag.swift in Sources */,
