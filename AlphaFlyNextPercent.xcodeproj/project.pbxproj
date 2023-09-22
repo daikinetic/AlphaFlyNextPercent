@@ -23,6 +23,8 @@
 		656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */; };
 		656B66872AACA841007F1A7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66862AACA841007F1A7D /* Extension.swift */; };
 		65C025812AB42497003E3418 /* HandSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C025802AB42497003E3418 /* HandSpinner.swift */; };
+		65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */; };
+		65F697512ABDC6800067E6C6 /* MultiThreading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F697502ABDC6800067E6C6 /* MultiThreading.swift */; };
 		CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondrianOfMondrian.swift; sourceTree = "<group>"; };
 		656B66862AACA841007F1A7D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		65C025802AB42497003E3418 /* HandSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSpinner.swift; sourceTree = "<group>"; };
+		65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateHandlingInIOS17.swift; sourceTree = "<group>"; };
+		65F697502ABDC6800067E6C6 /* MultiThreading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiThreading.swift; sourceTree = "<group>"; };
 		6DD5FD27638AC0DA62C58DC9 /* Pods-AlphaFlyNextPercent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFlyNextPercent.release.xcconfig"; path = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.release.xcconfig"; sourceTree = "<group>"; };
 		AB2702EDECC1D176D64322F4 /* Pods-AlphaFlyNextPercent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFlyNextPercent.debug.xcconfig"; path = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.debug.xcconfig"; sourceTree = "<group>"; };
 		CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphaFlyNextPercent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,14 +155,24 @@
 		656B66852AACA79D007F1A7D /* 2023 */ = {
 			isa = PBXGroup;
 			children = (
+				65F6974D2ABDC54F0067E6C6 /* EmptyStateHandlingInIOS17 */,
 				651DFE1A2ABC77D900E18BBC /* GlassMorphism */,
 				656B66822AACA6C9007F1A7D /* MondrianOfMondrian */,
 				650CD65F2AB03BA800502061 /* AccessControlVariation.swift */,
 				6542F26B2AB731E30071EC01 /* keyPathExpression.swift */,
 				6542F2712AB798F80071EC01 /* TagTextField */,
 				65C025802AB42497003E3418 /* HandSpinner.swift */,
+				65F697502ABDC6800067E6C6 /* MultiThreading.swift */,
 			);
 			path = 2023;
+			sourceTree = "<group>";
+		};
+		65F6974D2ABDC54F0067E6C6 /* EmptyStateHandlingInIOS17 */ = {
+			isa = PBXGroup;
+			children = (
+				65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */,
+			);
+			path = EmptyStateHandlingInIOS17;
 			sourceTree = "<group>";
 		};
 		7CF1B94F6B66832740A55CE0 /* Frameworks */ = {
@@ -283,12 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F697512ABDC6800067E6C6 /* MultiThreading.swift in Sources */,
 				6542F26C2AB731E30071EC01 /* keyPathExpression.swift in Sources */,
 				651DFE1C2ABC77FB00E18BBC /* GlassMorphism.swift in Sources */,
 				6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */,
 				656B66872AACA841007F1A7D /* Extension.swift in Sources */,
 				6542F2752AB799490071EC01 /* Tag.swift in Sources */,
 				6542F2772AB79A3A0071EC01 /* Home.swift in Sources */,
+				65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */,
 				65C025812AB42497003E3418 /* HandSpinner.swift in Sources */,
 				656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */,
 				6542F27D2AB88A570071EC01 /* TagLayout.swift in Sources */,
