@@ -11,13 +11,88 @@
 import SwiftUI
 
 struct EmptyStateHandlingInIOS17: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var body: some View {
+    if #available(iOS 17.0, *) {
+      ContentUnavailableView(
+        "This app is unavailable",
+        systemImage: "magnifyingglass",
+        description: Text("This app is unavailable as we are busy to create new feature for everyone")
+          .italic()
+      )
+    } else {
+      // Fallback on earlier versions
     }
+  }
 }
 
-struct EmptyStateHandlingInIOS17_Previews: PreviewProvider {
-    static var previews: some View {
-        EmptyStateHandlingInIOS17()
+struct EmptyStateHandlingInIOS17Ver2: View {
+  var body: some View {
+    if #available(iOS 17.0, *) {
+      ContentUnavailableView {
+        Label("Sorry! No result found: (", systemImage: "magnifyingglass")
+      } description: {
+        Text("Try another keyword")
+      } actions: {
+        HStack {
+          Button("Go back") {}
+          Button(role: .destructive) {} label: {
+            Text("Reset filters")
+          }
+        }
+      }
+
+
+    } else {
+      // Fallback on earlier versions
     }
+  }
+}
+
+@available(iOS 17.0, *)
+struct EmptyStateHandlingInIOS17WithSearchView: View {
+
+  let courses = [
+    "Mastering SwiftUI", "Build TaskList using MVVM", "Mastering WidgetKit", "DiscoveryPlus Clone"
+  ]
+  @State private var searchText = ""
+
+  var body: some View {
+    NavigationStack {
+      List {
+
+        if searchResults.isEmpty {
+          ContentUnavailableView.search(text: searchText)
+
+        } else {
+          ForEach(searchResults, id: \.self) { course in
+            NavigationLink {
+              Text(course)
+            } label: {
+              Text(course)
+            }
+          }
+        }
+      }
+      .searchable(text: $searchText)
+    }
+  }
+
+  var searchResults: [String] {
+    if searchText.isEmpty {
+      return courses
+    } else {
+      return courses.filter {
+        $0.contains(searchText)
+      }
+    }
+  }
+}
+
+@available(iOS 17.0, *)
+struct EmptyStateHandlingInIOS17_Previews: PreviewProvider {
+  static var previews: some View {
+//    EmptyStateHandlingInIOS17()
+//    EmptyStateHandlingInIOS17Ver2()
+    EmptyStateHandlingInIOS17WithSearchView()
+  }
 }
