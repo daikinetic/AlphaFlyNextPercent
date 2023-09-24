@@ -19,13 +19,12 @@ struct ToggleContentTransition: View {
       Circle()
         .frame(width: 180)
         .overlay {
-          Image(systemName: "face.smiling")
+          Image("mountain")
             .resizable()
-            .foregroundColor(.cyan)
+            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
         }
         .foregroundColor(.white)
         .padding(.bottom, 70)
-
 
       Text("Set how you would like to join the meeting")
         .foregroundColor(.white)
