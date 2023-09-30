@@ -22,9 +22,9 @@ class MainTabBarViewController: UITabBarController {
     let firstVC = MondrianOfMondrian()
     firstVC.tabBarItem = UITabBarItem(title: "tab1", image: .actions, tag: 0)
 
-    let secondVC = UIViewController()
-    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 0)
-    secondVC.view.backgroundColor = .layeringColor
+    let secondVC = SearchViewController()
+    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
+//    secondVC.view.backgroundColor = .layeringColor
 
     viewControllers = [firstVC, secondVC]
 
