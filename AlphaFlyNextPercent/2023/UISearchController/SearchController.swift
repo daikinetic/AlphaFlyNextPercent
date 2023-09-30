@@ -56,7 +56,11 @@ class SearchViewController:
   // MARK: - Properties
   let tableView = UITableView()
   let searchBar = UISearchBar()
-  var searchResults = [String]()
+  var searchResults: [String] = []
+
+  var allData: [String] = [
+    "Apple", "Google", "Amazon", "MicroSoft"
+  ]
 
   // MARK: - Functions
   override func viewDidLoad() {
@@ -67,11 +71,20 @@ class SearchViewController:
     tableView.dataSource = self
     tableView.frame = view.bounds
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-    view.addSubview(tableView)
+
+    searchResults = allData
+
+    Mondrian.buildSubviews(on: view) {
+      VStackBlock(alignment: .leading) {
+        tableView
+
+      }
+      .height(view.bounds.height)
+    }
 
     // Configure UISearchBar
     searchBar.delegate = self
-    searchBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+    searchBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
     tableView.tableHeaderView = searchBar
   }
 
@@ -83,6 +96,7 @@ class SearchViewController:
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     cell.textLabel?.text = searchResults[indexPath.row]
+    cell.frame = .init(x: 0, y: 0, width: view.bounds.width, height: 40)
     return cell
   }
 
@@ -90,7 +104,16 @@ class SearchViewController:
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     // SearchLogic
     // Update search results based on searchText and reload tableView
-    print(searchText)
+    if searchText.isEmpty {
+      searchResults = allData
+
+    } else {
+      searchResults = searchResults.filter {
+        return $0.lowercased().contains(searchText.lowercased())
+      }
+    }
+
+    tableView.reloadData()
   }
 
 }
