@@ -14,12 +14,13 @@ struct DarkModeAnimation: View {
   @State private var activeTab: Int = 0
   @State private var toggles: [Bool] = Array(repeating: false, count: 10)
 
-  @State private var toggleDarkMode: Bool = false
-  @State private var activateDarkMode: Bool = false
+  @AppStorage("toggleDarkMode") private var toggleDarkMode: Bool = false
+  @AppStorage("activateDarkMode") private var activateDarkMode: Bool = false
   @State private var buttonRect: CGRect = .zero
 
   @State private var currentImage: UIImage?
   @State private var previousImage: UIImage?
+  @State private var maskAnimation: Bool = false
 
   var body: some View {
     TabView(selection: $activeTab) {
@@ -52,29 +53,6 @@ struct DarkModeAnimation: View {
           Text("Settings")
         }
     }
-    .overlay(alignment: .topLeading) {
-      Button(action: { toggleDarkMode.toggle() }) {
-        Image(systemName: toggleDarkMode ? "sun.max.fill" : "moon.fill")
-          .font(.title2)
-          .foregroundStyle(Color.primary)
-          .symbolEffect(.bounce, value: toggleDarkMode)
-          .frame(width: 40, height: 40)
-      }
-      .rect { rect in
-        buttonRect = rect
-      }
-      .padding(10)
-    }
-    .overlay(alignment: .topLeading) {
-      if buttonRect != .zero {
-        Circle()
-          .fill(.red)
-          .frame(width: buttonRect.width, height: buttonRect.height)
-          .offset(x: buttonRect.minX, y: buttonRect.minY)
-          .ignoresSafeArea()
-          .hidden()
-      }
-    }
     .createImages(
       toggleDarkMode: toggleDarkMode,
       currentImage: $currentImage,
@@ -86,17 +64,59 @@ struct DarkModeAnimation: View {
         let size = geometry.size
 
         if let previousImage, let currentImage {
-          VStack {
+          ZStack {
             Image(uiImage: previousImage)
               .resizable()
               .aspectRatio(contentMode: .fit)
+              .frame(width: size.width, height: size.height)
 
             Image(uiImage: currentImage)
               .resizable()
               .aspectRatio(contentMode: .fit)
+              .frame(width: size.width, height: size.height)
+              .mask(alignment: .topLeading) {
+                Circle()
+                  .frame(width: buttonRect.width * (maskAnimation ? 80 : 1), height: buttonRect.height * (maskAnimation ? 80 : 1), alignment: .bottomLeading)
+                  .frame(width: buttonRect.width, height: buttonRect.height)
+                  .offset(x: buttonRect.minX, y: buttonRect.minY)
+                  .ignoresSafeArea()
+              }
+          }
+          .task {
+            guard !maskAnimation else { return }
+            withAnimation(.easeInOut(duration: 0.9), completionCriteria: .logicallyComplete) {
+              maskAnimation = true
+            } completion: {
+              self.currentImage = nil
+              self.previousImage = nil
+              maskAnimation = false
+            }
           }
         }
       }
+      .mask({
+        Rectangle()
+          .overlay(alignment: .topLeading) {
+            Circle()
+              .frame(width: buttonRect.width, height: buttonRect.height)
+              .offset(x: buttonRect.minX, y: buttonRect.minY)
+              .blendMode(.destinationOut)
+          }
+      })
+    }
+    .overlay(alignment: .topTrailing) {
+      Button(action: { toggleDarkMode.toggle() }) {
+        Image(systemName: toggleDarkMode ? "sun.max.fill" : "moon.fill")
+          .font(.title2)
+          .foregroundStyle(Color.primary)
+          .symbolEffect(.bounce, value: toggleDarkMode)
+          .frame(width: 40, height: 40)
+      }
+      .rect { rect in
+        buttonRect = rect
+      }
+      .padding(10)
+      .disabled(currentImage != nil || previousImage != nil || maskAnimation)
     }
     .preferredColorScheme(activateDarkMode ? .dark : .light)
 
@@ -138,7 +158,14 @@ extension View {
     self
       .onChange(of: toggleDarkMode) { oldValue, newValue in
         Task {
+
           if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first(where: { $0.isKeyWindow }) {
+            let imageView = UIImageView()
+            imageView.frame = window.frame
+            imageView.image = window.rootViewController?.view.image(window.frame.size)
+            imageView.contentMode = .scaleAspectFit
+            window.addSubview(imageView)
+
             if let rootView = window.rootViewController?.view {
 
               let frameSize = rootView.frame.size
@@ -150,6 +177,9 @@ extension View {
 
               try await Task.sleep(for: .seconds(0.01))
               currentImage.wrappedValue = rootView.image(frameSize)
+
+              try await Task.sleep(for: .seconds(0.01))
+              imageView.removeFromSuperview()
             }
           }
         }
