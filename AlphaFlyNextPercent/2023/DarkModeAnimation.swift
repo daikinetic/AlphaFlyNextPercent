@@ -115,10 +115,12 @@ struct DarkModeAnimation: View {
       .rect { rect in
         buttonRect = rect
       }
-      .padding(10)
+      .padding(.top, 60)
+      .padding(.trailing, 10)
       .disabled(currentImage != nil || previousImage != nil || maskAnimation)
     }
     .preferredColorScheme(activateDarkMode ? .dark : .light)
+    .ignoresSafeArea()
 
   }
 }
@@ -147,6 +149,7 @@ extension View {
             .onPreferenceChange(RectKey.self, perform: { rect in
               value(rect)
             })
+
         }
       }
   }
