@@ -15,7 +15,7 @@ import Foundation
 import SwiftUI
 
 struct FlowLayout: Layout {
-  func sizeThatFits() {
-    
+  func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+    let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
   }
 }
