@@ -38,6 +38,7 @@
 		65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */; };
 		65F697512ABDC6800067E6C6 /* MultiThreading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F697502ABDC6800067E6C6 /* MultiThreading.swift */; };
 		65FC1CA42AD59CD600AD6A60 /* UIKitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC1CA32AD59CD600AD6A60 /* UIKitPreview.swift */; };
+		65FD59F92AD82DEB005E2125 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD59F82AD82DEB005E2125 /* Shimmer.swift */; };
 		CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateHandlingInIOS17.swift; sourceTree = "<group>"; };
 		65F697502ABDC6800067E6C6 /* MultiThreading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiThreading.swift; sourceTree = "<group>"; };
 		65FC1CA32AD59CD600AD6A60 /* UIKitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitPreview.swift; sourceTree = "<group>"; };
+		65FD59F82AD82DEB005E2125 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		6DD5FD27638AC0DA62C58DC9 /* Pods-AlphaFlyNextPercent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFlyNextPercent.release.xcconfig"; path = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.release.xcconfig"; sourceTree = "<group>"; };
 		AB2702EDECC1D176D64322F4 /* Pods-AlphaFlyNextPercent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFlyNextPercent.debug.xcconfig"; path = "Target Support Files/Pods-AlphaFlyNextPercent/Pods-AlphaFlyNextPercent.debug.xcconfig"; sourceTree = "<group>"; };
 		CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphaFlyNextPercent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 				65E20A6F2AD19BEA00BBF7EC /* PresentingMultipleSheet.swift */,
 				65E20A712AD2F70E00BBF7EC /* InAppCustomNotification.swift */,
 				65FC1CA32AD59CD600AD6A60 /* UIKitPreview.swift */,
+				65FD59F82AD82DEB005E2125 /* Shimmer.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				6542F27D2AB88A570071EC01 /* TagLayout.swift in Sources */,
 				65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
+				65FD59F92AD82DEB005E2125 /* Shimmer.swift in Sources */,
 				656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */,
 				65E20A722AD2F70E00BBF7EC /* InAppCustomNotification.swift in Sources */,
 				656B66712AACA6B0007F1A7D /* SceneDelegate.swift in Sources */,
