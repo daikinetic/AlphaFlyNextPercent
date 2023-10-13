@@ -244,7 +244,7 @@ fileprivate struct AnimatedNotificationView<Content: View>: View {
   }
 }
 
-@main
+//@main
 struct InAppNotificationApp: App {
   @State private var overlayWindow: PassThroughWindow?
 
