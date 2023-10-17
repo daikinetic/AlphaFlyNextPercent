@@ -33,6 +33,9 @@ struct HomeProgressBasedHero: View {
             .aspectRatio(contentMode: .fill)
             .frame(width: 50, height: 50)
             .clipShape(.circle)
+            .anchorPreference(key: AnchorKey.self, value: .bounds, transform: { anchor in
+              return [profile.id.uuidString: anchor]
+            })
 
           VStack(alignment: .leading, spacing: 6) {
             Text(profile.userName)
