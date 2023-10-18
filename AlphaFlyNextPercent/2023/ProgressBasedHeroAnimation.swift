@@ -80,6 +80,10 @@ struct DetailView: View {
             .aspectRatio(contentMode: .fill)
             .frame(width: size.width, height: 400)
             .clipped()
+            // Destination Anchor Frame
+            .anchorPreference(key: AnchorKey.self, value: .bounds, transform: { anchor in
+              return ["DESTINATION": anchor]
+            })
         }
         .scrollIndicators(.hidden)
         .ignoresSafeArea()
