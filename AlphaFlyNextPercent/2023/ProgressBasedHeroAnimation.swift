@@ -60,6 +60,16 @@ struct HomeProgressBasedHero: View {
         showDetail: $showDetail
       )
     }
+    // Hero Animation Layer
+    .overlayPreferenceValue(AnchorKey.self, { value in
+      GeometryReader { geometry in
+        //Let's check whether we have both source and destination frames
+        if let selectedProfile, let source = value[selectedProfile.id.uuidString], let destination = value["DESTINATION"] {
+          Color.red
+        }
+
+      }
+    })
   }
 }
 
@@ -75,11 +85,18 @@ struct DetailView: View {
         let size = $0.size
 
         ScrollView {
-          Image(selectedProfile.profilePicture)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: size.width, height: 400)
-            .clipped()
+
+          Rectangle()
+            .fill(.clear)
+            .overlay {
+              Image(selectedProfile.profilePicture)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: size.width, height: 400)
+                .clipped()
+                .hidden()
+            }
+            .frame(height: 400)
             // Destination Anchor Frame
             .anchorPreference(key: AnchorKey.self, value: .bounds, transform: { anchor in
               return ["DESTINATION": anchor]
