@@ -22,9 +22,11 @@ struct ConfigDemo: View {
             Text("Awesomeness: \(stepperValue)")
           }
           DatePicker(selection: $dateValue, label: { Text("Date") })
-        } header: {
+        } 
+        header: {
           Text("First Section")
-        } footer: {
+        } 
+        footer: {
           Text("This section contains some useful settings")
         }
 
@@ -33,12 +35,13 @@ struct ConfigDemo: View {
           Text("Hello, world!")
           Text("Hello, world!")
           Text("Hello, world!")
-        } header: {
+        } 
+        header: {
           Text("Second Section")
         }
       }
+      .navigationTitle("SwiftUI Config Demo")
     }
-    .navigationTitle("SwiftUI Config Demo")
   }
 }
 
