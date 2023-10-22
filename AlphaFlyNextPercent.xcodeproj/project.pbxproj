@@ -34,6 +34,7 @@
 		65BE80662AC717B500038167 /* SectorChartExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE80652AC717B500038167 /* SectorChartExample.swift */; };
 		65C025812AB42497003E3418 /* HandSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C025802AB42497003E3418 /* HandSpinner.swift */; };
 		65C21DD52ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C21DD42ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift */; };
+		65CFBA8B2AE536D300ACEC62 /* sensoryFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CFBA8A2AE536D300ACEC62 /* sensoryFeedBack.swift */; };
 		65E20A702AD19BEA00BBF7EC /* PresentingMultipleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E20A6F2AD19BEA00BBF7EC /* PresentingMultipleSheet.swift */; };
 		65E20A722AD2F70E00BBF7EC /* InAppCustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E20A712AD2F70E00BBF7EC /* InAppCustomNotification.swift */; };
 		65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */; };
@@ -74,6 +75,7 @@
 		65BE80652AC717B500038167 /* SectorChartExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorChartExample.swift; sourceTree = "<group>"; };
 		65C025802AB42497003E3418 /* HandSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSpinner.swift; sourceTree = "<group>"; };
 		65C21DD42ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBasedHeroAnimation.swift; sourceTree = "<group>"; };
+		65CFBA8A2AE536D300ACEC62 /* sensoryFeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sensoryFeedBack.swift; sourceTree = "<group>"; };
 		65E20A6F2AD19BEA00BBF7EC /* PresentingMultipleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingMultipleSheet.swift; sourceTree = "<group>"; };
 		65E20A712AD2F70E00BBF7EC /* InAppCustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppCustomNotification.swift; sourceTree = "<group>"; };
 		65F6974E2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateHandlingInIOS17.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				65FD59F82AD82DEB005E2125 /* Shimmer.swift */,
 				65C21DD42ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift */,
 				65FCB3732AE41A5A00454C3C /* DatePicker.swift */,
+				65CFBA8A2AE536D300ACEC62 /* sensoryFeedBack.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				65E20A702AD19BEA00BBF7EC /* PresentingMultipleSheet.swift in Sources */,
 				65FCB3742AE41A5A00454C3C /* DatePicker.swift in Sources */,
 				651DFE1C2ABC77FB00E18BBC /* GlassMorphism.swift in Sources */,
+				65CFBA8B2AE536D300ACEC62 /* sensoryFeedBack.swift in Sources */,
 				6519F30E2AC824D0005B41FF /* SearchController.swift in Sources */,
 				6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */,
 				65C21DD52ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift in Sources */,
