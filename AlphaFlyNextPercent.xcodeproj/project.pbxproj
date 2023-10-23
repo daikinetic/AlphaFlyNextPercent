@@ -29,6 +29,7 @@
 		656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */; };
 		656B66872AACA841007F1A7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66862AACA841007F1A7D /* Extension.swift */; };
 		6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */; };
+		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
 		6599D7832AC478C800A6CD3E /* HeartAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599D7822AC478C800A6CD3E /* HeartAnimation.swift */; };
 		65BE80642AC5B20E00038167 /* HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE80632AC5B20E00038167 /* HalfModal.swift */; };
 		65BE80662AC717B500038167 /* SectorChartExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE80652AC717B500038167 /* SectorChartExample.swift */; };
@@ -70,6 +71,7 @@
 		656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondrianOfMondrian.swift; sourceTree = "<group>"; };
 		656B66862AACA841007F1A7D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleContentTransition.swift; sourceTree = "<group>"; };
+		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
 		6599D7822AC478C800A6CD3E /* HeartAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAnimation.swift; sourceTree = "<group>"; };
 		65BE80632AC5B20E00038167 /* HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModal.swift; sourceTree = "<group>"; };
 		65BE80652AC717B500038167 /* SectorChartExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorChartExample.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				65C21DD42ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift */,
 				65FCB3732AE41A5A00454C3C /* DatePicker.swift */,
 				65CFBA8A2AE536D300ACEC62 /* sensoryFeedBack.swift */,
+				658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				6542F2772AB79A3A0071EC01 /* Home.swift in Sources */,
 				65197AE12AC30FD200DA683C /* ScrollTransition.swift in Sources */,
 				65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */,
+				658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */,
 				65C025812AB42497003E3418 /* HandSpinner.swift in Sources */,
 				656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */,
 				65FC1CA42AD59CD600AD6A60 /* UIKitPreview.swift in Sources */,
