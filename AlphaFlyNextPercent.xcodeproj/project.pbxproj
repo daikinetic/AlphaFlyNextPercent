@@ -20,6 +20,8 @@
 		6542F2772AB79A3A0071EC01 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F2762AB79A3A0071EC01 /* Home.swift */; };
 		6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F2782AB79AEF0071EC01 /* TagField.swift */; };
 		6542F27D2AB88A570071EC01 /* TagLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F27C2AB88A570071EC01 /* TagLayout.swift */; };
+		65448C572AE7F57300419185 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 65448C562AE7F57300419185 /* UIOnboarding */; };
+		65448C592AE7F59E00419185 /* UIOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65448C582AE7F59E00419185 /* UIOnboarding.swift */; };
 		6546BDC82ACDB02F00218624 /* LayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546BDC72ACDB02F00218624 /* LayoutProtocol.swift */; };
 		656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B666E2AACA6B0007F1A7D /* AppDelegate.swift */; };
 		656B66712AACA6B0007F1A7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66702AACA6B0007F1A7D /* SceneDelegate.swift */; };
@@ -60,6 +62,7 @@
 		6542F2762AB79A3A0071EC01 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		6542F2782AB79AEF0071EC01 /* TagField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagField.swift; sourceTree = "<group>"; };
 		6542F27C2AB88A570071EC01 /* TagLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLayout.swift; sourceTree = "<group>"; };
+		65448C582AE7F59E00419185 /* UIOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOnboarding.swift; sourceTree = "<group>"; };
 		6546BDC72ACDB02F00218624 /* LayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProtocol.swift; sourceTree = "<group>"; };
 		656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaFlyNextPercent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656B666E2AACA6B0007F1A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */,
+				65448C572AE7F57300419185 /* UIOnboarding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +229,7 @@
 				65FCB3732AE41A5A00454C3C /* DatePicker.swift */,
 				65CFBA8A2AE536D300ACEC62 /* sensoryFeedBack.swift */,
 				658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */,
+				65448C582AE7F59E00419185 /* UIOnboarding.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -263,6 +268,9 @@
 			dependencies = (
 			);
 			name = AlphaFlyNextPercent;
+			packageProductDependencies = (
+				65448C562AE7F57300419185 /* UIOnboarding */,
+			);
 			productName = AlphaFlyNextPercent;
 			productReference = 656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +299,9 @@
 				Base,
 			);
 			mainGroup = 656B66622AACA6B0007F1A7D;
+			packageReferences = (
+				65448C552AE7F57300419185 /* XCRemoteSwiftPackageReference "UIOnboarding" */,
+			);
 			productRefGroup = 656B666C2AACA6B0007F1A7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -389,6 +400,7 @@
 				656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */,
 				65E20A722AD2F70E00BBF7EC /* InAppCustomNotification.swift in Sources */,
 				656B66712AACA6B0007F1A7D /* SceneDelegate.swift in Sources */,
+				65448C592AE7F59E00419185 /* UIOnboarding.swift in Sources */,
 				6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */,
 				6542F2702AB78B800071EC01 /* TagTextFieldSwiftUI.swift in Sources */,
 				650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */,
@@ -604,6 +616,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65448C552AE7F57300419185 /* XCRemoteSwiftPackageReference "UIOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lascic/UIOnboarding.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65448C562AE7F57300419185 /* UIOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65448C552AE7F57300419185 /* XCRemoteSwiftPackageReference "UIOnboarding" */;
+			productName = UIOnboarding;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 656B66632AACA6B0007F1A7D /* Project object */;
 }
