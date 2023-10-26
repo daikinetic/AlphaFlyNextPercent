@@ -43,10 +43,17 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 //    secondVC.view.backgroundColor = .layeringColor
 
-    let thirdVC = onboardingController
+    let thirdVC = LinearGradientController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
-    viewControllers = [firstVC, secondVC, thirdVC]
+    let fourceVC = RadialGradientController()
+    fourceVC.tabBarItem = UITabBarItem(title: "tab4", image: .strokedCheckmark, tag: 2)
+
+    let fifthVC = AnimatedGradientController()
+    fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
+
+
+    viewControllers = [firstVC, secondVC, thirdVC, fourceVC, fifthVC]
 
   }
 
