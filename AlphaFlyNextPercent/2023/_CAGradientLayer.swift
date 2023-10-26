@@ -72,12 +72,6 @@ final class RadialGradientController: UIViewController {
     let gradient = CAGradientLayer()
     gradient.type = .radial
     gradient.colors = [
-//      UIColor.purple.cgColor,
-//      UIColor.blue.cgColor,
-//      UIColor.green.cgColor,
-//      UIColor.yellow.cgColor,
-//      UIColor.orange.cgColor,
-//      UIColor.red.cgColor
       UIColor.init(hex: "D16BA5").cgColor,
       UIColor.init(hex: "86A8E7").cgColor,
       UIColor.init(hex: "5FFBF1").cgColor
