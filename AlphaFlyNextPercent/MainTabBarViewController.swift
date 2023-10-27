@@ -39,21 +39,24 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let firstVC = MondrianOfMondrian()
     firstVC.tabBarItem = UITabBarItem(title: "tab1", image: .actions, tag: 0)
 
-    let secondVC = SearchViewController()
-    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
+//    let secondVC = SearchViewController()
+//    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 //    secondVC.view.backgroundColor = .layeringColor
 
-    let thirdVC = LinearGradientController()
+    let thirdVC = ShadowDropController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
-    let fourceVC = RadialGradientController()
+    let fourceVC = ShadowContactController()
     fourceVC.tabBarItem = UITabBarItem(title: "tab4", image: .strokedCheckmark, tag: 2)
 
-    let fifthVC = AnimatedGradientController()
+    let fifthVC = ShadowContactWithDepthController()
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
+    let sixthVC = ShadowContactFlatController()
+    fifthVC.tabBarItem = UITabBarItem(title: "tab6", image: .strokedCheckmark, tag: 2)
 
-    viewControllers = [firstVC, secondVC, thirdVC, fourceVC, fifthVC]
+
+    viewControllers = [firstVC, thirdVC, fourceVC, fifthVC, sixthVC]
 
   }
 
