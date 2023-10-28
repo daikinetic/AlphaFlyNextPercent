@@ -30,6 +30,17 @@
 		656B667B2AACA6B0007F1A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656B66792AACA6B0007F1A7D /* LaunchScreen.storyboard */; };
 		656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */; };
 		656B66872AACA841007F1A7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66862AACA841007F1A7D /* Extension.swift */; };
+		6574F9312AED47C200A44EC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F9302AED47C200A44EC9 /* ContentView.swift */; };
+		6574F9382AED489400A44EC9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6574F9372AED489400A44EC9 /* WidgetKit.framework */; };
+		6574F93A2AED489400A44EC9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6574F9392AED489400A44EC9 /* SwiftUI.framework */; };
+		6574F93D2AED489400A44EC9 /* OrderStatusBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F93C2AED489400A44EC9 /* OrderStatusBundle.swift */; };
+		6574F93F2AED489400A44EC9 /* OrderStatusLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F93E2AED489400A44EC9 /* OrderStatusLiveActivity.swift */; };
+		6574F9412AED489400A44EC9 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F9402AED489400A44EC9 /* OrderStatus.swift */; };
+		6574F9432AED489400A44EC9 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F9422AED489400A44EC9 /* AppIntent.swift */; };
+		6574F9452AED489500A44EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6574F9442AED489500A44EC9 /* Assets.xcassets */; };
+		6574F9492AED489500A44EC9 /* OrderStatusExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6574F9362AED489400A44EC9 /* OrderStatusExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6574F9502AED494C00A44EC9 /* OrderAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F94F2AED494C00A44EC9 /* OrderAttributes.swift */; };
+		6574F9512AED496900A44EC9 /* OrderAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574F94F2AED494C00A44EC9 /* OrderAttributes.swift */; };
 		6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */; };
 		6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */; };
 		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
@@ -50,6 +61,30 @@
 		65FD59F92AD82DEB005E2125 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD59F82AD82DEB005E2125 /* Shimmer.swift */; };
 		CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6574F9472AED489500A44EC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 656B66632AACA6B0007F1A7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6574F9352AED489400A44EC9;
+			remoteInfo = OrderStatusExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6574F94D2AED489500A44EC9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6574F9492AED489500A44EC9 /* OrderStatusExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		650CD65F2AB03BA800502061 /* AccessControlVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlVariation.swift; sourceTree = "<group>"; };
@@ -76,6 +111,17 @@
 		656B667C2AACA6B0007F1A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondrianOfMondrian.swift; sourceTree = "<group>"; };
 		656B66862AACA841007F1A7D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		6574F9302AED47C200A44EC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6574F9362AED489400A44EC9 /* OrderStatusExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrderStatusExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6574F9372AED489400A44EC9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6574F9392AED489400A44EC9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		6574F93C2AED489400A44EC9 /* OrderStatusBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusBundle.swift; sourceTree = "<group>"; };
+		6574F93E2AED489400A44EC9 /* OrderStatusLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLiveActivity.swift; sourceTree = "<group>"; };
+		6574F9402AED489400A44EC9 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		6574F9422AED489400A44EC9 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		6574F9442AED489500A44EC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6574F9462AED489500A44EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6574F94F2AED494C00A44EC9 /* OrderAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAttributes.swift; sourceTree = "<group>"; };
 		6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleContentTransition.swift; sourceTree = "<group>"; };
 		6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CAGradientLayer.swift; sourceTree = "<group>"; };
 		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
@@ -106,6 +152,15 @@
 			files = (
 				CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */,
 				65448C572AE7F57300419185 /* UIOnboarding in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6574F9332AED489400A44EC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6574F93A2AED489400A44EC9 /* SwiftUI.framework in Frameworks */,
+				6574F9382AED489400A44EC9 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				656B666D2AACA6B0007F1A7D /* AlphaFlyNextPercent */,
+				6574F93B2AED489400A44EC9 /* OrderStatus */,
 				656B666C2AACA6B0007F1A7D /* Products */,
 				4242367A30720210C3C83B47 /* Pods */,
 				7CF1B94F6B66832740A55CE0 /* Frameworks */,
@@ -179,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */,
+				6574F9362AED489400A44EC9 /* OrderStatusExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +266,7 @@
 		656B66852AACA79D007F1A7D /* 2023 */ = {
 			isa = PBXGroup;
 			children = (
+				6574F92F2AED479200A44EC9 /* Live Activities */,
 				6519F30C2AC824B4005B41FF /* UISearchController */,
 				65F6974D2ABDC54F0067E6C6 /* EmptyStateHandlingInIOS17 */,
 				651DFE1A2ABC77D900E18BBC /* GlassMorphism */,
@@ -243,6 +301,36 @@
 			path = 2023;
 			sourceTree = "<group>";
 		};
+		6574F92F2AED479200A44EC9 /* Live Activities */ = {
+			isa = PBXGroup;
+			children = (
+				6574F94E2AED492200A44EC9 /* Model */,
+				6574F9302AED47C200A44EC9 /* ContentView.swift */,
+			);
+			path = "Live Activities";
+			sourceTree = "<group>";
+		};
+		6574F93B2AED489400A44EC9 /* OrderStatus */ = {
+			isa = PBXGroup;
+			children = (
+				6574F93C2AED489400A44EC9 /* OrderStatusBundle.swift */,
+				6574F93E2AED489400A44EC9 /* OrderStatusLiveActivity.swift */,
+				6574F9402AED489400A44EC9 /* OrderStatus.swift */,
+				6574F9422AED489400A44EC9 /* AppIntent.swift */,
+				6574F9442AED489500A44EC9 /* Assets.xcassets */,
+				6574F9462AED489500A44EC9 /* Info.plist */,
+			);
+			path = OrderStatus;
+			sourceTree = "<group>";
+		};
+		6574F94E2AED492200A44EC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6574F94F2AED494C00A44EC9 /* OrderAttributes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		65F6974D2ABDC54F0067E6C6 /* EmptyStateHandlingInIOS17 */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				CEBF67BE420BEA7DD144B9A7 /* Pods_AlphaFlyNextPercent.framework */,
+				6574F9372AED489400A44EC9 /* WidgetKit.framework */,
+				6574F9392AED489400A44EC9 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,10 +361,12 @@
 				656B66682AACA6B0007F1A7D /* Frameworks */,
 				656B66692AACA6B0007F1A7D /* Resources */,
 				4BC10B01037D6FB7A78D97AE /* [CP] Embed Pods Frameworks */,
+				6574F94D2AED489500A44EC9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6574F9482AED489500A44EC9 /* PBXTargetDependency */,
 			);
 			name = AlphaFlyNextPercent;
 			packageProductDependencies = (
@@ -284,6 +376,23 @@
 			productReference = 656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6574F9352AED489400A44EC9 /* OrderStatusExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6574F94A2AED489500A44EC9 /* Build configuration list for PBXNativeTarget "OrderStatusExtension" */;
+			buildPhases = (
+				6574F9322AED489400A44EC9 /* Sources */,
+				6574F9332AED489400A44EC9 /* Frameworks */,
+				6574F9342AED489400A44EC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderStatusExtension;
+			productName = OrderStatusExtension;
+			productReference = 6574F9362AED489400A44EC9 /* OrderStatusExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -291,11 +400,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					656B666A2AACA6B0007F1A7D = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					6574F9352AED489400A44EC9 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -316,6 +428,7 @@
 			projectRoot = "";
 			targets = (
 				656B666A2AACA6B0007F1A7D /* AlphaFlyNextPercent */,
+				6574F9352AED489400A44EC9 /* OrderStatusExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +440,14 @@
 			files = (
 				656B667B2AACA6B0007F1A7D /* LaunchScreen.storyboard in Resources */,
 				656B66782AACA6B0007F1A7D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6574F9342AED489400A44EC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6574F9452AED489500A44EC9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,9 +523,11 @@
 				65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */,
 				658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */,
 				65C025812AB42497003E3418 /* HandSpinner.swift in Sources */,
+				6574F9312AED47C200A44EC9 /* ContentView.swift in Sources */,
 				656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */,
 				65FC1CA42AD59CD600AD6A60 /* UIKitPreview.swift in Sources */,
 				6542F27D2AB88A570071EC01 /* TagLayout.swift in Sources */,
+				6574F9502AED494C00A44EC9 /* OrderAttributes.swift in Sources */,
 				65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
 				65FD59F92AD82DEB005E2125 /* Shimmer.swift in Sources */,
@@ -420,7 +543,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6574F9322AED489400A44EC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6574F9412AED489400A44EC9 /* OrderStatus.swift in Sources */,
+				6574F9432AED489400A44EC9 /* AppIntent.swift in Sources */,
+				6574F9512AED496900A44EC9 /* OrderAttributes.swift in Sources */,
+				6574F93D2AED489400A44EC9 /* OrderStatusBundle.swift in Sources */,
+				6574F93F2AED489400A44EC9 /* OrderStatusLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6574F9482AED489500A44EC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6574F9352AED489400A44EC9 /* OrderStatusExtension */;
+			targetProxy = 6574F9472AED489500A44EC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		656B66792AACA6B0007F1A7D /* LaunchScreen.storyboard */ = {
@@ -552,6 +695,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB2702EDECC1D176D64322F4 /* Pods-AlphaFlyNextPercent.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -581,6 +725,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DD5FD27638AC0DA62C58DC9 /* Pods-AlphaFlyNextPercent.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -606,6 +751,71 @@
 			};
 			name = Release;
 		};
+		6574F94B2AED489500A44EC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSW5VPM32V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrderStatus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OrderStatus;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dddaiki-t.AlphaFlyNextPercent.OrderStatus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6574F94C2AED489500A44EC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSW5VPM32V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrderStatus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OrderStatus;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dddaiki-t.AlphaFlyNextPercent.OrderStatus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,6 +833,15 @@
 			buildConfigurations = (
 				656B66802AACA6B0007F1A7D /* Debug */,
 				656B66812AACA6B0007F1A7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6574F94A2AED489500A44EC9 /* Build configuration list for PBXNativeTarget "OrderStatusExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6574F94B2AED489500A44EC9 /* Debug */,
+				6574F94C2AED489500A44EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
