@@ -43,7 +43,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
 //    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 //    secondVC.view.backgroundColor = .layeringColor
 
-    let thirdVC = ShadowDropController()
+    let thirdVC = TapViewController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
     let fourceVC = ShadowContactController()
