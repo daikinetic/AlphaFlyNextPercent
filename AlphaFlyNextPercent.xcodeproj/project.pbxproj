@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CD65F2AB03BA800502061 /* AccessControlVariation.swift */; };
+		650F65212AF2922600F69440 /* EnumConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F65202AF2922600F69440 /* EnumConstructor.swift */; };
 		65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65184B572AC9A68D00FB20C1 /* DarkModeAnimation.swift */; };
 		65197ADF2AC1CE6A00DA683C /* ConfigDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65197ADE2AC1CE6A00DA683C /* ConfigDemo.swift */; };
 		65197AE12AC30FD200DA683C /* ScrollTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65197AE02AC30FD200DA683C /* ScrollTransition.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		650CD65F2AB03BA800502061 /* AccessControlVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlVariation.swift; sourceTree = "<group>"; };
+		650F65202AF2922600F69440 /* EnumConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumConstructor.swift; sourceTree = "<group>"; };
 		65184B572AC9A68D00FB20C1 /* DarkModeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeAnimation.swift; sourceTree = "<group>"; };
 		65197ADE2AC1CE6A00DA683C /* ConfigDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDemo.swift; sourceTree = "<group>"; };
 		65197AE02AC30FD200DA683C /* ScrollTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTransition.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				65D6CF852AEBE6DF00B0ACA3 /* _Shadows.swift */,
 				65FE6EB42AEFF000007BBEF0 /* tapGestureController.swift */,
 				65FE6EB62AF13888007BBEF0 /* TypealiasPatterns.swift */,
+				650F65202AF2922600F69440 /* EnumConstructor.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */,
 				65FE6EB52AEFF000007BBEF0 /* tapGestureController.swift in Sources */,
 				6542F2702AB78B800071EC01 /* TagTextFieldSwiftUI.swift in Sources */,
+				650F65212AF2922600F69440 /* EnumConstructor.swift in Sources */,
 				650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */,
 				6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */,
 				652CCB5D2ACC4186001720B8 /* IfAsAnExpression.swift in Sources */,
