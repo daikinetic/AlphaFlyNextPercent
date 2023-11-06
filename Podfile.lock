@@ -1,16 +1,20 @@
 PODS:
+  - lottie-ios (4.3.3)
   - MondrianLayout (0.10.0)
 
 DEPENDENCIES:
+  - lottie-ios
   - MondrianLayout
 
 SPEC REPOS:
   trunk:
+    - lottie-ios
     - MondrianLayout
 
 SPEC CHECKSUMS:
+  lottie-ios: 25e7b2675dad5c3ddad369ac9baab03560c5bfdd
   MondrianLayout: a817f7dd2f7c2663ba46d8944db09ac04bc39310
 
-PODFILE CHECKSUM: 13919e5d4a5b0dda00e87d5820af27c8457a4e1c
+PODFILE CHECKSUM: f0659753f0768cbf1332fa4dd205e521bd215bfa
 
 COCOAPODS: 1.12.0
