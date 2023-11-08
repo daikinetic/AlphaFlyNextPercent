@@ -34,6 +34,7 @@
 		6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */; };
 		6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */; };
 		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
+		65933C1A2AFBB3990000660F /* AnimateFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65933C192AFBB3990000660F /* AnimateFlip.swift */; };
 		65990E172AE94CA4002E9A16 /* trackingModifier_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65990E162AE94CA4002E9A16 /* trackingModifier_.swift */; };
 		6599D7832AC478C800A6CD3E /* HeartAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599D7822AC478C800A6CD3E /* HeartAnimation.swift */; };
 		659BD07C2AF92374009D8E7D /* LottieSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BD07B2AF92374009D8E7D /* LottieSwiftUI.swift */; };
@@ -104,6 +105,7 @@
 		6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleContentTransition.swift; sourceTree = "<group>"; };
 		6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CAGradientLayer.swift; sourceTree = "<group>"; };
 		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
+		65933C192AFBB3990000660F /* AnimateFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateFlip.swift; sourceTree = "<group>"; };
 		65990E162AE94CA4002E9A16 /* trackingModifier_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackingModifier_.swift; sourceTree = "<group>"; };
 		6599D7822AC478C800A6CD3E /* HeartAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAnimation.swift; sourceTree = "<group>"; };
 		659BD07B2AF92374009D8E7D /* LottieSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSwiftUI.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				659BD07B2AF92374009D8E7D /* LottieSwiftUI.swift */,
 				659BD07D2AF92513009D8E7D /* aa.swift */,
 				65C49D0E2AF927B60048BDEB /* LottieUIKit.swift */,
+				65933C192AFBB3990000660F /* AnimateFlip.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				65CFBA8B2AE536D300ACEC62 /* sensoryFeedBack.swift in Sources */,
 				6519F30E2AC824D0005B41FF /* SearchController.swift in Sources */,
 				65990E172AE94CA4002E9A16 /* trackingModifier_.swift in Sources */,
+				65933C1A2AFBB3990000660F /* AnimateFlip.swift in Sources */,
 				6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */,
 				65C21DD52ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift in Sources */,
 				65BE80662AC717B500038167 /* SectorChartExample.swift in Sources */,

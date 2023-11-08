@@ -41,12 +41,25 @@ final class ShadowDropController: UIViewController {
 
 }
 
-final class ShadowContactController: UIViewController {
+final class ShadowContactController: UIViewController, UIGestureRecognizerDelegate {
 
   let imageView: UIImageView = .init()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    //シングルタップ用のインスタンスを生成する
+    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
+      target: self,
+      action: #selector(TapViewController.singleTap(_:))
+    )
+
+    //デリゲートをセット
+    tapGesture.delegate = self
+
+    //viewにタップジェスチャーを追加
+    self.view.addGestureRecognizer(tapGesture)
+
     view.backgroundColor = .white
 
     imageView.frame = .init(origin: .zero, size: .init(width: 200, height: 200))
@@ -75,6 +88,23 @@ final class ShadowContactController: UIViewController {
       .width(300)
       .padding(.vertical, 300)
       .padding(.leading, 50)
+    }
+  }
+
+  //シングルタップ時に実行されるメソッド
+  @objc func singleTap(_ sender: UITapGestureRecognizer) {
+    if sender.state == .ended {
+
+      print(sender.location(ofTouch: 0, in: view))
+
+      let location = sender.location(ofTouch: 0, in: view)
+      if location.x < 200 {
+        imageView.animateFlip(direction: .left)
+      } else {
+        imageView.animateFlip(direction: .right)
+      }
+
+
     }
   }
 
