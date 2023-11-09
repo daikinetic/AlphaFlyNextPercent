@@ -49,14 +49,11 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let fourceVC = ShadowContactController()
     fourceVC.tabBarItem = UITabBarItem(title: "tab4", image: .strokedCheckmark, tag: 2)
 
-    let fifthVC = ShadowContactWithDepthController()
+    let fifthVC = BasicAnimos()
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
-    let sixthVC = ShadowContactFlatController()
-    fifthVC.tabBarItem = UITabBarItem(title: "tab6", image: .strokedCheckmark, tag: 2)
 
-
-    viewControllers = [firstVC, thirdVC, fourceVC, fifthVC, sixthVC]
+    viewControllers = [firstVC, thirdVC, fourceVC, fifthVC]
 
   }
 
