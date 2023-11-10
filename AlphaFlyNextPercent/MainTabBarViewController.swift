@@ -39,9 +39,8 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let firstVC = MondrianOfMondrian()
     firstVC.tabBarItem = UITabBarItem(title: "tab1", image: .actions, tag: 0)
 
-//    let secondVC = SearchViewController()
+//    let secondVC = BasicAnimos_Drop()
 //    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
-//    secondVC.view.backgroundColor = .layeringColor
 
     let thirdVC = TapViewController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)

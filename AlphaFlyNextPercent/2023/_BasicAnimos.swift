@@ -12,31 +12,46 @@ import UIKit
 final class BasicAnimos: UIViewController {
 
   let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0))
-  let square = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 200.0, height: 200.0))
+  let squareBlue = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 150.0, height: 150.0))
   let buttonPopIn = UIButton(type: .system)
-  let buttonReset = UIButton(type: .system)
+  let buttonResetPopIn = UIButton(type: .system)
+  let buttonResetDropFromTop = UIButton(type: .system)
+  let buttonDropFromTop = UIButton(type: .system)
+  let offset = CGPoint(x: 0, y: -500)
+  let x: CGFloat = 0, y: CGFloat = 0
 
   init() {
     super.init(nibName: nil, bundle: nil)
     view.backgroundColor = .white
-    view.addSubview(square)
+    view.addSubview(squareBlue)
 
-    square.layer.cornerRadius = 20.0
-    square.backgroundColor = UIColor.blue
-    square.alpha = 0
-    square.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+    squareBlue.layer.cornerRadius = 20.0
+    squareBlue.backgroundColor = UIColor.blue
+    squareBlue.alpha = 0
+    squareBlue.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
 
-    var configuration = UIButton.Configuration.gray()
 
-    buttonPopIn.configuration = configuration
+    var configurationBase = UIButton.Configuration.gray()
+    configurationBase.baseForegroundColor = .blue
+
+    var configurationReset = UIButton.Configuration.gray()
+    configurationReset.baseForegroundColor = .red
+    configurationReset.title = "Reset"
+
+    buttonPopIn.configuration = configurationBase
     buttonPopIn.setTitle("PopIn", for: .normal)
-    buttonPopIn.tintColor = .blue
     buttonPopIn.addTarget(self, action: #selector(PopIn(_:)), for: .touchDown)
 
-    buttonReset.configuration = configuration
-    buttonReset.setTitle("Reset", for: .normal)
-    buttonReset.tintColor = .red
-    buttonReset.addTarget(self, action: #selector(Reset(_:)), for: .touchDown)
+    buttonDropFromTop.configuration = configurationBase
+    buttonDropFromTop.setTitle("DropFromTop", for: .normal)
+    buttonDropFromTop.addTarget(self, action: #selector(DropFromTop(_:)), for: .touchDown)
+
+    buttonResetPopIn.configuration = configurationReset
+    buttonResetPopIn.addTarget(self, action: #selector(Reset(_:)), for: .touchDown)
+
+    buttonResetDropFromTop.configuration = configurationReset
+    buttonResetDropFromTop.addTarget(self, action: #selector(ResetDFT(_:)), for: .touchDown)
+
   }
   
   required init?(coder: NSCoder) {
@@ -48,11 +63,17 @@ final class BasicAnimos: UIViewController {
 
     Mondrian.buildSubviews(on: view) {
       VStackBlock(alignment: .center) {
-        square
+        squareBlue
           .viewBlock.padding(50)
-        HStackBlock(spacing: 10, alignment: .center) {
-          buttonPopIn
-          buttonReset
+        VStackBlock(spacing: 16, alignment: .center) {
+          HStackBlock(spacing: 10, alignment: .center) {
+            buttonPopIn
+            buttonResetPopIn
+          }
+          HStackBlock(spacing: 10, alignment: .center) {
+            buttonDropFromTop
+            buttonResetDropFromTop
+          }
         }
 
       }
@@ -60,15 +81,15 @@ final class BasicAnimos: UIViewController {
         width: LayoutDescriptor.ConstraintValue(floatLiteral: view.bounds.width),
         height: LayoutDescriptor.ConstraintValue(floatLiteral: view.bounds.width)
       )
-      .padding(.vertical, 200)
+      .padding(.vertical, 100)
 
     }
   }
 }
 
+//MARK: PopUp
 extension BasicAnimos {
   @objc func PopIn(_ sender: UIButton) {
-
     UIView.animate(
       withDuration: 0.5,
       delay: 1,
@@ -76,14 +97,49 @@ extension BasicAnimos {
       initialSpringVelocity: 3,
       options: .curveEaseOut,
       animations: {
-        self.square.transform = .identity
-        self.square.alpha = 1
+        self.squareBlue.transform = .identity
+        self.squareBlue.alpha = 1
       },
       completion: nil
     )
   }
 
+  @objc func DropFromTop(_ sender: UIButton) {
+
+    UIView.animate(
+      withDuration: 1,
+      delay: 1,
+      usingSpringWithDamping: 0.47,
+      initialSpringVelocity: 3,
+      options: .curveEaseOut,
+      animations: {
+        self.squareBlue.transform = .identity
+        self.squareBlue.alpha = 1
+      },
+      completion: nil
+    )
+  }
+}
+
+//MARK: Reset
+extension BasicAnimos {
+
   @objc func Reset(_ sender: UIButton) {
+    UIView.animate(
+      withDuration: 0.5,
+      delay: 1,
+      usingSpringWithDamping: 0.55,
+      initialSpringVelocity: 3,
+      options: .curveEaseOut,
+      animations: {
+        self.squareBlue.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        self.squareBlue.alpha = 0
+      },
+      completion: nil
+    )
+  }
+
+  @objc func ResetDFT(_ sender: UIButton) {
 
     UIView.animate(
       withDuration: 0.5,
@@ -92,11 +148,13 @@ extension BasicAnimos {
       initialSpringVelocity: 3,
       options: .curveEaseOut,
       animations: {
-        self.square.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        self.square.alpha = 0
+        self.squareBlue.alpha = 0
+        self.squareBlue.transform = CGAffineTransform(translationX: self.offset.x + self.x, y: self.offset.y + self.y)
+        self.squareBlue.isHidden = false
       },
       completion: nil
     )
 
   }
 }
+
