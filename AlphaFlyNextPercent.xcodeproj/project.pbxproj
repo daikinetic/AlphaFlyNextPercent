@@ -34,6 +34,7 @@
 		656B66842AACA6F3007F1A7D /* MondrianOfMondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66832AACA6F3007F1A7D /* MondrianOfMondrian.swift */; };
 		656B66872AACA841007F1A7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66862AACA841007F1A7D /* Extension.swift */; };
 		6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */; };
+		657E6D972B05470D002CC126 /* _Actor_Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E6D962B05470D002CC126 /* _Actor_Sendable.swift */; };
 		6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */; };
 		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
 		65933C1A2AFBB3990000660F /* AnimateFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65933C192AFBB3990000660F /* AnimateFlip.swift */; };
@@ -108,6 +109,7 @@
 		6574F9372AED489400A44EC9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		6574F9392AED489400A44EC9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleContentTransition.swift; sourceTree = "<group>"; };
+		657E6D962B05470D002CC126 /* _Actor_Sendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Actor_Sendable.swift; sourceTree = "<group>"; };
 		6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CAGradientLayer.swift; sourceTree = "<group>"; };
 		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
 		65933C192AFBB3990000660F /* AnimateFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateFlip.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				6536B3652AFD26AF00C63C9E /* _BasicAnimos.swift */,
 				656439B22AFFCB2500447715 /* Logging.swift */,
 				65C9C68A2B038C2E00EFFA6C /* IFCase.swift */,
+				657E6D962B05470D002CC126 /* _Actor_Sendable.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				6599D7832AC478C800A6CD3E /* HeartAnimation.swift in Sources */,
 				65E20A702AD19BEA00BBF7EC /* PresentingMultipleSheet.swift in Sources */,
 				65FCB3742AE41A5A00454C3C /* DatePicker.swift in Sources */,
+				657E6D972B05470D002CC126 /* _Actor_Sendable.swift in Sources */,
 				65E339F62AF68EEE008CF912 /* RollingCounter_.swift in Sources */,
 				651DFE1C2ABC77FB00E18BBC /* GlassMorphism.swift in Sources */,
 				65CFBA8B2AE536D300ACEC62 /* sensoryFeedBack.swift in Sources */,
