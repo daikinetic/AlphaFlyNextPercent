@@ -42,7 +42,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
 //    let secondVC = BasicAnimos_Drop()
 //    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
-    let thirdVC = TapViewController()
+    let thirdVC = _CoreAnimos()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
     let fourceVC = ShadowContactController()
