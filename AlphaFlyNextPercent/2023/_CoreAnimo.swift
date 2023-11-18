@@ -50,16 +50,6 @@ final class _CoreAnimos: UIViewController {
     replicatorLayer.instanceCount = 4
     replicatorLayer.instanceTransform = CATransform3DMakeTranslation(60, 0.0, 0.0)
     replicatorLayer.instanceDelay = 0.1
-
-//    let animation = CABasicAnimation(keyPath: "position.y")
-//    animation.toValue = view.center.y + 20
-//    animation.duration = 0.5
-//    animation.autoreverses = true
-//    animation.repeatCount = .infinity
-//    animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-//    circle.add(animation, forKey: "animation")
-//
-//    replicatorLayer.instanceDelay = 0.1
   }
 
   required init?(coder: NSCoder) {
