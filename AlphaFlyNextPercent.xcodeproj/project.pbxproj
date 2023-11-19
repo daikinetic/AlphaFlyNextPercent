@@ -42,7 +42,6 @@
 		65990E172AE94CA4002E9A16 /* trackingModifier_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65990E162AE94CA4002E9A16 /* trackingModifier_.swift */; };
 		6599D7832AC478C800A6CD3E /* HeartAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599D7822AC478C800A6CD3E /* HeartAnimation.swift */; };
 		659BD07C2AF92374009D8E7D /* LottieSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BD07B2AF92374009D8E7D /* LottieSwiftUI.swift */; };
-		659BD07E2AF92513009D8E7D /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BD07D2AF92513009D8E7D /* aa.swift */; };
 		65BE80642AC5B20E00038167 /* HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE80632AC5B20E00038167 /* HalfModal.swift */; };
 		65BE80662AC717B500038167 /* SectorChartExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE80652AC717B500038167 /* SectorChartExample.swift */; };
 		65C025812AB42497003E3418 /* HandSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C025802AB42497003E3418 /* HandSpinner.swift */; };
@@ -118,7 +117,6 @@
 		65990E162AE94CA4002E9A16 /* trackingModifier_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackingModifier_.swift; sourceTree = "<group>"; };
 		6599D7822AC478C800A6CD3E /* HeartAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAnimation.swift; sourceTree = "<group>"; };
 		659BD07B2AF92374009D8E7D /* LottieSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSwiftUI.swift; sourceTree = "<group>"; };
-		659BD07D2AF92513009D8E7D /* aa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
 		65BE80632AC5B20E00038167 /* HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModal.swift; sourceTree = "<group>"; };
 		65BE80652AC717B500038167 /* SectorChartExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorChartExample.swift; sourceTree = "<group>"; };
 		65C025802AB42497003E3418 /* HandSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSpinner.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				65E8D1352AF5067800CDB432 /* _ConvenienceInitializer.swift */,
 				65E339F52AF68EEE008CF912 /* RollingCounter_.swift */,
 				659BD07B2AF92374009D8E7D /* LottieSwiftUI.swift */,
-				659BD07D2AF92513009D8E7D /* aa.swift */,
 				65C49D0E2AF927B60048BDEB /* LottieUIKit.swift */,
 				65933C192AFBB3990000660F /* AnimateFlip.swift */,
 				6536B3652AFD26AF00C63C9E /* _BasicAnimos.swift */,
@@ -470,7 +467,6 @@
 				6542F2772AB79A3A0071EC01 /* Home.swift in Sources */,
 				65197AE12AC30FD200DA683C /* ScrollTransition.swift in Sources */,
 				65F6974F2ABDC5800067E6C6 /* EmptyStateHandlingInIOS17.swift in Sources */,
-				659BD07E2AF92513009D8E7D /* aa.swift in Sources */,
 				658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */,
 				65C025812AB42497003E3418 /* HandSpinner.swift in Sources */,
 				65FE6EB72AF13888007BBEF0 /* TypealiasPatterns.swift in Sources */,
