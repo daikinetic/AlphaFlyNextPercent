@@ -11,6 +11,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
 
+  lazy var deeplinkCoordinator: DeeplinkCoordinatorProtocol = {
+    return DeeplinkCoordinator(handlers: [
+      AccountDeeplinkHandler(rootViewController: self.rootViewController),
+      VideoDeeplinkHandler(rootViewController: self.rootViewController)
+    ])
+  }()
+
+  var rootViewController: MainTabBarViewController? {
+    return window?.rootViewController as? MainTabBarViewController
+  }
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
@@ -49,6 +59,98 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // to restore the scene back to its current state.
   }
 
+}
+
+extension SceneDelegate {
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+
+    guard let firstUrl = URLContexts.first?.url else { return }
+
+    print(firstUrl.absoluteString)
+    deeplinkCoordinator.handleURL(firstUrl)
+  }
+}
+
+protocol DeeplinkHandlerProtocol {
+  func canOpenURL(_ url: URL) -> Bool
+  func openURL(_ url: URL)
+}
+
+protocol DeeplinkCoordinatorProtocol {
+  @discardableResult
+  func handleURL(_ url: URL) -> Bool
+}
+
+final class DeeplinkCoordinator {
+  let handlers: [DeeplinkHandlerProtocol]
+
+  init(handlers: [DeeplinkHandlerProtocol]) {
+    self.handlers = handlers
+  }
+}
+
+extension DeeplinkCoordinator: DeeplinkCoordinatorProtocol {
+  @discardableResult
+  func handleURL(_ url: URL) -> Bool {
+    guard let handler = handlers.first(where: { $0.canOpenURL(url) }) else { return false }
+
+    handler.openURL(url)
+    return true
+  }
+}
+
+final class AccountDeeplinkHandler: DeeplinkHandlerProtocol {
+  private weak var rootViewController: MainTabBarViewController?
+  init(rootViewController: MainTabBarViewController? = nil) {
+    self.rootViewController = rootViewController
+  }
+
+  // MARK: - DeeplinkHandlerProtocol
+
+  func canOpenURL(_ url: URL) -> Bool {
+    return url.absoluteString == "alpha://account"
+  }
+
+  func openURL(_ url: URL) {
+    guard canOpenURL(url) else { return }
+
+    let viewController = UIViewController()
+    viewController.title = "Account"
+    viewController.view.backgroundColor = .yellow
+    rootViewController?.present(viewController, animated: true)
+  }
+}
+
+final class VideoDeeplinkHandler: DeeplinkHandlerProtocol {
+  private weak var rootViewController: MainTabBarViewController?
+  init(rootViewController: MainTabBarViewController? = nil) {
+    self.rootViewController = rootViewController
+  }
+
+  // MARK: - DeeplinkHandlerProtocol
+
+  func canOpenURL(_ url: URL) -> Bool {
+    return url.absoluteString.hasPrefix("alpha://videos")
+  }
+
+  func openURL(_ url: URL) {
+    guard canOpenURL(url) else { return }
+
+    let viewController = UIViewController()
+    switch url.path {
+    case "/new":
+      viewController.title = "Video Editing"
+      viewController.view.backgroundColor = .orange
+    default:
+      viewController.title = "Video Listing"
+      viewController.view.backgroundColor = .cyan
+    }
+
+    rootViewController?.present(viewController, animated: true)
+  }
 
 }
+
+
+
 
