@@ -48,7 +48,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let fourceVC = ShadowContactController()
     fourceVC.tabBarItem = UITabBarItem(title: "tab4", image: .strokedCheckmark, tag: 2)
 
-    let fifthVC = BasicAnimos()
+    let fifthVC = _WebView_Train()
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
 
