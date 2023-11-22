@@ -1,18 +1,21 @@
 //
-//  _BasicAnimos.swift
+//  _UIViewTransition.swift
 //  AlphaFlyNextPercent
 //
-//  Created by Daiki Takano on 2023/11/09.
+//  Created by Daiki Takano on 2023/11/22.
 //
+//  https://qiita.com/hachinobu/items/57d4c305c907805b4a53
 
 import Foundation
 import MondrianLayout
 import UIKit
 
-final class BasicAnimos: UIViewController {
+final class _UIViewTransition: UIViewController {
 
   let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0))
   let squareBlue = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 150.0, height: 150.0))
+//  let squareRed = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 150.0, height: 150.0))
+
   //MARK: DisplayButton
   let buttonPopIn = UIButton(type: .system)
   let buttonDropFromTop = UIButton(type: .system)
@@ -20,6 +23,14 @@ final class BasicAnimos: UIViewController {
   let buttonFadeIn = UIButton(type: .system)
   let buttonCardFlip = UIButton(type: .system)
   let buttonTransitionFlipFromLeft = UIButton(type: .system)
+  let buttonTransitionFlipFromRight = UIButton(type: .system)
+  let buttonTransitionFlipFromTop = UIButton(type: .system)
+  let buttonTransitionFlipFromBottom = UIButton(type: .system)
+  let buttonTransitionCurlUp = UIButton(type: .system)
+  let buttonTransitionCurlDown = UIButton(type: .system)
+  let buttonTransitionCurlDownReverse = UIButton(type: .system)
+
+
 
   //MARK: ResetButton
   let buttonResetPopIn = UIButton(type: .system)
@@ -39,6 +50,9 @@ final class BasicAnimos: UIViewController {
     squareBlue.layer.cornerRadius = 20.0
     squareBlue.backgroundColor = UIColor.blue
     squareBlue.alpha = 0
+
+//    squareRed.layer.cornerRadius = 20.0
+//    squareRed.backgroundColor = UIColor.red
 
     var configurationBase = UIButton.Configuration.gray()
     configurationBase.baseForegroundColor = .blue
@@ -72,6 +86,30 @@ final class BasicAnimos: UIViewController {
     buttonTransitionFlipFromLeft.setTitle("TransitionFlipFromLeft", for: .normal)
     buttonTransitionFlipFromLeft.addTarget(self, action: #selector(TransitionFlipFromLeft(_:)), for: .touchDown)
 
+    buttonTransitionFlipFromRight.configuration = configurationBase
+    buttonTransitionFlipFromRight.setTitle("Right", for: .normal)
+    buttonTransitionFlipFromRight.addTarget(self, action: #selector(TransitionFlipFromRight(_:)), for: .touchDown)
+
+    buttonTransitionFlipFromTop.configuration = configurationBase
+    buttonTransitionFlipFromTop.setTitle("Top", for: .normal)
+    buttonTransitionFlipFromTop.addTarget(self, action: #selector(TransitionFlipFromTop(_:)), for: .touchDown)
+
+    buttonTransitionFlipFromBottom.configuration = configurationBase
+    buttonTransitionFlipFromBottom.setTitle("Bottom", for: .normal)
+    buttonTransitionFlipFromBottom.addTarget(self, action: #selector(TransitionFlipFromBottom(_:)), for: .touchDown)
+
+    buttonTransitionCurlUp.configuration = configurationBase
+    buttonTransitionCurlUp.setTitle("CurlUo", for: .normal)
+    buttonTransitionCurlUp.addTarget(self, action: #selector(CurlUp(_:)), for: .touchDown)
+
+    buttonTransitionCurlDown.configuration = configurationBase
+    buttonTransitionCurlDown.setTitle("CurlDown", for: .normal)
+    buttonTransitionCurlDown.addTarget(self, action: #selector(CurlDown(_:)), for: .touchDown)
+
+    buttonTransitionCurlDownReverse.configuration = configurationBase
+    buttonTransitionCurlDownReverse.setTitle("CurlDownReverse", for: .normal)
+    buttonTransitionCurlDownReverse.addTarget(self, action: #selector(CurlDownReverse(_:)), for: .touchDown)
+
     //MARK: ResetButton
     buttonResetPopIn.configuration = configurationReset
     buttonResetPopIn.addTarget(self, action: #selector(Reset(_:)), for: .touchDown)
@@ -89,11 +127,11 @@ final class BasicAnimos: UIViewController {
     buttonResetCardFlip.addTarget(self, action: #selector(ResetCF(_:)), for: .touchDown) //
 
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -107,23 +145,19 @@ final class BasicAnimos: UIViewController {
             buttonResetPopIn
           }
           HStackBlock(spacing: 10, alignment: .center) {
-            buttonDropFromTop
-            buttonResetDropFromTop
-          }
-          HStackBlock(spacing: 10, alignment: .center) {
-            buttonComeFromLeft
-            buttonResetComeFromLeft
-          }
-          HStackBlock(spacing: 10, alignment: .center) {
-            buttonFadeIn
-            buttonResetFadeIn
-          }
-          HStackBlock(spacing: 10, alignment: .center) {
-            buttonCardFlip
-            buttonResetCardFlip
-          }
-          HStackBlock(spacing: 10, alignment: .center) {
             buttonTransitionFlipFromLeft
+          }
+          HStackBlock(spacing: 10, alignment: .center) {
+            buttonTransitionFlipFromRight
+            buttonTransitionFlipFromTop
+            buttonTransitionFlipFromBottom
+          }
+          HStackBlock(spacing: 10, alignment: .center) {
+            buttonTransitionCurlUp
+            buttonTransitionCurlDown
+          }
+          HStackBlock(spacing: 10, alignment: .center) {
+            buttonTransitionCurlDownReverse
           }
         }
 
@@ -139,7 +173,7 @@ final class BasicAnimos: UIViewController {
 }
 
 //MARK: PopUp
-extension BasicAnimos {
+extension _UIViewTransition {
   @objc func PopIn(_ sender: UIButton) {
     UIView.animate(
       withDuration: 0.5,
@@ -210,10 +244,82 @@ extension BasicAnimos {
     )
   }
 
+  @objc func TransitionFlipFromRight(_ sender: UIButton) {
+
+    UIView.transition(
+      with: squareBlue,
+      duration: 1.0,
+      options: [.transitionFlipFromRight],
+      animations: nil,
+      completion: nil
+    )
+  }
+
+  @objc func TransitionFlipFromTop(_ sender: UIButton) {
+
+    UIView.transition(
+      with: squareBlue,
+      duration: 1.0,
+      options: [.transitionFlipFromTop],
+      animations: nil,
+      completion: nil
+    )
+  }
+
+  @objc func TransitionFlipFromBottom(_ sender: UIButton) {
+
+    UIView.transition(
+      with: squareBlue,
+      duration: 1.0,
+      options: [.transitionFlipFromBottom],
+      animations: nil,
+      completion: nil
+    )
+  }
+
+  @objc func CurlUp(_ sender: UIButton) {
+
+    UIView.transition(
+      with: squareBlue,
+      duration: 1.0,
+      options: [.transitionCurlUp],
+      animations: nil,
+      completion: nil
+    )
+  }
+
+  @objc func CurlDown(_ sender: UIButton) {
+
+    UIView.transition(
+      with: squareBlue,
+      duration: 1.0,
+      options: [.transitionCurlDown],
+      animations: nil,
+      completion: nil
+    )
+  }
+
+  @objc func CurlDownReverse(_ sender: UIButton) {
+
+    let squareRed = UIView(frame: self.squareBlue.frame)
+    squareRed.layer.cornerRadius = 20.0
+    squareRed.backgroundColor = UIColor.red
+
+    UIView.transition(
+      from: squareBlue,
+      to: squareRed,
+      duration: 1.0,
+      options: [.transitionCurlDown, .autoreverse]
+    ) { _ in
+      self.view.addSubview(self.squareBlue)
+      squareRed.removeFromSuperview()
+    }
+  }
+
 }
 
 //MARK: Reset
-extension BasicAnimos {
+extension _UIViewTransition {
 
   @objc func Reset(_ sender: UIButton) {
     UIView.animate(
@@ -300,4 +406,5 @@ extension BasicAnimos {
   }
 
 }
+
 

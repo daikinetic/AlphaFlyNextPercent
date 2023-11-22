@@ -39,8 +39,8 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let firstVC = MondrianOfMondrian()
     firstVC.tabBarItem = UITabBarItem(title: "tab1", image: .actions, tag: 0)
 
-//    let secondVC = BasicAnimos_Drop()
-//    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
+    let secondVC = _UIViewTransition()
+    secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
     let thirdVC = _CoreAnimos()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
@@ -52,7 +52,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
 
-    viewControllers = [firstVC, thirdVC, fourceVC, fifthVC]
+    viewControllers = [firstVC, secondVC, thirdVC, fourceVC, fifthVC]
 
   }
 
