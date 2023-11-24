@@ -10,13 +10,13 @@ import Foundation
 import os
 import SwiftUI
 
-@MainActor final class ProductsViewModel: ObservableObject {
+@MainActor fileprivate final class ProductsViewModel: ObservableObject {
   private static let logger = Logger(
     subsystem: Bundle.main.bundleIdentifier!,
     category: String(describing: ProductsViewModel.self)
   )
 
-  @Published private(set) var products: [Product] = []
+  @Published fileprivate(set) var products: [Product] = []
 
   private let service: Service_Private
 
@@ -24,7 +24,7 @@ import SwiftUI
     self.service = service
   }
 
-  func fetch() async {
+  fileprivate func fetch() async {
     do {
       Self.logger.trace("Start product list fetching")
       products = try await service.fetch()
@@ -67,8 +67,14 @@ struct LoggedView: View {
 }
 
 struct Service_Private {
-  func fetch() -> [Product] {
+  fileprivate func fetch() -> [Product] {
     print("loading...")
     return [Product.init(title: "aa", revenue: 120)]
   }
+}
+
+fileprivate struct Product: Identifiable {
+  let id = UUID()
+  let title: String
+  let revenue: Double
 }

@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum Size {
+fileprivate enum Size {
   case Small
   case Medium
   case Large
 }
 
-enum _Size {
+fileprivate enum _Size {
   case Small
   case Medium
   case Large

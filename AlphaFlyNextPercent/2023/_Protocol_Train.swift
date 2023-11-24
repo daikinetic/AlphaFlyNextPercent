@@ -8,6 +8,11 @@
 
 import Foundation
 import UIKit
+import SwiftUI
+
+#Preview {
+  SomeView()
+}
 
 //
 protocol SomeProtocol {
@@ -16,7 +21,7 @@ protocol SomeProtocol {
   func methodB(a: Int, b: Int) -> Int
 }
 
-final class SomeClass {}
+fileprivate final class SomeClass {}
 
 extension SomeClass: SomeProtocol {
   var computedA: String {
@@ -168,3 +173,155 @@ struct DataStoreStub: DataStoreProtocol {
     return Item()
   }
 }
+
+//MARK: https://medium.com/swift2go/mastering-generics-with-protocols-the-specification-pattern-5e2e303af4ca
+
+fileprivate enum Size {
+  case small, medium, large
+}
+
+fileprivate enum Color {
+  case red, green, blue
+}
+
+fileprivate struct Product {
+  var name: String
+  var color: Color
+  var size: Size
+}
+
+extension Product: CustomStringConvertible {
+  var description: String {
+    return "\(size) \(color) \(name)"
+  }
+}
+
+//
+fileprivate struct ProductFilter {
+  static func filterProducts(_ products: [Product], by size: Size) -> [Product] {
+
+    var output = [Product]()
+    for product in products where product.size == size {
+      output.append(product)
+    }
+    return output
+  }
+}
+
+// MARK: - Technique 1: Setting associatedtypes with typealias
+// MARK: - associatedtype T, then set, typealias T = SomeType.
+fileprivate protocol Specification {
+  associatedtype T
+  func isSatisfied(item: T) -> Bool
+}
+
+fileprivate struct ColorSpecification: Specification {
+  typealias T = Product
+  var color: Color
+
+  func isSatisfied(item: Product) -> Bool {
+    return item.color == color
+  }
+}
+
+fileprivate struct SizeSpecification: Specification {
+  typealias T = Product
+  var size: Size
+
+  func isSatisfied(item: Product) -> Bool {
+    return item.size == size
+  }
+}
+
+// MARK: - Technique 2: Checking conditions on generic instances
+// MARK: - func someFunc<T: SomeType>(argument: T) where T.someProperty == self.someProperty
+fileprivate protocol Filter {
+  associatedtype T
+  func filter<Spec: Specification>(items: [T], specs: Spec) -> [T] where Spec.T == T
+}
+
+fileprivate struct _ProductFilter {
+  typealias T = Product
+  func filter<Spec: Specification>(items: [Product], specs: Spec) -> [Product] where _ProductFilter.T == Spec.T {
+    var output = [T]()
+    for item in items {
+      if specs.isSatisfied(item: item) {
+        output.append(item)
+      }
+    }
+    return output
+  }
+}
+
+
+// MARK: - Technique 3: Setting associatedtypes with static initialization
+// MARK: - struct MyStruct<T> : ProtocolType {} / let a = MyStruct<SomeType>()
+fileprivate protocol Sized {
+  var size: Size { get set }
+}
+
+fileprivate protocol Colored {
+  var color: Color { get set }
+}
+
+extension Product: Colored, Sized {}
+
+fileprivate struct _ColorSpecification<T: Colored> : Specification {
+  var color: Color
+  func isSatisfied(item: T) -> Bool {
+    return item.color == color
+  }
+}
+
+fileprivate struct _SizeSpecification<T: Sized> : Specification {
+  var size : Size
+  func isSatisfied(item: T) -> Bool {
+    return item.size == size
+  }
+}
+
+fileprivate struct GenericFilter<T> : Filter {
+  func filter<Spec>(items: [T], specs: Spec) -> [T] where Spec : Specification, T == Spec.T {
+    var output = [T]()
+    for item in items {
+      if specs.isSatisfied(item: item) {
+        output.append(item)
+      }
+    }
+    return output
+  }
+}
+
+fileprivate struct SomeView: View {
+  let tree = Product(name: "tree", color: .green, size: .large)
+  let frog = Product(name: "frog", color: .green, size: .small)
+  let strawberry = Product(name: "strawberry", color: .red, size: .small)
+  let small = _SizeSpecification<Product>(size: .small)
+
+  var body: some View {
+    VStack {
+      Button("action") {
+        let result = GenericFilter().filter(items: [tree, frog, strawberry], specs: small)
+        print(result)
+      }
+    }
+  }
+}
+
+// MARK: - Technique 4: Using protocol type for recursive design
+//
+fileprivate struct AndSpecification<T, SpecA: Specification, SpecB: Specification> : Specification where T == SpecA.T, T == SpecB.T {
+
+  fileprivate var specA: SpecA
+  fileprivate var specB: SpecB
+
+  fileprivate init(specA: SpecA, specB: SpecB) {
+    self.specA = specA
+    self.specB = specB
+  }
+
+  func isSatisfied(item: T) -> Bool {
+    return specA.isSatisfied(item: item) && specB.isSatisfied(item: item)
+  }
+}
+

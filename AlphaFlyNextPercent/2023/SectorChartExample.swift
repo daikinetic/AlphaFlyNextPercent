@@ -38,7 +38,7 @@ struct SectorChartExample: View {
   SectorChartExample()
 }
 
-struct Product: Identifiable {
+fileprivate struct Product: Identifiable {
   let id = UUID()
   let title: String
   let revenue: Double

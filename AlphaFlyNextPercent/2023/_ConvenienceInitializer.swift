@@ -19,7 +19,7 @@ fileprivate class SomeClass {
   }
 }
 
-final private class SubClass: SomeClass {
+final fileprivate class SubClass: SomeClass {
   var hoge: String
   init() {
     self.hoge = "foo" // variable defined at Subclass
