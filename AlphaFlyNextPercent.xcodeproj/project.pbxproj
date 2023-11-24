@@ -35,6 +35,7 @@
 		656B66872AACA841007F1A7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66862AACA841007F1A7D /* Extension.swift */; };
 		657105802B064FD7001A764B /* _CoreAnimo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571057F2B064FD7001A764B /* _CoreAnimo.swift */; };
 		6579D7C92AC07C83001CEE44 /* ToggleContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */; };
+		657D1AC52B108AC300C985C2 /* _Protocol_Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D1AC42B108AC300C985C2 /* _Protocol_Train.swift */; };
 		657E6D972B05470D002CC126 /* _Actor_Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E6D962B05470D002CC126 /* _Actor_Sendable.swift */; };
 		6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */; };
 		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
@@ -113,6 +114,7 @@
 		6574F9372AED489400A44EC9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		6574F9392AED489400A44EC9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleContentTransition.swift; sourceTree = "<group>"; };
+		657D1AC42B108AC300C985C2 /* _Protocol_Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Protocol_Train.swift; sourceTree = "<group>"; };
 		657E6D962B05470D002CC126 /* _Actor_Sendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Actor_Sendable.swift; sourceTree = "<group>"; };
 		6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CAGradientLayer.swift; sourceTree = "<group>"; };
 		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				65F48BD42B0CC17D00EA1EAD /* _WebView_Train.swift */,
 				65F48BD62B0E2C9500EA1EAD /* _UIViewTransition.swift */,
 				65F48BD82B0FD01400EA1EAD /* _Ticket.swift */,
+				657D1AC42B108AC300C985C2 /* _Protocol_Train.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				6542F2702AB78B800071EC01 /* TagTextFieldSwiftUI.swift in Sources */,
 				65C9C68B2B038C2E00EFFA6C /* IFCase.swift in Sources */,
 				650F65212AF2922600F69440 /* EnumConstructor.swift in Sources */,
+				657D1AC52B108AC300C985C2 /* _Protocol_Train.swift in Sources */,
 				650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */,
 				6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */,
 				652CCB5D2ACC4186001720B8 /* IfAsAnExpression.swift in Sources */,
