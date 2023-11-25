@@ -34,8 +34,10 @@ fileprivate struct Debounce_Intro: View {
       TextField("name", text: $vm.name)
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .padding()
+        .font(.title2)
 
       Text("\(vm.nameEntered)")
+
 
       Spacer()
     }
