@@ -39,7 +39,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let firstVC = MondrianOfMondrian()
     firstVC.tabBarItem = UITabBarItem(title: "tab1", image: .actions, tag: 0)
 
-    let secondVC = ShimmerViewController()
+    let secondVC = ShimmerPairsCardViewController()
     secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
     let thirdVC = ShimmerCardViewController()
