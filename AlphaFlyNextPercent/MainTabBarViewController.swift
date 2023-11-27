@@ -39,10 +39,10 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let firstVC = MondrianOfMondrian()
     firstVC.tabBarItem = UITabBarItem(title: "tab1", image: .actions, tag: 0)
 
-    let secondVC = _Ticket()
+    let secondVC = ShimmerViewController()
     secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
-    let thirdVC = _CoreAnimos()
+    let thirdVC = ShimmerCardViewController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
     let fourceVC = ShadowContactController()
@@ -52,7 +52,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
 
-    viewControllers = [secondVC, firstVC, secondVC, thirdVC, fourceVC, fifthVC]
+    viewControllers = [secondVC, firstVC, thirdVC, fourceVC, fifthVC]
 
   }
 
