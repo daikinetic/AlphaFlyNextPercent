@@ -390,48 +390,52 @@ final class ShimmerPairsCardViewController: UIViewController {
 
   @objc func shimmer(_ sender: UIButton) {
 
-    print("QQQ: shimmer")
-
     let gradient = CAGradientLayer()
     gradient.colors = [
       UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(0.3).cgColor, // 0.3
+      UIColor.white.withAlphaComponent(0).cgColor, // 0.3
       UIColor.white.withAlphaComponent(1).cgColor
     ]
-    gradient.startPoint = CGPoint(x: 0.0, y: 0.4) // 0.0, 0.4
-    gradient.endPoint = CGPoint(x: 1.0, y: 0.6) //1.0, 0.6
+    gradient.startPoint = CGPoint(x: 0.0, y: 0.5) // 0.0, 0.4
+    gradient.endPoint = CGPoint(x: 1.0, y: 0.5) //1.0, 0.6
     gradient.locations = [1, 1, 1]
 
     gradient.frame = CGRect(
-      x: -displayView.bounds.width/2,
+      x: 0, // -displayView.bounds.width/2,
       y: 0,
-      width: displayView.bounds.width*2,
+      width: displayView.bounds.width, // displayView.bounds.width*2
       height: displayView.bounds.height
     )
     displayView.layer.mask = gradient
 
     let locationsAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
-    locationsAnimation.fromValue = [0.0, 0.2, 0.2]
-    locationsAnimation.toValue = [0.8, 1.0, 1.0]
+    locationsAnimation.fromValue = [0.0, 0.3, 0.3] // [0.0, 0.2, 0.2]
+    locationsAnimation.toValue = [0.7, 1.0, 1.0] // [0.8, 1.0, 1.0]
+    locationsAnimation.duration = 1.0 // nil
+    locationsAnimation.repeatCount = .infinity
 
-    let opacityAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
-    opacityAnimation.fromValue = [
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor
-    ]
-    opacityAnimation.toValue = [
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(0.6).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor
-    ]
+    gradient.add(locationsAnimation, forKey: "shimmer")
 
-    let animationGroup = CAAnimationGroup()
-    animationGroup.duration = 0.2
-    animationGroup.repeatCount = 1
-    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeIn)
-    animationGroup.animations = [locationsAnimation, opacityAnimation]
-    gradient.add(animationGroup, forKey: "shimmer")
+//    let opacityAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
+//    opacityAnimation.fromValue = [
+//      UIColor.white.withAlphaComponent(1).cgColor,
+//      UIColor.white.withAlphaComponent(1).cgColor,
+//      UIColor.white.withAlphaComponent(1).cgColor
+//    ]
+//    opacityAnimation.toValue = [
+//      UIColor.white.withAlphaComponent(1).cgColor,
+//      UIColor.white.withAlphaComponent(0.6).cgColor, // 0.6
+//      UIColor.white.withAlphaComponent(1).cgColor
+//    ]
+//
+//    let animationGroup = CAAnimationGroup()
+//    animationGroup.duration = 1 // 0.4
+//    animationGroup.repeatCount = 1
+//    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeIn)
+//    animationGroup.animations = [locationsAnimation, opacityAnimation]
+//    gradient.add(animationGroup, forKey: "shimmer")
 
   }
 }
+
+
