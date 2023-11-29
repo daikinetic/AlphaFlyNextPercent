@@ -45,14 +45,14 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let thirdVC = ShimmerCardViewController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
-    let fourceVC = ShadowContactController()
+    let fourceVC = ShimmerStepPairsCardStepViewController()
     fourceVC.tabBarItem = UITabBarItem(title: "tab4", image: .strokedCheckmark, tag: 2)
 
     let fifthVC = _WebView_Train()
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
 
-    viewControllers = [secondVC, firstVC, thirdVC, fourceVC, fifthVC]
+    viewControllers = [secondVC, firstVC, thirdVC, fourceVC]
 
   }
 

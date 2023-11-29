@@ -25,6 +25,7 @@
 		65448C572AE7F57300419185 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 65448C562AE7F57300419185 /* UIOnboarding */; };
 		65448C592AE7F59E00419185 /* UIOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65448C582AE7F59E00419185 /* UIOnboarding.swift */; };
 		6546BDC82ACDB02F00218624 /* LayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546BDC72ACDB02F00218624 /* LayoutProtocol.swift */; };
+		654E95192B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E95182B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift */; };
 		656439B32AFFCB2500447715 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656439B22AFFCB2500447715 /* Logging.swift */; };
 		656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B666E2AACA6B0007F1A7D /* AppDelegate.swift */; };
 		656B66712AACA6B0007F1A7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B66702AACA6B0007F1A7D /* SceneDelegate.swift */; };
@@ -102,6 +103,7 @@
 		6542F27C2AB88A570071EC01 /* TagLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLayout.swift; sourceTree = "<group>"; };
 		65448C582AE7F59E00419185 /* UIOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOnboarding.swift; sourceTree = "<group>"; };
 		6546BDC72ACDB02F00218624 /* LayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProtocol.swift; sourceTree = "<group>"; };
+		654E95182B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShimmerStepPairsCardStepViewController+Extension.swift"; sourceTree = "<group>"; };
 		656439B22AFFCB2500447715 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaFlyNextPercent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656B666E2AACA6B0007F1A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				657D1AC42B108AC300C985C2 /* _Protocol_Train.swift */,
 				65CA7A902B1235EC00483D3E /* _Debounce.swift */,
 				65BC96EE2B14AFC2003CB936 /* _Shimmer.swift */,
+				654E95182B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
 				65CA7A912B1235EC00483D3E /* _Debounce.swift in Sources */,
+				654E95192B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift in Sources */,
 				65F48BD72B0E2C9500EA1EAD /* _UIViewTransition.swift in Sources */,
 				65FD59F92AD82DEB005E2125 /* Shimmer.swift in Sources */,
 				656B666F2AACA6B0007F1A7D /* AppDelegate.swift in Sources */,

@@ -393,26 +393,196 @@ final class ShimmerPairsCardViewController: UIViewController {
     let gradient = CAGradientLayer()
     gradient.colors = [
       UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(0).cgColor, // 0.3
+      UIColor.white.withAlphaComponent(0.3).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor
     ]
-    gradient.startPoint = CGPoint(x: 0.0, y: 0.5) // 0.0, 0.4
-    gradient.endPoint = CGPoint(x: 1.0, y: 0.5) //1.0, 0.6
+    gradient.startPoint = CGPoint(x: 0.0, y: 0.4)
+    gradient.endPoint = CGPoint(x: 1.0, y: 0.6)
     gradient.locations = [1, 1, 1]
 
     gradient.frame = CGRect(
-      x: 0, // -displayView.bounds.width/2,
+      x: -displayView.bounds.width/2,
       y: 0,
-      width: displayView.bounds.width, // displayView.bounds.width*2
+      width: displayView.bounds.width*2,
       height: displayView.bounds.height
     )
     displayView.layer.mask = gradient
 
     let locationsAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
-    locationsAnimation.fromValue = [0.0, 0.3, 0.3] // [0.0, 0.2, 0.2]
-    locationsAnimation.toValue = [0.7, 1.0, 1.0] // [0.8, 1.0, 1.0]
-    locationsAnimation.duration = 1.0 // nil
-    locationsAnimation.repeatCount = .infinity
+    locationsAnimation.fromValue = [0.0, 0.2, 0.2]
+    locationsAnimation.toValue = [0.8, 1.0, 1.0]
+
+    let opacityAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
+    opacityAnimation.fromValue = [
+      UIColor.white.withAlphaComponent(1).cgColor,
+      UIColor.white.withAlphaComponent(1).cgColor,
+      UIColor.white.withAlphaComponent(1).cgColor
+    ]
+    opacityAnimation.toValue = [
+      UIColor.white.withAlphaComponent(1).cgColor,
+      UIColor.white.withAlphaComponent(0.6).cgColor,
+      UIColor.white.withAlphaComponent(1).cgColor
+    ]
+
+    let animationGroup = CAAnimationGroup()
+    animationGroup.duration = 0.4
+    animationGroup.repeatCount = 1
+    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeIn)
+    animationGroup.animations = [locationsAnimation, opacityAnimation]
+    gradient.add(animationGroup, forKey: "shimmer")
+
+  }
+}
+
+final class ShimmerStepPairsCardStepViewController: UIViewController {
+
+  private let buttonShimmer = UIButton(type: .system)
+  private let displayView: UIView = .init(frame: .init(x: 0, y: 0, width: 164 * 1.618, height: 164))
+  private let text: UILabel = .init()
+  private let icon: UIImageView = .init()
+  let safeAreaInsetsVertical: CGFloat = 59 + 34
+  let containerPadding: CGFloat = 20
+  let buttonHeight: CGFloat = 50
+
+  init() {
+
+    super.init(nibName: nil, bundle: nil)
+    view.backgroundColor = .white
+
+    var configurationBase = UIButton.Configuration.gray()
+//    configurationBase.baseBackgroundColor = .blue
+    configurationBase.baseForegroundColor = .white
+
+    buttonShimmer.configuration = configurationBase
+    buttonShimmer.setTitle("Shimmer", for: .normal)
+    buttonShimmer.addTarget(self, action: #selector(shimmer(_:)), for: .touchDown)
+
+    displayView.backgroundColor = .init(hex: "18AE9F")
+    displayView.layer.masksToBounds = true
+    displayView.layer.cornerRadius = .init(16)
+
+    icon.image = .init(named: "pairs_logo_white")
+    icon.contentMode = .scaleAspectFit
+
+    text.text = "CLUB MEMBER"
+    text.font = UIFont(name: "Futura-Medium", size: 17)
+    text.textColor = .white
+
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  override func viewDidLoad() {
+
+    super.viewDidLoad()
+
+    let gradient = CAGradientLayer()
+    gradient.colors = [
+      UIColor.init(hex: "69D5E4").cgColor,
+      UIColor.init(hex: "0096A9").cgColor
+    ]
+    gradient.startPoint = CGPoint(x: 0, y: 0.5)
+    gradient.endPoint = CGPoint(x: 1, y: 0.5)
+    gradient.locations = [0, 1.0]
+
+    gradient.frame = CGRect(
+      x: -displayView.bounds.width/2,
+      y: 0,
+      width: displayView.bounds.width*2,
+      height: displayView.bounds.height
+    )
+    displayView.layer.addSublayer(gradient)
+
+    let displayViewPaddingVertical = ((
+      view.bounds.height - displayView.frame.height - buttonHeight - safeAreaInsetsVertical - 80 - containerPadding * 2
+    )) / 2
+
+    Mondrian.buildSubviews(on: displayView) {
+      VStackBlock {
+        icon
+          .viewBlock
+          .height(30)
+          .relative(.bottom, 24)
+          .relative(.leading, -168)
+      }
+    }
+
+    let backgroundView = UIView.mock(backgroundColor: .white)
+    backgroundView.layer.cornerRadius = 16
+    backgroundView.layer.borderWidth = 0
+
+    Mondrian.buildSubviews(on: view) {
+      VStackBlock(alignment: .center) {
+
+        displayView
+          .viewBlock
+          .size(
+            width: LayoutDescriptor.ConstraintValue(floatLiteral: displayView.frame.width),
+            height: LayoutDescriptor.ConstraintValue(floatLiteral: displayView.frame.height)
+          )
+          .background(backgroundView)
+          .padding(.bottom, 80)
+
+        buttonShimmer
+
+      }
+      .width(LayoutDescriptor.ConstraintValue(floatLiteral: view.bounds.width))
+      .padding(.vertical, displayViewPaddingVertical)
+      .container(respectingSafeAreaEdges: .vertical)
+    }
+  }
+}
+
+import simd
+
+extension ShimmerStepPairsCardStepViewController {
+
+  @objc func shimmer(_ sender: UIButton) {
+
+    let baseColor = UIColor.white.withAlphaComponent(1)
+    let highlightColor = UIColor.white.withAlphaComponent(0.3)
+
+    var interpolatedColors: [Any] {
+      let baseColor = baseColor
+      let highlightColor = highlightColor
+      let numberOfSteps = 30
+      let baseColors: [UIColor] = [baseColor, highlightColor, baseColor]
+      var colors: [UIColor] = []
+      for i in 0..<baseColors.count-1 {
+        let lengthOfStep = 1.0 / Float(numberOfSteps)
+        let newColors = stride(from: 0.0, to: 1.0, by: lengthOfStep).map {
+          baseColors[i].interpolate(with: baseColors[i+1], degree: CGFloat(simd_smoothstep(0.0, 1.0, $0)))
+        }
+        colors += newColors
+      }
+      colors.append(baseColors[baseColors.count-1])
+      return colors.map { $0.cgColor }
+    }
+
+    let gradient = CAGradientLayer()
+    gradient.colors = interpolatedColors
+//    [
+//      UIColor.white.withAlphaComponent(1).cgColor,
+//      UIColor.white.withAlphaComponent(0.3).cgColor,
+//      UIColor.white.withAlphaComponent(1).cgColor
+//    ]
+    gradient.startPoint = CGPoint(x: 0.0, y: 0.4)
+    gradient.endPoint = CGPoint(x: 1.0, y: 0.6)
+    gradient.locations = [1, 1, 1]
+
+    gradient.frame = CGRect(
+      x: -displayView.bounds.width/2,
+      y: 0,
+      width: displayView.bounds.width*2,
+      height: displayView.bounds.height
+    )
+    displayView.layer.mask = gradient
+
+    let locationsAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
+    locationsAnimation.fromValue = [0.0, 0.2, 0.2]
+    locationsAnimation.toValue = [0.8, 1.0, 1.0]
 
     gradient.add(locationsAnimation, forKey: "shimmer")
 
@@ -424,18 +594,41 @@ final class ShimmerPairsCardViewController: UIViewController {
 //    ]
 //    opacityAnimation.toValue = [
 //      UIColor.white.withAlphaComponent(1).cgColor,
-//      UIColor.white.withAlphaComponent(0.6).cgColor, // 0.6
+//      UIColor.white.withAlphaComponent(0.6).cgColor,
 //      UIColor.white.withAlphaComponent(1).cgColor
 //    ]
-//
-//    let animationGroup = CAAnimationGroup()
-//    animationGroup.duration = 1 // 0.4
-//    animationGroup.repeatCount = 1
-//    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeIn)
-//    animationGroup.animations = [locationsAnimation, opacityAnimation]
-//    gradient.add(animationGroup, forKey: "shimmer")
+
+    let animationGroup = CAAnimationGroup()
+    animationGroup.duration = 2
+    animationGroup.repeatCount = 1
+    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeIn)
+    animationGroup.animations = [locationsAnimation]//, opacityAnimation]
+    gradient.add(animationGroup, forKey: "shimmer")
 
   }
 }
 
 
+public extension UIColor {
+    var components: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return (red: red, green: green, blue: blue, alpha: alpha)
+    }
+
+    func interpolate(with secondColor: UIColor, degree: CGFloat) -> UIColor {
+        let degree = min(1.0, max(0.0, degree))
+        let first = components
+        let second = secondColor.components
+
+        let red = (1-degree)*first.red + degree*second.red
+        let green = (1-degree)*first.green + degree*second.green
+        let blue = (1-degree)*first.blue + degree*second.blue
+        let alpha = (1-degree)*first.alpha + degree*second.alpha
+
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+}
