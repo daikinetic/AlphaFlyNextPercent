@@ -42,7 +42,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let secondVC = ShimmerPairsCardViewController()
     secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
-    let thirdVC = ShimmerCardViewController()
+    let thirdVC = ShimmerTextureCardViewController()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
     let fourceVC = ShimmerStepPairsCardStepViewController()
@@ -52,7 +52,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
 
-    viewControllers = [secondVC, firstVC, thirdVC, fourceVC]
+    viewControllers = [thirdVC, secondVC, firstVC, fourceVC]
 
   }
 
