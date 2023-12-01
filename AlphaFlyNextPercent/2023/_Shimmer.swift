@@ -850,8 +850,8 @@ final class ShimmerTextureCardViewController: UIViewController {
     locationsAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
     locationsAnimation.isRemovedOnCompletion = true
 
-    let opacityAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
-    opacityAnimation.fromValue = [
+    let appearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
+    appearAnimation.fromValue = [
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
@@ -862,7 +862,7 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
     ]
-    opacityAnimation.toValue = [
+    appearAnimation.toValue = [
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.red.withAlphaComponent(0.9).cgColor,
@@ -873,13 +873,13 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.red.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor
     ]
-    opacityAnimation.beginTime = 0.15 // 0.15
-    opacityAnimation.duration = 0.2 // 01.45
-    opacityAnimation.isRemovedOnCompletion = true
-    opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+    appearAnimation.beginTime = 0.15 // 0.15
+    appearAnimation.duration = 0.2 // 01.45
+    appearAnimation.isRemovedOnCompletion = true
+    appearAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 
-    let opacityAnimationLatter = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
-    opacityAnimationLatter.fromValue = [
+    let disappearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
+    disappearAnimation.fromValue = [
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.red.withAlphaComponent(0.9).cgColor,
@@ -890,7 +890,7 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.red.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor
     ]
-    opacityAnimationLatter.toValue = [
+    disappearAnimation.toValue = [
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
@@ -901,16 +901,16 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
     ]
-    opacityAnimationLatter.beginTime = 0.35 //1.6
-    opacityAnimationLatter.duration = 0.2 //1.2
-    opacityAnimationLatter.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-    opacityAnimationLatter.repeatCount = 1
-    opacityAnimationLatter.isRemovedOnCompletion = true
+    disappearAnimation.beginTime = 0.35 //1.6
+    disappearAnimation.duration = 0.2 //1.2
+    disappearAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+    disappearAnimation.repeatCount = 1
+    disappearAnimation.isRemovedOnCompletion = true
 
     let animationGroup = CAAnimationGroup()
     animationGroup.duration = 0.75 //3.8
     animationGroup.repeatCount = 1
-    animationGroup.animations = [locationsAnimation, opacityAnimation, opacityAnimationLatter]
+    animationGroup.animations = [locationsAnimation, appearAnimation, disappearAnimation]
     gradient.add(animationGroup, forKey: "shimmer")
 
   }
