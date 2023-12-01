@@ -873,8 +873,8 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.red.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor
     ]
-    opacityAnimation.beginTime = 0.15
-    opacityAnimation.duration = 1.45 //0.6
+    opacityAnimation.beginTime = 0.15 // 0.15
+    opacityAnimation.duration = 0.2 // 01.45
     opacityAnimation.isRemovedOnCompletion = true
     opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 
@@ -901,16 +901,15 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
     ]
-    opacityAnimationLatter.beginTime = 1.6
-    opacityAnimationLatter.duration = 1.2
+    opacityAnimationLatter.beginTime = 0.35 //1.6
+    opacityAnimationLatter.duration = 0.2 //1.2
     opacityAnimationLatter.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
     opacityAnimationLatter.repeatCount = 1
     opacityAnimationLatter.isRemovedOnCompletion = true
 
     let animationGroup = CAAnimationGroup()
-    animationGroup.duration = 3.8
-    animationGroup.repeatCount = .infinity
-//    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+    animationGroup.duration = 0.75 //3.8
+    animationGroup.repeatCount = 1
     animationGroup.animations = [locationsAnimation, opacityAnimation, opacityAnimationLatter]
     gradient.add(animationGroup, forKey: "shimmer")
 
