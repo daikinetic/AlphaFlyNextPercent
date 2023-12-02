@@ -820,8 +820,7 @@ final class ShimmerTextureCardViewController: UIViewController {
 
   @objc func shimmer(_ sender: UIButton) {
 
-    let gradient = CAGradientLayer()
-    gradient.colors = [
+    let highlightColors: [CGColor] = [
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.red.withAlphaComponent(0.9).cgColor,
@@ -832,14 +831,25 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.red.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor
     ]
+
+    let baseColors: [CGColor] = {
+      var colors: [CGColor] = []
+      for _ in 1 ... highlightColors.count {
+        colors.append(UIColor.white.withAlphaComponent(1).cgColor)
+      }
+      return colors
+    }()
+
+    let gradient = CAGradientLayer()
+    gradient.colors = highlightColors
     gradient.startPoint = CGPoint(x: 0.0, y: 0.4)
     gradient.endPoint = CGPoint(x: 1.0, y: 0.55)
     gradient.locations = [1, 1, 1]
 
     gradient.frame = CGRect(
-      x: -displayView.bounds.width + 25,
+      x: -displayView.bounds.width,
       y: 0,
-      width: displayView.bounds.width*3 - 10,
+      width: displayView.bounds.width*3,
       height: displayView.bounds.height
     )
     displayView.layer.mask = gradient
@@ -847,70 +857,23 @@ final class ShimmerTextureCardViewController: UIViewController {
     let locationsAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
     locationsAnimation.fromValue = [0.0, 0.04, 0.07, 0.1, 0.12, 0.14, 0.17, 0.2, 0.24]
     locationsAnimation.toValue = [0.76, 0.8, 0.83, 0.86, 0.88, 0.9, 0.93, 0.96, 0.1]
-    locationsAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-    locationsAnimation.isRemovedOnCompletion = true
 
     let appearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
-    appearAnimation.fromValue = [
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-    ]
-    appearAnimation.toValue = [
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.red.withAlphaComponent(0.9).cgColor,
-      UIColor.red.withAlphaComponent(0.8).cgColor,
-      UIColor.red.withAlphaComponent(0.75).cgColor,
-      UIColor.red.withAlphaComponent(0.8).cgColor,
-      UIColor.red.withAlphaComponent(0.9).cgColor,
-      UIColor.red.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor
-    ]
-    appearAnimation.beginTime = 0.15 // 0.15
-    appearAnimation.duration = 0.2 // 01.45
-    appearAnimation.isRemovedOnCompletion = true
-    appearAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+    appearAnimation.fromValue = baseColors
+    appearAnimation.toValue = highlightColors
+    appearAnimation.duration = 0.5
 
     let disappearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
-    disappearAnimation.fromValue = [
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.red.withAlphaComponent(0.9).cgColor,
-      UIColor.red.withAlphaComponent(0.8).cgColor,
-      UIColor.red.withAlphaComponent(0.75).cgColor,
-      UIColor.red.withAlphaComponent(0.8).cgColor,
-      UIColor.red.withAlphaComponent(0.9).cgColor,
-      UIColor.red.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor
-    ]
-    disappearAnimation.toValue = [
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.white.withAlphaComponent(1).cgColor,
-    ]
-    disappearAnimation.beginTime = 0.35 //1.6
-    disappearAnimation.duration = 0.2 //1.2
-    disappearAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-    disappearAnimation.repeatCount = 1
-    disappearAnimation.isRemovedOnCompletion = true
+    disappearAnimation.fromValue = highlightColors
+    disappearAnimation.toValue = baseColors
+    disappearAnimation.beginTime = 0.5
+    disappearAnimation.duration = 0.5
 
     let animationGroup = CAAnimationGroup()
-    animationGroup.duration = 0.75 //3.8
+    animationGroup.duration = 1.1
     animationGroup.repeatCount = 1
     animationGroup.animations = [locationsAnimation, appearAnimation, disappearAnimation]
+    animationGroup.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
     gradient.add(animationGroup, forKey: "shimmer")
 
   }
