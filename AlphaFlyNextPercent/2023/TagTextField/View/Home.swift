@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home: View {
+struct HomeTagText: View {
   //MARK: - Properties
   @State private var tags: [Tag] = []
 
@@ -26,6 +26,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
   static var previews: some View {
-    Home()
+    HomeTagText()
   }
 }

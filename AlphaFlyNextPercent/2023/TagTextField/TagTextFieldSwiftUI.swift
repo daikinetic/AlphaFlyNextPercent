@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TagTextFieldContentView: View {
   var body: some View {
-    Home()
+    HomeTagText()
   }
 }
 
