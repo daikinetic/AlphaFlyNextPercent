@@ -842,14 +842,14 @@ final class ShimmerTextureCardViewController: UIViewController {
 
     let gradient = CAGradientLayer()
     gradient.colors = highlightColors
-    gradient.startPoint = CGPoint(x: 0.0, y: 0.4)
-    gradient.endPoint = CGPoint(x: 1.0, y: 0.55)
+    gradient.startPoint = CGPoint(x: -1, y: 0)
+    gradient.endPoint = CGPoint(x: 2, y: 1.5) 
     gradient.locations = [1, 1, 1]
 
     gradient.frame = CGRect(
-      x: -displayView.bounds.width,
+      x: 0,
       y: 0,
-      width: displayView.bounds.width*3,
+      width: displayView.bounds.width,
       height: displayView.bounds.height
     )
     displayView.layer.mask = gradient
