@@ -823,12 +823,12 @@ final class ShimmerTextureCardViewController: UIViewController {
     let highlightColors: [CGColor] = [
       UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor,
-      UIColor.red.withAlphaComponent(0.9).cgColor,
-      UIColor.red.withAlphaComponent(0.8).cgColor,
-      UIColor.red.withAlphaComponent(0.75).cgColor,
-      UIColor.red.withAlphaComponent(0.8).cgColor,
-      UIColor.red.withAlphaComponent(0.9).cgColor,
-      UIColor.red.withAlphaComponent(1).cgColor,
+      UIColor.white.withAlphaComponent(0.9).cgColor,
+      UIColor.white.withAlphaComponent(0.8).cgColor,
+      UIColor.white.withAlphaComponent(0.75).cgColor,
+      UIColor.white.withAlphaComponent(0.8).cgColor,
+      UIColor.white.withAlphaComponent(0.9).cgColor,
+      UIColor.white.withAlphaComponent(1).cgColor,
       UIColor.white.withAlphaComponent(1).cgColor
     ]
 
@@ -861,16 +861,17 @@ final class ShimmerTextureCardViewController: UIViewController {
     let appearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
     appearAnimation.fromValue = baseColors
     appearAnimation.toValue = highlightColors
-    appearAnimation.duration = 0.5
+    appearAnimation.beginTime = 0.15
+    appearAnimation.duration = 1.5 //0.5
 
     let disappearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
     disappearAnimation.fromValue = highlightColors
     disappearAnimation.toValue = baseColors
-    disappearAnimation.beginTime = 0.5
-    disappearAnimation.duration = 0.5
+    disappearAnimation.beginTime = 1.65 //0.5
+    disappearAnimation.duration = 1.5 //0.5
 
     let animationGroup = CAAnimationGroup()
-    animationGroup.duration = 1.1
+    animationGroup.duration = 4 //1.1
     animationGroup.repeatCount = 1
     animationGroup.animations = [locationsAnimation, appearAnimation, disappearAnimation]
     animationGroup.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
