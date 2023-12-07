@@ -832,18 +832,24 @@ final class ShimmerTextureCardViewController: UIViewController {
       UIColor.white.withAlphaComponent(1).cgColor
     ]
 
-    let baseColors: [CGColor] = {
-      var colors: [CGColor] = []
-      for _ in 1 ... highlightColors.count {
-        colors.append(UIColor.white.withAlphaComponent(1).cgColor)
-      }
-      return colors
-    }()
+//    let baseColors: [CGColor] = {
+//      var colors: [CGColor] = []
+//      for _ in 1 ... highlightColors.count {
+//        colors.append(UIColor.white.withAlphaComponent(1).cgColor)
+//      }
+//      return colors
+//    }()
+
+    let baseColors: [CGColor] = highlightColors.map { _ in
+      UIColor.white.withAlphaComponent(1).cgColor
+    }
+
+    print("QQQ: \(baseColors)")
 
     let gradient = CAGradientLayer()
     gradient.colors = highlightColors
-    gradient.startPoint = CGPoint(x: -1, y: 0)
-    gradient.endPoint = CGPoint(x: 2, y: 1.5) 
+    gradient.startPoint = CGPoint(x: -1, y: 0) // -1, 0
+    gradient.endPoint = CGPoint(x: 2, y: 1.5) // 2, 1.5
     gradient.locations = [1, 1, 1]
 
     gradient.frame = CGRect(
@@ -861,17 +867,17 @@ final class ShimmerTextureCardViewController: UIViewController {
     let appearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
     appearAnimation.fromValue = baseColors
     appearAnimation.toValue = highlightColors
-    appearAnimation.beginTime = 0.15
-    appearAnimation.duration = 1.5 //0.5
+    appearAnimation.beginTime = 0
+    appearAnimation.duration = 0.5
 
     let disappearAnimation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.colors))
     disappearAnimation.fromValue = highlightColors
     disappearAnimation.toValue = baseColors
-    disappearAnimation.beginTime = 1.65 //0.5
-    disappearAnimation.duration = 1.5 //0.5
+    disappearAnimation.beginTime = 0.5
+    disappearAnimation.duration = 0.5
 
     let animationGroup = CAAnimationGroup()
-    animationGroup.duration = 4 //1.1
+    animationGroup.duration = 1.25
     animationGroup.repeatCount = 1
     animationGroup.animations = [locationsAnimation, appearAnimation, disappearAnimation]
     animationGroup.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)

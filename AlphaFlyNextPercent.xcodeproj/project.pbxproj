@@ -14,6 +14,7 @@
 		65197AE12AC30FD200DA683C /* ScrollTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65197AE02AC30FD200DA683C /* ScrollTransition.swift */; };
 		6519F30E2AC824D0005B41FF /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519F30D2AC824D0005B41FF /* SearchController.swift */; };
 		651DFE1C2ABC77FB00E18BBC /* GlassMorphism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DFE1B2ABC77FB00E18BBC /* GlassMorphism.swift */; };
+		6527A34F2B21EE840050FBEC /* Upd_17_GradationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527A34E2B21EE840050FBEC /* Upd_17_GradationAnimation.swift */; };
 		652CCB5D2ACC4186001720B8 /* IfAsAnExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CCB5C2ACC4186001720B8 /* IfAsAnExpression.swift */; };
 		6536B3662AFD26AF00C63C9E /* _BasicAnimos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536B3652AFD26AF00C63C9E /* _BasicAnimos.swift */; };
 		6542F26C2AB731E30071EC01 /* keyPathExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6542F26B2AB731E30071EC01 /* keyPathExpression.swift */; };
@@ -94,6 +95,7 @@
 		65197AE02AC30FD200DA683C /* ScrollTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTransition.swift; sourceTree = "<group>"; };
 		6519F30D2AC824D0005B41FF /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		651DFE1B2ABC77FB00E18BBC /* GlassMorphism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassMorphism.swift; sourceTree = "<group>"; };
+		6527A34E2B21EE840050FBEC /* Upd_17_GradationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upd_17_GradationAnimation.swift; sourceTree = "<group>"; };
 		652CCB5C2ACC4186001720B8 /* IfAsAnExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfAsAnExpression.swift; sourceTree = "<group>"; };
 		6536B3652AFD26AF00C63C9E /* _BasicAnimos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _BasicAnimos.swift; sourceTree = "<group>"; };
 		6542F26B2AB731E30071EC01 /* keyPathExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyPathExpression.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				65BC96EE2B14AFC2003CB936 /* _Shimmer.swift */,
 				654E95182B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift */,
 				6555AB1C2B1CB2CE0098E5F7 /* TextShimmer_SwiftUI.swift */,
+				6527A34E2B21EE840050FBEC /* Upd_17_GradationAnimation.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				6542F2792AB79AEF0071EC01 /* TagField.swift in Sources */,
 				65C21DD52ADAE5F500D98C3B /* ProgressBasedHeroAnimation.swift in Sources */,
 				65BE80662AC717B500038167 /* SectorChartExample.swift in Sources */,
+				6527A34F2B21EE840050FBEC /* Upd_17_GradationAnimation.swift in Sources */,
 				65BC96EF2B14AFC2003CB936 /* _Shimmer.swift in Sources */,
 				656B66872AACA841007F1A7D /* Extension.swift in Sources */,
 				6542F2752AB799490071EC01 /* Tag.swift in Sources */,
