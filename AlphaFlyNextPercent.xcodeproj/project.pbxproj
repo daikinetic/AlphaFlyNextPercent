@@ -669,6 +669,10 @@
 				DEVELOPMENT_TEAM = XSW5VPM32V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AlphaFlyNextPercent/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラロールにアクセスする説明文";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に位置情報を利用する説明文";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "起動中に位置情報を利用する説明文";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "フォトライブラリにアクセスする説明文";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -698,6 +702,10 @@
 				DEVELOPMENT_TEAM = XSW5VPM32V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AlphaFlyNextPercent/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラロールにアクセスする説明文";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に位置情報を利用する説明文";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "起動中に位置情報を利用する説明文";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "フォトライブラリにアクセスする説明文";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

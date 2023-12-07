@@ -30,7 +30,9 @@ struct Upd_17_GradationAnimation: View {
           )
         }
       } label: {
-        Text("変更")
+        Text("Change")
+          .foregroundColor(.white)
+          .font(.title)
       }
     }
     .ignoresSafeArea()

@@ -52,7 +52,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     fifthVC.tabBarItem = UITabBarItem(title: "tab5", image: .strokedCheckmark, tag: 2)
 
 
-    viewControllers = [thirdVC, secondVC, firstVC, fourceVC]
+    viewControllers = [thirdVC, secondVC, firstVC, fifthVC]
 
   }
 
