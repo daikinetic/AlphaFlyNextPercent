@@ -12,13 +12,17 @@ import MapKit
 
 fileprivate struct Home: View {
   @State private var cameraPosition: MapCameraPosition = .region(.myRegion)
+  @State private var mapSelection: MKMapItem?
   @Namespace private var locationSpace
+  @State private var viewingRegion: MKCoordinateRegion?
   @State private var searchText: String = ""
   @State private var showSearch: Bool = false
   @State private var searchResults: [MKMapItem] = []
+  @State private var showDetails: Bool = false
+  @State private var lookAroundScene: MKLookAroundScene?
   var body: some View {
     NavigationStack {
-      Map(position: $cameraPosition, scope: locationSpace) {
+      Map(position: $cameraPosition, selection: $mapSelection, scope: locationSpace) {
         ///Map Annotations
         Annotation("Apple Park", coordinate: .myLocation) {
           ZStack {
@@ -34,11 +38,16 @@ fileprivate struct Home: View {
         ForEach(searchResults, id: \.self) { mapItem in
           let placeMark = mapItem.placemark
           Marker(placeMark.name ?? "Place", coordinate: placeMark.coordinate)
+            .tint(.blue)
+
         }
 
         ///To Show User Current Location
         UserAnnotation()
       }
+      .onMapCameraChange({ ctx in
+        viewingRegion = ctx.region
+      })
       .overlay(alignment: .bottomTrailing) {
         VStack(spacing: 15) {
           MapCompass(scope: locationSpace)
@@ -53,6 +62,13 @@ fileprivate struct Home: View {
       .navigationBarTitleDisplayMode(.inline)
       .searchable(text: $searchText, isPresented: $showSearch)
       .toolbarBackground(.visible, for: .navigationBar)
+      .sheet(isPresented: $showDetails, content: {
+        MapDetails()
+          .presentationDetents([.height(300)])
+          .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
+          .presentationCornerRadius(25)
+          .interactiveDismissDisabled(true)
+      })
     }
     .onSubmit(of: .search) {
       Task {
@@ -61,15 +77,83 @@ fileprivate struct Home: View {
         await searchPlaces()
       }
     }
+    .onChange(of: showSearch, initial: false) {
+      if !showSearch {
+        ///Clearing Search Results
+        searchResults.removeAll(keepingCapacity: false)
+        showDetails = false
+        ///Zooming out to User Region when Search Cancelled
+        withAnimation(.snappy) {
+          cameraPosition = .region(.myRegion)
+        }
+      }
+    }
+    .onChange(of: mapSelection) { oldValue, newValue in
+      ///Displaying Details about the Selected Place
+      showDetails = newValue != nil
+      ///Fetching Look Around Preview, when ever selection Changes
+      fetchLookAroundPreview()
+    }
+  }
+
+  @ViewBuilder
+  func MapDetails() -> some View {
+    VStack(spacing: 15) {
+      ZStack {
+        if lookAroundScene == nil {
+          ContentUnavailableView("No Preview Available", systemImage: "eye.slash")
+        } else {
+          LookAroundPreview(scene: $lookAroundScene)
+        }
+      }
+      .frame(height: 200)
+      .clipShape(.rect(cornerRadius: 15))
+      ///Close Button
+      .overlay(alignment: .topTrailing) {
+        Button(action: {
+          ///Closing View
+          showDetails = false
+          withAnimation(.snappy) {
+            mapSelection = nil
+          }
+        }, label: {
+          Image(systemName: "xmark.circle.fill")
+            .font(.title)
+            .foregroundStyle(.black)
+            .background(.white, in: .circle)
+        })
+        .padding(10)
+      }
+
+      Button("Get Directions") {
+
+      }
+      .foregroundStyle(.white)
+      .frame(maxWidth: .infinity)
+      .padding(.vertical, 12)
+      .background(.blue.gradient, in: .rect(cornerRadius: 15))
+    }
+    .padding(15)
   }
 
   func searchPlaces() async {
     let request = MKLocalSearch.Request()
     request.naturalLanguageQuery = searchText
-    request.region = .myRegion
+    request.region = viewingRegion ?? .myRegion
 
     let results = try? await MKLocalSearch(request: request).start()
     searchResults = results?.mapItems ?? []
+  }
+
+  func fetchLookAroundPreview() {
+    if let mapSelection {
+      ///Clearing Old One
+      lookAroundScene = nil
+      Task {
+        let request = MKLookAroundSceneRequest(mapItem: mapSelection)
+        lookAroundScene = try? await request.scene
+      }
+    }
   }
 }
 
