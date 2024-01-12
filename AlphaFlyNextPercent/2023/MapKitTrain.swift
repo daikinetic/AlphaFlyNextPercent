@@ -5,6 +5,7 @@
 //  Created by Daiki Takano on 2024/01/01.
 //
 //  MapKit
+//  19min 1/12 Fri 14:10
 
 import Foundation
 import SwiftUI
@@ -15,11 +16,18 @@ fileprivate struct Home: View {
   @State private var mapSelection: MKMapItem?
   @Namespace private var locationSpace
   @State private var viewingRegion: MKCoordinateRegion?
+  ///Search
   @State private var searchText: String = ""
   @State private var showSearch: Bool = false
   @State private var searchResults: [MKMapItem] = []
+  ///MapSelection
   @State private var showDetails: Bool = false
   @State private var lookAroundScene: MKLookAroundScene?
+  ///Route
+  @State private var routeDisplaying: Bool = false
+  @State private var route: MKRoute?
+  @State private var routeDestination: MKMapItem?
+
   var body: some View {
     NavigationStack {
       Map(position: $cameraPosition, selection: $mapSelection, scope: locationSpace) {
@@ -36,10 +44,24 @@ fileprivate struct Home: View {
 
         ///Simply Display Annotations as Marker, as we seen before
         ForEach(searchResults, id: \.self) { mapItem in
-          let placeMark = mapItem.placemark
-          Marker(placeMark.name ?? "Place", coordinate: placeMark.coordinate)
-            .tint(.blue)
+          /// Hiding All other Markers, Expect Destination One
+          if routeDisplaying {
+            if mapItem == routeDestination {
+              let placeMark = mapItem.placemark
+              Marker(placeMark.name ?? "Place", coordinate: placeMark.coordinate)
+                .tint(.blue)
+            }
+          } else {
+            let placeMark = mapItem.placemark
+            Marker(placeMark.name ?? "Place", coordinate: placeMark.coordinate)
+              .tint(.blue)
+          }
+        }
 
+        ///Display Route using Polyline
+        if let route {
+          MapPolyline(route.polyline)
+            .stroke(.blue, lineWidth: 7)
         }
 
         ///To Show User Current Location
@@ -62,6 +84,8 @@ fileprivate struct Home: View {
       .navigationBarTitleDisplayMode(.inline)
       .searchable(text: $searchText, isPresented: $showSearch)
       .toolbarBackground(.visible, for: .navigationBar)
+      ///When Route Displaying Hiding Top and Bottom Bar
+      .toolbar(routeDisplaying ? .hidden : .visible, for: .navigationBar)
       .sheet(isPresented: $showDetails, content: {
         MapDetails()
           .presentationDetents([.height(300)])
@@ -125,9 +149,7 @@ fileprivate struct Home: View {
         .padding(10)
       }
 
-      Button("Get Directions") {
-
-      }
+      Button("Get Directions", action: fetchRoute)
       .foregroundStyle(.white)
       .frame(maxWidth: .infinity)
       .padding(.vertical, 12)
@@ -154,6 +176,27 @@ fileprivate struct Home: View {
         lookAroundScene = try? await request.scene
       }
     }
+  }
+
+  func fetchRoute() {
+    if let mapSelection {
+      let request = MKDirections.Request()
+      request.source = .init(placemark: .init(coordinate: .myLocation))
+      request.destination = mapSelection
+
+      Task {
+        let result = try? await MKDirections(request: request).calculate()
+        route = result?.routes.first
+        ///Saving Route Destination
+        routeDestination = mapSelection
+
+        withAnimation(.snappy) {
+          routeDisplaying = true
+          showDetails = false
+        }
+      }
+    }
+
   }
 }
 
