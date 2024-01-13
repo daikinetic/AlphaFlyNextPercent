@@ -86,13 +86,40 @@ fileprivate struct Home: View {
       .toolbarBackground(.visible, for: .navigationBar)
       ///When Route Displaying Hiding Top and Bottom Bar
       .toolbar(routeDisplaying ? .hidden : .visible, for: .navigationBar)
-      .sheet(isPresented: $showDetails, content: {
+      .sheet(isPresented: $showDetails, onDismiss: {
+        withAnimation(.snappy) {
+          ///Zooming Region
+          if let boundingRect = route?.polyline.boundingMapRect, routeDisplaying {
+            cameraPosition = .rect(boundingRect)
+          }
+        }
+      }, content: {
         MapDetails()
           .presentationDetents([.height(300)])
           .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
           .presentationCornerRadius(25)
           .interactiveDismissDisabled(true)
       })
+      .safeAreaInset(edge: .bottom) {
+        if routeDisplaying {
+          Button("End Route") {
+            ///Closing The Route and Setting the Selection
+            withAnimation(.snappy) {
+              routeDisplaying = false
+              showDetails = true
+              mapSelection = routeDestination
+              route = nil
+              cameraPosition = .region(.myRegion)
+            }
+          }
+          .foregroundStyle(.white)
+          .frame(maxWidth: .infinity)
+          .padding(.vertical, 12)
+          .background(.red.gradient, in: .rect(cornerRadius: 15))
+          .padding()
+          .background(.ultraThinMaterial)
+        }
+      }
     }
     .onSubmit(of: .search) {
       Task {
