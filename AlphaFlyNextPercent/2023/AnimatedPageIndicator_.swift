@@ -69,6 +69,27 @@ fileprivate struct PagingIndicator: View {
   var opacityEffect: Bool = false
   var clipEdges: Bool = false
   var body: some View {
-    Text("Hello, world")
+    GeometryReader {
+      ///Entire View Size for Calculating Pages
+      let width = $0.size.width
+
+      if let scrollViewWidth = $0.bounds(of: .scrollView(axis: .horizontal))?.width, scrollViewWidth > 0 {
+
+        let minX = $0.frame(in: .scrollView(axis: .horizontal)).minX
+        let totalPages = Int(width / scrollViewWidth)
+
+        HStack() {
+          ForEach(0..<totalPages, id: \.self) { index in
+            Circle()
+              .fill(inActiveTint)
+              .frame(width: 8, height: 8)
+          }
+        }
+        .frame(width: scrollViewWidth)
+        .offset(x: -minX)
+      }
+
+    }
+    .frame(height: 30)
   }
 }
