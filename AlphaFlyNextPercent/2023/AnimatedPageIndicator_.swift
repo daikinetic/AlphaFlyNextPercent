@@ -77,12 +77,38 @@ fileprivate struct PagingIndicator: View {
 
         let minX = $0.frame(in: .scrollView(axis: .horizontal)).minX
         let totalPages = Int(width / scrollViewWidth)
+        ///Progress
+        let freeProgress = -minX / scrollViewWidth
+        let clippedProgress = min(max(freeProgress, 0.0), 1.0)
+        let progress = clipEdges ? clippedProgress : freeProgress
+        ///Indexes
+        let activeIndex = Int(progress)
+        let nextIndex = Int(progress.rounded(.awayFromZero))
+        let indicatorProgress = progress - CGFloat(activeIndex)
+        ///Indicator Width's (Current & Upcoming)
+        let currentPageWidth = 18 - (indicatorProgress * 18)
+        let nextPageWidth = indicatorProgress * 18
 
         HStack() {
           ForEach(0..<totalPages, id: \.self) { index in
-            Circle()
+            Capsule()
               .fill(inActiveTint)
-              .frame(width: 8, height: 8)
+              .frame(
+                width: 8 + ((activeIndex == index) ? currentPageWidth : (nextIndex == index) ? nextPageWidth : 0),
+                height: 8
+              )
+              .overlay {
+                ZStack {
+                  Capsule()
+                    .fill(inActiveTint)
+
+                  Capsule()
+                    .fill(activeTint)
+                    .opacity(
+                      (activeIndex == index) ? (1 - indicatorProgress) : (nextIndex == index) ? indicatorProgress : 0
+                    )
+                }
+              }
           }
         }
         .frame(width: scrollViewWidth)
