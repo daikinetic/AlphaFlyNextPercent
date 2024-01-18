@@ -24,10 +24,11 @@ fileprivate struct AnimatedPageIndicator: View {
             ForEach(colors, id: \.self) { color in
               RoundedRectangle(cornerRadius: 25)
                 .fill(color.gradient)
-                .padding(.horizontal, 15)
+                .padding(.horizontal, 5)
                 .containerRelativeFrame(.horizontal)
             }
           }
+          .scrollTargetLayout()
           .overlay(alignment: .bottom) {
             PagingIndicator(
               activeTint: .white,
@@ -37,10 +38,11 @@ fileprivate struct AnimatedPageIndicator: View {
             )
           }
         }
-        .scrollTargetBehavior(.paging)
+        .scrollTargetBehavior(.viewAligned)
         .scrollIndicators(.hidden)
         .frame(height: 220)
-        .padding(.top, 15)
+        .safeAreaPadding(.vertical, 15)
+        .safeAreaPadding(.horizontal, 25)
 
         List {
           Section("Options") {
@@ -79,7 +81,7 @@ fileprivate struct PagingIndicator: View {
         let totalPages = Int(width / scrollViewWidth)
         ///Progress
         let freeProgress = -minX / scrollViewWidth
-        let clippedProgress = min(max(freeProgress, 0.0), 1.0)
+        let clippedProgress = min(max(freeProgress, 0.0), CGFloat(totalPages - 1))
         let progress = clipEdges ? clippedProgress : freeProgress
         ///Indexes
         let activeIndex = Int(progress)
@@ -105,7 +107,7 @@ fileprivate struct PagingIndicator: View {
                   Capsule()
                     .fill(activeTint)
                     .opacity(
-                      (activeIndex == index) ? (1 - indicatorProgress) : (nextIndex == index) ? indicatorProgress : 0
+                      opacityEffect ? (activeIndex == index) ? (1 - indicatorProgress) : (nextIndex == index) ? indicatorProgress : 0 : 1
                     )
                 }
               }
