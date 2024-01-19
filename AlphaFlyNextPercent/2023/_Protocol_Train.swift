@@ -150,10 +150,10 @@ extension Extension where Base: UIImageView {
 }
 
 //
-struct Item {}
+struct ItemForProtocolTrain {}
 
 protocol DataStoreProtocol {
-  func getItem() -> Item
+  func getItem() -> ItemForProtocolTrain
 }
 
 final class _ViewModel {
@@ -163,14 +163,14 @@ final class _ViewModel {
     self.dataStore = dataStore
   }
 
-  func getItem() -> Item {
+  func getItem() -> ItemForProtocolTrain {
     return dataStore.getItem()
   }
 }
 
 struct DataStoreStub: DataStoreProtocol {
-  func getItem() -> Item {
-    return Item()
+  func getItem() -> ItemForProtocolTrain {
+    return ItemForProtocolTrain()
   }
 }
 
