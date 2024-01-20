@@ -18,13 +18,18 @@ fileprivate struct InfiniteScrollView_: View {
     NavigationStack {
       ScrollView(.vertical) {
         VStack {
-          LoopingScrollView(width: 150, spacing: 10, items: items) { item in
-            RoundedRectangle(cornerRadius: 15)
-              .fill(item.color.gradient)
+          GeometryReader {
+            let size = $0.size
 
+            LoopingScrollView(width: size.width, spacing: 0, items: items) { item in
+              RoundedRectangle(cornerRadius: 15)
+                .fill(item.color.gradient)
+                .padding(.horizontal, 15)
+            }
+            //.contentMargins(.horizontal, 15, for: .scrollContent)
+            .scrollTargetBehavior(.paging)
           }
-          .frame(height: 150)
-          .contentMargins(.horizontal, 15, for: .scrollContent)
+          .frame(height: 220)
         }
         .padding(.vertical, 15)
       }
@@ -106,6 +111,11 @@ fileprivate struct ScrollViewHelper: UIViewRepresentable {
         context.coordinator.isAdded = true
       }
     }
+
+    context.coordinator.width = width
+    context.coordinator.spacing = spacing
+    context.coordinator.itemsCount = itemsCount
+    context.coordinator.repeatingCount = repeatingCount
   }
 
   class Coordinator: NSObject, UIScrollViewDelegate {
@@ -123,6 +133,22 @@ fileprivate struct ScrollViewHelper: UIViewRepresentable {
 
     ///Tells us whether the delegate is added or not
     var isAdded: Bool = false
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+      guard itemsCount > 0 else { return }
+
+      let minX = scrollView.contentOffset.x
+      let mainContentSize = CGFloat(itemsCount) * width
+      let spacingSize = CGFloat(itemsCount) * spacing
+
+      if minX > (mainContentSize + spacingSize) {
+        scrollView.contentOffset.x -= (mainContentSize + spacingSize)
+      }
+
+      if minX < 0 {
+        scrollView.contentOffset.x += (mainContentSize + spacingSize)
+      }
+    }
   }
 
 }
