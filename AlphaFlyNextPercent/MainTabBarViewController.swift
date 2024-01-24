@@ -42,7 +42,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let secondVC = ShimmerPairsCardViewController()
     secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
-    let thirdVC = ShimmerTextureCardViewController()
+    let thirdVC = CalendarInitializer()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
     let fourceVC = ShimmerStepPairsCardStepViewController()
