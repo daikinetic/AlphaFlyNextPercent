@@ -10,6 +10,7 @@
 		650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CD65F2AB03BA800502061 /* AccessControlVariation.swift */; };
 		650F65212AF2922600F69440 /* EnumConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F65202AF2922600F69440 /* EnumConstructor.swift */; };
 		65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65184B572AC9A68D00FB20C1 /* DarkModeAnimation.swift */; };
+		6519710C2B65966200486BBB /* DuolingoDragAndDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */; };
 		65197ADF2AC1CE6A00DA683C /* ConfigDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65197ADE2AC1CE6A00DA683C /* ConfigDemo.swift */; };
 		65197AE12AC30FD200DA683C /* ScrollTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65197AE02AC30FD200DA683C /* ScrollTransition.swift */; };
 		6519F30E2AC824D0005B41FF /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519F30D2AC824D0005B41FF /* SearchController.swift */; };
@@ -96,6 +97,7 @@
 		650CD65F2AB03BA800502061 /* AccessControlVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlVariation.swift; sourceTree = "<group>"; };
 		650F65202AF2922600F69440 /* EnumConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumConstructor.swift; sourceTree = "<group>"; };
 		65184B572AC9A68D00FB20C1 /* DarkModeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeAnimation.swift; sourceTree = "<group>"; };
+		6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DuolingoDragAndDrop.swift; path = /Users/daiki.takano/Documents/Development/AlphaFlyNextPercent/AlphaFlyNextPercent/2023/DuolingoDragAndDrop.swift; sourceTree = "<absolute>"; };
 		65197ADE2AC1CE6A00DA683C /* ConfigDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDemo.swift; sourceTree = "<group>"; };
 		65197AE02AC30FD200DA683C /* ScrollTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTransition.swift; sourceTree = "<group>"; };
 		6519F30D2AC824D0005B41FF /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				6542F2712AB798F80071EC01 /* TagTextField */,
 				65C025802AB42497003E3418 /* HandSpinner.swift */,
 				65A2AA7E2B59394500EB53DF /* InfiniteScrollView_.swift */,
+				6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */,
 				65F697502ABDC6800067E6C6 /* MultiThreading.swift */,
 				6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */,
 				65197ADE2AC1CE6A00DA683C /* ConfigDemo.swift */,
@@ -491,6 +494,7 @@
 				656439B32AFFCB2500447715 /* Logging.swift in Sources */,
 				6536B3662AFD26AF00C63C9E /* _BasicAnimos.swift in Sources */,
 				65D6CF862AEBE6DF00B0ACA3 /* _Shadows.swift in Sources */,
+				6519710C2B65966200486BBB /* DuolingoDragAndDrop.swift in Sources */,
 				65A519E82B542063007622E5 /* AnimatedPageIndicator_.swift in Sources */,
 				6599D7832AC478C800A6CD3E /* HeartAnimation.swift in Sources */,
 				65E20A702AD19BEA00BBF7EC /* PresentingMultipleSheet.swift in Sources */,

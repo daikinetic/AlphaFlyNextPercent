@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/daiki.takano/Documents/Development/AlphaFlyNextPercent/AlphaFlyNextPercent/2023/DuolingoDragAndDrop.swift">
+   </FileRef>
+   <FileRef
       location = "group:AlphaFlyNextPercent.xcodeproj">
    </FileRef>
    <FileRef
