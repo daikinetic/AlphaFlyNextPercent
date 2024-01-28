@@ -7,12 +7,20 @@
 //  https://youtu.be/owo6Xtvad4c?si=MOHQ-mrW8dBG1APc
 //
 //  2024 1/28 3:05
+//  2024 1/28 7:05
 
 import SwiftUI
 
 fileprivate struct DuolingoDragAndDrop: View {
 
   @State var progress: CGFloat = 0
+  @State var characters: [Character] = characters_
+  //MARK: Custom Grid Arrays
+  ///For Drag Part
+  @State var shuffledRows: [[Character]] = []
+  ///For Drop Part
+  @State var rows: [[Character]] = []
+
   var body: some View {
     VStack(spacing: 15) {
       NavBar()
@@ -27,8 +35,26 @@ fileprivate struct DuolingoDragAndDrop: View {
           .padding(.trailing, 100)
       }
       .padding(.top, 30)
+
+      //MARK: Drag Drop Area
     }
     .padding()
+    .onAppear {
+      if rows.isEmpty {
+        /// Creating Shuffled One -> Normal One
+        characters = characters.shuffled()
+        shuffledRows = generateGrid()
+        characters = characters_
+        rows = generateGrid()
+      }
+    }
+  }
+
+  @ViewBuilder
+  func DragArea() -> some View {
+    VStack(spacing: 12) {
+
+    }
   }
 
   @ViewBuilder
@@ -62,6 +88,59 @@ fileprivate struct DuolingoDragAndDrop: View {
           .foregroundColor(.red)
       }
     }
+  }
+
+  func generateGrid() -> [[Character]] {
+
+    /// Identifying Each Text Width and Updating it into State Variable
+    for item in characters.enumerated() {
+      let textSize = textSize(character: item.element)
+
+      characters[item.offset].textSize = textSize
+    }
+
+    var gridArray: [[Character]] = []
+    var tempArray: [Character] = []
+
+    /// Current Width
+    var currentWidth: CGFloat = 0
+    /// -30 -> Horizontal Padding
+    let totalScreenWidth: CGFloat = UIScreen.main.bounds.width - 30
+
+    for character in characters {
+      currentWidth += character.textSize
+
+      if currentWidth < totalScreenWidth {
+        tempArray.append(character)
+
+      } else {
+        gridArray.append(tempArray)
+        tempArray = []
+        currentWidth = character.textSize
+        tempArray.append(character)
+      }
+    }
+
+    /// Checking Exhaust
+    if !tempArray.isEmpty {
+      gridArray.append(tempArray)
+    }
+
+    return gridArray
+  }
+
+  ///Identifying Text Size
+  func textSize(character: Character) -> CGFloat {
+    let font = UIFont.systemFont(ofSize: character.fontSize)
+
+    let attributes = [NSAttributedString.Key.font : font]
+
+    let size = (character.value as NSString).size(
+      withAttributes: attributes
+    )
+
+    /// Horizontal Padding
+    return size.width * (character.padding * 2)
   }
 }
 
