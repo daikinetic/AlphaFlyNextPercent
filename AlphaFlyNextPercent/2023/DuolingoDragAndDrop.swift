@@ -8,6 +8,7 @@
 //
 //  2024 1/28 3:05
 //  2024 1/28 7:05
+//  2024 1/29 8:45
 
 import SwiftUI
 
@@ -23,6 +24,7 @@ fileprivate struct DuolingoDragAndDrop: View {
 
   var body: some View {
     VStack(spacing: 15) {
+
       NavBar()
 
       VStack(alignment: .leading, spacing: 30) {
@@ -37,6 +39,9 @@ fileprivate struct DuolingoDragAndDrop: View {
       .padding(.top, 30)
 
       //MARK: Drag Drop Area
+      DropArea()
+        .padding(.bottom, 30)
+      DragArea()
     }
     .padding()
     .onAppear {
@@ -51,9 +56,42 @@ fileprivate struct DuolingoDragAndDrop: View {
   }
 
   @ViewBuilder
+  func DropArea() -> some View {
+    VStack(spacing: 12) {
+      ForEach($rows, id: \.self) { $row in
+        HStack(spacing: 10) {
+          ForEach($row) { $item in
+            Text(item.value)
+              .font(.system(size: item.fontSize))
+              .padding(.vertical, 5)
+              .padding(.horizontal, item.padding)
+              .background {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                  .stroke(.gray)
+              }
+          }
+        }
+      }
+    }
+  }
+
+  @ViewBuilder
   func DragArea() -> some View {
     VStack(spacing: 12) {
-
+      ForEach(shuffledRows, id: \.self) { row in
+        HStack(spacing: 10) {
+          ForEach(row) { item in
+            Text(item.value)
+              .font(.system(size: item.fontSize))
+              .padding(.vertical, 5)
+              .padding(.horizontal, item.padding)
+              .background {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                  .stroke(.gray)
+              }
+          }
+        }
+      }
     }
   }
 
@@ -140,7 +178,7 @@ fileprivate struct DuolingoDragAndDrop: View {
     )
 
     /// Horizontal Padding
-    return size.width * (character.padding * 2)
+    return size.width + (character.padding * 2) + 10
   }
 }
 
@@ -156,7 +194,7 @@ fileprivate struct ZakoView: View {
   }
 }
 
-struct Character: Identifiable, Hashable, Equatable {
+fileprivate struct Character: Identifiable, Hashable, Equatable {
   var id = UUID().uuidString
   var value: String
   var padding: CGFloat = 10
@@ -165,7 +203,7 @@ struct Character: Identifiable, Hashable, Equatable {
   var isShowing: Bool = false
 }
 
-var characters_: [Character] = [
+fileprivate var characters_: [Character] = [
   Character(value: "Lorem"),
   Character(value: "Ipsum"),
   Character(value: "is"),
