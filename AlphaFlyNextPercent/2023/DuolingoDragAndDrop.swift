@@ -12,6 +12,15 @@
 
 import SwiftUI
 
+@main
+struct DuolingoDragAndDropApp: App {
+  var body: some Scene {
+    WindowGroup {
+      DuolingoDragAndDrop()
+    }
+  }
+}
+
 fileprivate struct DuolingoDragAndDrop: View {
 
   @State var progress: CGFloat = 0
@@ -21,6 +30,9 @@ fileprivate struct DuolingoDragAndDrop: View {
   @State var shuffledRows: [[Character]] = []
   ///For Drop Part
   @State var rows: [[Character]] = []
+  ///ANIMATION
+  @State var isAnimatedWrongText: Bool = false
+  @State var droppedCount: CGFloat = 0
 
   var body: some View {
     VStack(spacing: 15) {
@@ -53,6 +65,7 @@ fileprivate struct DuolingoDragAndDrop: View {
         rows = generateGrid()
       }
     }
+    .offset(x: isAnimatedWrongText ? -30 : 0)
   }
 
   @ViewBuilder
@@ -82,8 +95,19 @@ fileprivate struct DuolingoDragAndDrop: View {
                   let _ = first.loadObject(ofClass: URL.self) { value, error in
                     guard let url = value else { return }
                     if item.id == "\(url)" {
-                      item.isShowing = true
+                      droppedCount += 1
+                      let progress = (droppedCount / CGFloat(characters.count))
+
+                      withAnimation {
+                        item.isShowing = true
+                        updateShuffledArray(character: item)
+                        self.progress = progress
+                      }
+                    } else {
+                      /// ANIMATING WHEN WRONG TEXT DROPPED
+                      animateView()
                     }
+
                   }
                 }
 
@@ -218,13 +242,35 @@ fileprivate struct DuolingoDragAndDrop: View {
     /// Horizontal Padding
     return size.width + (character.padding * 2) + 10
   }
+
+  func updateShuffledArray(character: Character) {
+    for index in shuffledRows.indices {
+      for subIndex in shuffledRows[index].indices {
+        if shuffledRows[index][subIndex].id == character.id {
+          shuffledRows[index][subIndex].isShowing = true
+        }
+      }
+    }
+  }
+
+  func animateView() {
+    withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.2, blendDuration: 0.2)) {
+      isAnimatedWrongText = true
+    }
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.2, blendDuration: 0.2)) {
+        isAnimatedWrongText = false
+      }
+    }
+  }
 }
 
 #Preview {
   ZakoView()
 }
 
-struct ZakoView: View {
+fileprivate struct ZakoView: View {
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       DuolingoDragAndDrop()
