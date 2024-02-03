@@ -40,7 +40,7 @@ fileprivate struct DuolingoDragAndDrop: View {
 
       //MARK: Drag Drop Area
       DropArea()
-        .padding(.bottom, 30)
+        .padding(.vertical, 30)
       DragArea()
     }
     .padding()
@@ -65,11 +65,35 @@ fileprivate struct DuolingoDragAndDrop: View {
               .font(.system(size: item.fontSize))
               .padding(.vertical, 5)
               .padding(.horizontal, item.padding)
+              .opacity(item.isShowing ? 1 : 0)
               .background {
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
+                  .fill(item.isShowing ? .clear : .gray.opacity(0.25))
+              }
+              .background {
+                /// IF ITEM IS DROPPED INTO CORRECT PLACE
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
                   .stroke(.gray)
+                  .opacity(item.isShowing ? 1 : 0)
+              }
+              /// ADDING DROP OPERATION
+              .onDrop(of: [.url], isTargeted: .constant(false)) { providers in
+                if let first = providers.first {
+                  let _ = first.loadObject(ofClass: URL.self) { value, error in
+                    guard let url = value else { return }
+                    if item.id == "\(url)" {
+                      item.isShowing = true
+                    }
+                  }
+                }
+
+                return false
               }
           }
+        }
+
+        if row != rows.last {
+          Divider()
         }
       }
     }
@@ -89,7 +113,21 @@ fileprivate struct DuolingoDragAndDrop: View {
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                   .stroke(.gray)
               }
+              /// ADDING DRAG OPERATION
+              .onDrag {
+                /// RETURNING ID TO FIND WHICH ITEM IS MOVING
+                return .init(contentsOf: URL(string: item.id))!
+              }
+              .opacity(item.isShowing ? 0 : 1)
+              .background {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                  .fill(item.isShowing ? .gray.opacity(0.25) : .clear)
+              }
           }
+        }
+
+        if row != shuffledRows.last {
+          Divider()
         }
       }
     }
@@ -186,7 +224,7 @@ fileprivate struct DuolingoDragAndDrop: View {
   ZakoView()
 }
 
-fileprivate struct ZakoView: View {
+struct ZakoView: View {
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       DuolingoDragAndDrop()
