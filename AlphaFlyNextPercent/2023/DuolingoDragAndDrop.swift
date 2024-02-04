@@ -12,6 +12,7 @@
 
 import SwiftUI
 
+/// When Previewing, Dis Comment Out This
 @main
 struct DuolingoDragAndDropApp: App {
   var body: some Scene {
@@ -288,13 +289,12 @@ fileprivate struct Character: Identifiable, Hashable, Equatable {
 }
 
 fileprivate var characters_: [Character] = [
-  Character(value: "Lorem"),
-  Character(value: "Ipsum"),
-  Character(value: "is"),
-  Character(value: "simply"),
-  Character(value: "dummy"),
-  Character(value: "text"),
+  //This painting represents a disciple of Desilitre.
+  Character(value: "This"),
+  Character(value: "painting"),
+  Character(value: "represents"),
+  Character(value: "a"),
+  Character(value: "disciple"),
   Character(value: "of"),
-  Character(value: "the"),
-  Character(value: "design"),
+  Character(value: "Desilitre")
 ]
