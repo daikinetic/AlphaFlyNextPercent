@@ -363,6 +363,18 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		655AF42F2B6F8D550028662C /* 2024 */ = {
+			isa = PBXGroup;
+			children = (
+				659323422B42F65300ADA64A /* MapKitTrain.swift */,
+				65AB59932B5D539D008F1C60 /* DropDownView.swift */,
+				65A2AA7E2B59394500EB53DF /* InfiniteScrollView_.swift */,
+				6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */,
+				655AF4012B6F769B0028662C /* Spotify */,
+			);
+			path = 2024;
+			sourceTree = "<group>";
+		};
 		656B66622AACA6B0007F1A7D = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +396,7 @@
 		656B666D2AACA6B0007F1A7D /* AlphaFlyNextPercent */ = {
 			isa = PBXGroup;
 			children = (
+				655AF42F2B6F8D550028662C /* 2024 */,
 				656B66852AACA79D007F1A7D /* 2023 */,
 				656B666E2AACA6B0007F1A7D /* AppDelegate.swift */,
 				656B66702AACA6B0007F1A7D /* SceneDelegate.swift */,
@@ -408,7 +421,6 @@
 		656B66852AACA79D007F1A7D /* 2023 */ = {
 			isa = PBXGroup;
 			children = (
-				655AF4012B6F769B0028662C /* Spotify */,
 				6519F30C2AC824B4005B41FF /* UISearchController */,
 				65F6974D2ABDC54F0067E6C6 /* EmptyStateHandlingInIOS17 */,
 				651DFE1A2ABC77D900E18BBC /* GlassMorphism */,
@@ -418,8 +430,6 @@
 				65A519E72B542063007622E5 /* AnimatedPageIndicator_.swift */,
 				6542F2712AB798F80071EC01 /* TagTextField */,
 				65C025802AB42497003E3418 /* HandSpinner.swift */,
-				65A2AA7E2B59394500EB53DF /* InfiniteScrollView_.swift */,
-				6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */,
 				65F697502ABDC6800067E6C6 /* MultiThreading.swift */,
 				6579D7C82AC07C83001CEE44 /* ToggleContentTransition.swift */,
 				65197ADE2AC1CE6A00DA683C /* ConfigDemo.swift */,
@@ -456,7 +466,6 @@
 				657E6D962B05470D002CC126 /* _Actor_Sendable.swift */,
 				6571057F2B064FD7001A764B /* _CoreAnimo.swift */,
 				65F48BD42B0CC17D00EA1EAD /* _WebView_Train.swift */,
-				659323422B42F65300ADA64A /* MapKitTrain.swift */,
 				65F48BD62B0E2C9500EA1EAD /* _UIViewTransition.swift */,
 				65F48BD82B0FD01400EA1EAD /* _Ticket.swift */,
 				657D1AC42B108AC300C985C2 /* _Protocol_Train.swift */,
@@ -466,7 +475,6 @@
 				654E95182B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift */,
 				6555AB1C2B1CB2CE0098E5F7 /* TextShimmer_SwiftUI.swift */,
 				6527A34E2B21EE840050FBEC /* Upd_17_GradationAnimation.swift */,
-				65AB59932B5D539D008F1C60 /* DropDownView.swift */,
 			);
 			path = 2023;
 			sourceTree = "<group>";
