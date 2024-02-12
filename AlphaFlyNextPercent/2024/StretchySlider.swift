@@ -7,6 +7,7 @@
 //  https://youtu.be/r1uxDHcGSaA?si=CEvV8GI9n4M80Y-K
 //
 //  2024 2/10 5:50
+//  2024 2/12 9:30
 
 import SwiftUI
 
@@ -30,7 +31,7 @@ fileprivate struct StretchySlider: View {
     GeometryReader {
       let size = $0.size
       let orientationSize = axis == .horizontal ? size.width : size.height
-      let progressValue = progress * orientationSize
+      let progressValue = (max(progress, .zero)) * orientationSize
 
       ZStack(alignment: axis == .horizontal ? .leading : .bottom) {
         Rectangle()
@@ -45,6 +46,12 @@ fileprivate struct StretchySlider: View {
       }
       .clipShape(.rect(cornerRadius: 15))
       .contentShape(.rect(cornerRadius: 15))
+      .optionalSizingModifiers(
+        axis: axis,
+        size: size,
+        progress: progress,
+        orientationSize: orientationSize
+      )
       .gesture(
         DragGesture(minimumDistance: 0)
           .onChanged {
@@ -56,21 +63,46 @@ fileprivate struct StretchySlider: View {
           }
           .onEnded { _ in
             withAnimation(.smooth) {
-              dragOffset = dragOffset > orientationSize ? orientationSize : dragOffset
+              dragOffset = dragOffset > orientationSize ? orientationSize : ((dragOffset < 0) ? 0 : dragOffset)
               calculateProgress(orientationSize: orientationSize)
             }
 
             lastDragOffset = dragOffset
           }
       )
+      .frame(
+        maxWidth: size.width,
+        maxHeight: size.height,
+        alignment: (axis == .vertical) ? ((progress < 0) ? .top : .bottom) : .leading
+      )
     }
   }
   
   private func calculateProgress(orientationSize: CGFloat) {
-    let progress = dragOffset / orientationSize
+    let topAndTrailingExcessOffset = orientationSize + (dragOffset - orientationSize) * 0.15
+    let bottomAndLeadingExcessOffset = (dragOffset < 0) ? (dragOffset * 0.15) : dragOffset
+
+    let progress = ((dragOffset > orientationSize) ? topAndTrailingExcessOffset : bottomAndLeadingExcessOffset) / orientationSize
+
     self.progress = progress
   }
 
+}
+
+fileprivate extension View {
+  @ViewBuilder
+  func optionalSizingModifiers(
+    axis: StretchySlider.SliderAxis,
+    size: CGSize,
+    progress: CGFloat,
+    orientationSize: CGFloat
+  ) -> some View {
+    self
+      .frame(
+        height: ((axis == .vertical) && (progress < 0)) ? 
+          size.height + (-progress * size.height) : nil
+      )
+  }
 }
 
 fileprivate struct StretchySliderContainer: View {
