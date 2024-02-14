@@ -62,6 +62,7 @@
 		6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */; };
 		658357642B778191008AD525 /* StretchySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658357632B778191008AD525 /* StretchySlider.swift */; };
 		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
+		65921DB62B7CE58E00AF872F /* PopToRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65921DB52B7CE58E00AF872F /* PopToRootView.swift */; };
 		659323432B42F65300ADA64A /* MapKitTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659323422B42F65300ADA64A /* MapKitTrain.swift */; };
 		65933C1A2AFBB3990000660F /* AnimateFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65933C192AFBB3990000660F /* AnimateFlip.swift */; };
 		65990E172AE94CA4002E9A16 /* trackingModifier_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65990E162AE94CA4002E9A16 /* trackingModifier_.swift */; };
@@ -171,6 +172,7 @@
 		6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CAGradientLayer.swift; sourceTree = "<group>"; };
 		658357632B778191008AD525 /* StretchySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchySlider.swift; sourceTree = "<group>"; };
 		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
+		65921DB52B7CE58E00AF872F /* PopToRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootView.swift; sourceTree = "<group>"; };
 		659323422B42F65300ADA64A /* MapKitTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitTrain.swift; sourceTree = "<group>"; };
 		65933C192AFBB3990000660F /* AnimateFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateFlip.swift; sourceTree = "<group>"; };
 		65990E162AE94CA4002E9A16 /* trackingModifier_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackingModifier_.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				65AB59932B5D539D008F1C60 /* DropDownView.swift */,
 				65A2AA7E2B59394500EB53DF /* InfiniteScrollView_.swift */,
 				658357632B778191008AD525 /* StretchySlider.swift */,
+				65921DB52B7CE58E00AF872F /* PopToRootView.swift */,
 				6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */,
 				655AF4012B6F769B0028662C /* Spotify */,
 			);
@@ -643,6 +646,7 @@
 				65E20A702AD19BEA00BBF7EC /* PresentingMultipleSheet.swift in Sources */,
 				655AF40B2B6F78220028662C /* TabBarVC.swift in Sources */,
 				655AF4162B6F7A740028662C /* WelcomeVC.swift in Sources */,
+				65921DB62B7CE58E00AF872F /* PopToRootView.swift in Sources */,
 				65FCB3742AE41A5A00454C3C /* DatePicker.swift in Sources */,
 				657E6D972B05470D002CC126 /* _Actor_Sendable.swift in Sources */,
 				65E339F62AF68EEE008CF912 /* RollingCounter_.swift in Sources */,
