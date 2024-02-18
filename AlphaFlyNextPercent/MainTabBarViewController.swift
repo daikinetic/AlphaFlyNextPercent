@@ -18,7 +18,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .clear
+    view.backgroundColor = .white
 
     setUp()
 
@@ -42,7 +42,7 @@ class MainTabBarViewController: UITabBarController, UIOnboardingViewControllerDe
     let secondVC = ShimmerPairsCardViewController()
     secondVC.tabBarItem = UITabBarItem(title: "tab2", image: .add, tag: 1)
 
-    let thirdVC = CalendarInitializer()
+    let thirdVC = GestureTrainVC()
     thirdVC.tabBarItem = UITabBarItem(title: "tab3", image: .strokedCheckmark, tag: 2)
 
     let fourceVC = ShimmerStepPairsCardStepViewController()

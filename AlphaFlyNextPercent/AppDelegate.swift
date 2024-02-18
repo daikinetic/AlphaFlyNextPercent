@@ -7,7 +7,7 @@
 
 import UIKit
 
-//@main
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
@@ -18,17 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let window = UIWindow(frame: UIScreen.main.bounds)
 
     // MARK: - When Spotify, UnCommentOut This
-    if SpotifyAuthM.shared.isSignedIn {
-      window.rootViewController = SpotifyTabBarVC()
-    } else {
-      let navVC = UINavigationController(rootViewController: SpotifyWelcomeVC())
-      navVC.navigationBar.prefersLargeTitles = true
-      navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
-      window.rootViewController = navVC
-    }
+//    if SpotifyAuthM.shared.isSignedIn {
+//      window.rootViewController = SpotifyTabBarVC()
+//    } else {
+//      let navVC = UINavigationController(rootViewController: SpotifyWelcomeVC())
+//      navVC.navigationBar.prefersLargeTitles = true
+//      navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+//      window.rootViewController = navVC
+//    }
 
     // MARK: - When Normal Simulator, UnCommentOut This
-//    window.rootViewController = MainTabBarViewController()
+    window.rootViewController = MainTabBarViewController()
 
     window.makeKeyAndVisible()
     self.window = window

@@ -29,18 +29,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.windowScene = windowScene
 
     // MARK: - When Spotify, UnCommentOut This
-    if SpotifyAuthM.shared.isSignedIn {
-      window?.rootViewController = SpotifyTabBarVC()
-    } else {
-      let navVC = UINavigationController(rootViewController: SpotifyWelcomeVC())
-      navVC.navigationBar.prefersLargeTitles = true
-      navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
-      window?.rootViewController = navVC
-    }
+//    if SpotifyAuthM.shared.isSignedIn {
+//      window?.rootViewController = SpotifyTabBarVC()
+//    } else {
+//      let navVC = UINavigationController(rootViewController: SpotifyWelcomeVC())
+//      navVC.navigationBar.prefersLargeTitles = true
+//      navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+//      window?.rootViewController = navVC
+//    }
 
     // MARK: - When Normal Simulator, UnCommentOut This
-//    window?.rootViewController = MainTabBarViewController()
-
+    window?.rootViewController = MainTabBarViewController()
 
     window?.makeKeyAndVisible()
   }

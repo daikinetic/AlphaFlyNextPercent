@@ -13,7 +13,7 @@
 import SwiftUI
 
 /// When Previewing, Dis Comment Out This
-@main
+//@main
 struct DuolingoDragAndDropApp: App {
   var body: some Scene {
     WindowGroup {

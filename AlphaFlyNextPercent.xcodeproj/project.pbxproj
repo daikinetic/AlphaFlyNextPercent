@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		650CD6602AB03BA800502061 /* AccessControlVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CD65F2AB03BA800502061 /* AccessControlVariation.swift */; };
+		650D82692B8271F700A00BC1 /* GestureTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D82682B8271F700A00BC1 /* GestureTrain.swift */; };
 		650F65212AF2922600F69440 /* EnumConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F65202AF2922600F69440 /* EnumConstructor.swift */; };
 		65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65184B572AC9A68D00FB20C1 /* DarkModeAnimation.swift */; };
 		6519710C2B65966200486BBB /* DuolingoDragAndDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */; };
@@ -115,6 +116,7 @@
 
 /* Begin PBXFileReference section */
 		650CD65F2AB03BA800502061 /* AccessControlVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlVariation.swift; sourceTree = "<group>"; };
+		650D82682B8271F700A00BC1 /* GestureTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTrain.swift; sourceTree = "<group>"; };
 		650F65202AF2922600F69440 /* EnumConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumConstructor.swift; sourceTree = "<group>"; };
 		65184B572AC9A68D00FB20C1 /* DarkModeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeAnimation.swift; sourceTree = "<group>"; };
 		6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DuolingoDragAndDrop.swift; path = /Users/daiki.takano/Documents/Development/AlphaFlyNextPercent/AlphaFlyNextPercent/2023/DuolingoDragAndDrop.swift; sourceTree = "<absolute>"; };
@@ -373,6 +375,7 @@
 				659323422B42F65300ADA64A /* MapKitTrain.swift */,
 				65AB59932B5D539D008F1C60 /* DropDownView.swift */,
 				65A2AA7E2B59394500EB53DF /* InfiniteScrollView_.swift */,
+				650D82682B8271F700A00BC1 /* GestureTrain.swift */,
 				658357632B778191008AD525 /* StretchySlider.swift */,
 				65921DB52B7CE58E00AF872F /* PopToRootView.swift */,
 				6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */,
@@ -687,6 +690,7 @@
 				65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
 				655AF42C2B6F7F3C0028662C /* Artist.swift in Sources */,
+				650D82692B8271F700A00BC1 /* GestureTrain.swift in Sources */,
 				65CA7A912B1235EC00483D3E /* _Debounce.swift in Sources */,
 				654E95192B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift in Sources */,
 				65F48BD72B0E2C9500EA1EAD /* _UIViewTransition.swift in Sources */,
