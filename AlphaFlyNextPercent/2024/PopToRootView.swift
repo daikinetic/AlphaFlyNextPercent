@@ -54,7 +54,7 @@ struct PopToRootView: View {
     }
   }
 
-  var tabSelection: Binding<Tab> {
+  fileprivate var tabSelection: Binding<Tab> {
     return .init(
       get: {
         activeTab
@@ -86,7 +86,7 @@ struct PopToRootView: View {
   }
 }
 
-enum Tab: String {
+fileprivate enum Tab: String {
   case home = "Home"
   case settings = "Settings"
 

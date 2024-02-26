@@ -63,6 +63,7 @@
 		6582BED72AEA905E003B1610 /* _CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */; };
 		658357642B778191008AD525 /* StretchySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658357632B778191008AD525 /* StretchySlider.swift */; };
 		658AD14F2AE6972D00D7F4B8 /* EnumFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */; };
+		6590C5DE2B8CB8D500878843 /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6590C5DD2B8CB8D500878843 /* MiniPlayer.swift */; };
 		65921DB62B7CE58E00AF872F /* PopToRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65921DB52B7CE58E00AF872F /* PopToRootView.swift */; };
 		659323432B42F65300ADA64A /* MapKitTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659323422B42F65300ADA64A /* MapKitTrain.swift */; };
 		65933C1A2AFBB3990000660F /* AnimateFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65933C192AFBB3990000660F /* AnimateFlip.swift */; };
@@ -174,6 +175,7 @@
 		6582BED62AEA905E003B1610 /* _CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _CAGradientLayer.swift; sourceTree = "<group>"; };
 		658357632B778191008AD525 /* StretchySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchySlider.swift; sourceTree = "<group>"; };
 		658AD14E2AE6972D00D7F4B8 /* EnumFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFeature.swift; sourceTree = "<group>"; };
+		6590C5DD2B8CB8D500878843 /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		65921DB52B7CE58E00AF872F /* PopToRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootView.swift; sourceTree = "<group>"; };
 		659323422B42F65300ADA64A /* MapKitTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitTrain.swift; sourceTree = "<group>"; };
 		65933C192AFBB3990000660F /* AnimateFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateFlip.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				650D82682B8271F700A00BC1 /* GestureTrain.swift */,
 				658357632B778191008AD525 /* StretchySlider.swift */,
 				65921DB52B7CE58E00AF872F /* PopToRootView.swift */,
+				6590C5DD2B8CB8D500878843 /* MiniPlayer.swift */,
 				6519710B2B65966200486BBB /* DuolingoDragAndDrop.swift */,
 				655AF4012B6F769B0028662C /* Spotify */,
 			);
@@ -689,6 +692,7 @@
 				65C49D0F2AF927B60048BDEB /* LottieUIKit.swift in Sources */,
 				65184B582AC9A68D00FB20C1 /* DarkModeAnimation.swift in Sources */,
 				656B66732AACA6B0007F1A7D /* MainTabBarViewController.swift in Sources */,
+				6590C5DE2B8CB8D500878843 /* MiniPlayer.swift in Sources */,
 				655AF42C2B6F7F3C0028662C /* Artist.swift in Sources */,
 				650D82692B8271F700A00BC1 /* GestureTrain.swift in Sources */,
 				65CA7A912B1235EC00483D3E /* _Debounce.swift in Sources */,
