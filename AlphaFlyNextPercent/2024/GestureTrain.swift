@@ -8,6 +8,7 @@
 
 import UIKit
 import MondrianLayout
+import FBSDKShareKit
 
 final class GestureTrainVC: UIViewController {
 
