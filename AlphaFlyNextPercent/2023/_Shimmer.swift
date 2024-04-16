@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import MondrianLayout
-import FBSDKShareKit
 
 final class ShimmerViewController: UIViewController {
 
@@ -283,7 +282,7 @@ final class ShimmerCardViewController: UIViewController {
 }
 
 
-final class ShimmerPairsCardViewController: UIViewController, SharingDelegate  {
+final class ShimmerPairsCardViewController: UIViewController {
 
   private let buttonShimmer = UIButton(type: .system)
   private let displayView: UIView = .init(frame: .init(x: 0, y: 0, width: 164 * 1.618, height: 164))
@@ -304,7 +303,7 @@ final class ShimmerPairsCardViewController: UIViewController, SharingDelegate  {
 
     buttonShimmer.configuration = configurationBase
     buttonShimmer.setTitle("Shimmer", for: .normal)
-    buttonShimmer.addTarget(self, action: #selector(shareFacebook(_:)), for: .touchDown)
+    buttonShimmer.addTarget(self, action: #selector(shimmer(_:)), for: .touchDown)
 
     displayView.backgroundColor = .init(hex: "18AE9F")
     displayView.layer.masksToBounds = true
@@ -387,30 +386,6 @@ final class ShimmerPairsCardViewController: UIViewController, SharingDelegate  {
       .padding(.vertical, displayViewPaddingVertical)
       .container(respectingSafeAreaEdges: .vertical)
     }
-  }
-
-  @objc func shareFacebook(_ sender: UIButton) {
-    print("QQQ: sharesheet")
-    let photo = SharePhoto(image: UIImage(systemName: "star")!, isUserGenerated: true)
-    let content = SharePhotoContent()
-    content.photos = [photo]
-//    content.hashtag = Hashtag("#ペアーズレポート")
-//    content.contentURL = URL(string: "https://pairs.com")!
-    let dialog = ShareDialog(viewController: self, content: content, delegate: self)
-    dialog.mode = .shareSheet
-    dialog.show()
-  }
-
-  func sharer(_ sharer: any FBSDKShareKit.Sharing, didCompleteWithResults results: [String : Any]) {
-    print("QQQ: results")
-  }
-
-  func sharer(_ sharer: any FBSDKShareKit.Sharing, didFailWithError error: any Error) {
-    print("QQQ: error")
-  }
-
-  func sharerDidCancel(_ sharer: any FBSDKShareKit.Sharing) {
-    print("QQQ: Sharing")
   }
 
   @objc func shimmer(_ sender: UIButton) {

@@ -1,24 +1,5 @@
 {
-  "originHash" : "0c7631c319c4133dda5bb3560ad329882e379bf4f888617c0c2fe4af410bb8de",
   "pins" : [
-    {
-      "identity" : "facebook-ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/facebook/facebook-ios-sdk",
-      "state" : {
-        "revision" : "c19607d535864533523d1f437c84035e5fb101cf",
-        "version" : "14.1.0"
-      }
-    },
-    {
-      "identity" : "licensesplugin",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/maiyama18/LicensesPlugin.git",
-      "state" : {
-        "revision" : "b303f6b92427d6236e63bd75b559f095101817aa",
-        "version" : "0.1.6"
-      }
-    },
     {
       "identity" : "uionboarding",
       "kind" : "remoteSourceControl",
@@ -29,5 +10,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

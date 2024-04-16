@@ -28,7 +28,6 @@
 		65448C572AE7F57300419185 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 65448C562AE7F57300419185 /* UIOnboarding */; };
 		65448C592AE7F59E00419185 /* UIOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65448C582AE7F59E00419185 /* UIOnboarding.swift */; };
 		6546BDC82ACDB02F00218624 /* LayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546BDC72ACDB02F00218624 /* LayoutProtocol.swift */; };
-		654787F82BCD161F00209B68 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 654787F72BCD161F00209B68 /* FacebookShare */; };
 		654E95192B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E95182B1626F70085A927 /* ShimmerStepPairsCardStepViewController+Extension.swift */; };
 		6555AB1D2B1CB2CE0098E5F7 /* TextShimmer_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555AB1C2B1CB2CE0098E5F7 /* TextShimmer_SwiftUI.swift */; };
 		655AF4082B6F775D0028662C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655AF4072B6F775D0028662C /* HomeVC.swift */; };
@@ -224,7 +223,6 @@
 			files = (
 				CA0F804012709BC96E924EE0 /* Pods_AlphaFlyNextPercent.framework in Frameworks */,
 				65448C572AE7F57300419185 /* UIOnboarding in Frameworks */,
-				654787F82BCD161F00209B68 /* FacebookShare in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +530,6 @@
 			name = AlphaFlyNextPercent;
 			packageProductDependencies = (
 				65448C562AE7F57300419185 /* UIOnboarding */,
-				654787F72BCD161F00209B68 /* FacebookShare */,
 			);
 			productName = AlphaFlyNextPercent;
 			productReference = 656B666B2AACA6B0007F1A7D /* AlphaFlyNextPercent.app */;
@@ -564,8 +561,6 @@
 			mainGroup = 656B66622AACA6B0007F1A7D;
 			packageReferences = (
 				65448C552AE7F57300419185 /* XCRemoteSwiftPackageReference "UIOnboarding" */,
-				65FB90B72B9E0B6C004B3A90 /* XCRemoteSwiftPackageReference "LicensesPlugin" */,
-				654787F62BCD161F00209B68 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 656B666C2AACA6B0007F1A7D /* Products */;
 			projectDirPath = "";
@@ -953,22 +948,6 @@
 				minimumVersion = 2.0.3;
 			};
 		};
-		654787F62BCD161F00209B68 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.1.0;
-			};
-		};
-		65FB90B72B9E0B6C004B3A90 /* XCRemoteSwiftPackageReference "LicensesPlugin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/maiyama18/LicensesPlugin.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.6;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -976,11 +955,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 65448C552AE7F57300419185 /* XCRemoteSwiftPackageReference "UIOnboarding" */;
 			productName = UIOnboarding;
-		};
-		654787F72BCD161F00209B68 /* FacebookShare */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 654787F62BCD161F00209B68 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookShare;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
